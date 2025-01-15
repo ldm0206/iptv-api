@@ -57,7 +57,7 @@ jobs:
         if: env.OPEN_DRIVER == 'True'
         run: pipenv install selenium
       - name: Update
-        run: pipenv run dev ipv_type=ipv6
+        run: pipenv run dev
       - name: Commit and push if changed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
