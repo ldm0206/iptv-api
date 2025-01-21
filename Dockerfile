@@ -21,12 +21,13 @@ FROM python:3.13-slim
 
 ARG APP_WORKDIR=/iptv-api
 ARG LITE=False
-ARG APP_PORT=8000
 
 ENV APP_WORKDIR=$APP_WORKDIR
 ENV LITE=$LITE
-ENV APP_PORT=$APP_PORT
+ENV APP_PORT=8000
 ENV PATH="/.venv/bin:$PATH"
+ENV UPDATE_CRON1="0 22 * * *"
+ENV UPDATE_CRON2="0 10 * * *"
 
 WORKDIR $APP_WORKDIR
 
@@ -42,8 +43,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends cron \
   && rm -rf /var/lib/apt/lists/*
 
 RUN (crontab -l ; \
-  echo "0 22 * * * cd $APP_WORKDIR && /.venv/bin/python main.py"; \
-  echo "0 10 * * * cd $APP_WORKDIR && /.venv/bin/python main.py") | crontab -
+  if [ -n "$UPDATE_CRON1" ]; then echo "$UPDATE_CRON1 cd $APP_WORKDIR && /.venv/bin/python main.py"; fi; \
+  if [ -n "$UPDATE_CRON2" ]; then echo "$UPDATE_CRON2 cd $APP_WORKDIR && /.venv/bin/python main.py"; fi) | crontab -
 
 EXPOSE $APP_PORT
 

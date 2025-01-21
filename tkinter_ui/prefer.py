@@ -32,12 +32,12 @@ class PreferUI:
         self.prefer_ipv_type_combo = ttk.Combobox(frame_prefer_ipv_type)
         self.prefer_ipv_type_combo.pack(side=tk.LEFT, padx=4, pady=8)
         self.prefer_ipv_type_combo["values"] = ("IPv4", "IPv6", "自动")
-        ipv_type_prefer = config.ipv_type_prefer
-        if ipv_type_prefer[0] == "ipv4":
+        ipv_type_prefer = config.ipv_type_prefer[0]
+        if ipv_type_prefer == "ipv4":
             self.prefer_ipv_type_combo.current(0)
-        elif ipv_type_prefer[0] == "ipv6":
+        elif ipv_type_prefer == "ipv6":
             self.prefer_ipv_type_combo.current(1)
-        else:
+        elif ipv_type_prefer in ["自动", "auto"]:
             self.prefer_ipv_type_combo.current(2)
         self.prefer_ipv_type_combo.bind(
             "<<ComboboxSelected>>", self.update_ipv_type_prefer
@@ -190,6 +190,7 @@ class ConfigOption:
             self.combo_box.get()
         ]
         origin_type_prefer_list[index] = select_value
+        self.entry.delete(0, tk.END)
         self.entry.insert(
             0,
             config.source_limits[self.origin_type_prefer_obj[self.combo_box.get()]],

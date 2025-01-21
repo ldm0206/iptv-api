@@ -273,7 +273,8 @@ async def check_stream_delay(url_info):
 cache = {}
 
 
-async def get_speed(url, ipv6_proxy=None, filter_resolution=config.open_filter_resolution, timeout=config.sort_timeout,
+async def get_speed(url, ipv6_proxy=None, filter_resolution=config.open_filter_resolution,
+                    min_resolution=config.min_resolution_value, timeout=config.sort_timeout,
                     callback=None):
     """
     Get the speed (response time and resolution) of the url
@@ -287,6 +288,12 @@ async def get_speed(url, ipv6_proxy=None, filter_resolution=config.open_filter_r
             matcher = re.search(r"cache:(.*)", cache_info)
             if matcher:
                 cache_key = matcher.group(1)
+        if cache_key in cache:
+            cache_list = cache[cache_key]
+            for cache_item in cache_list:
+                if cache_item['speed'] > 0 and cache_item['delay'] != -1 and get_resolution_value(
+                        cache_item['resolution']) > min_resolution:
+                    return cache_item
         if ipv6_proxy and url_is_ipv6:
             data['speed'] = float("inf")
             data['delay'] = 0

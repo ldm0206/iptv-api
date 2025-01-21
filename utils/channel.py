@@ -461,8 +461,8 @@ def append_data_to_info_data(info_data, cate, name, data, origin=None, check=Tru
     Append channel data to total info data
     """
     init_info_data(info_data, cate, name)
-    urls = [x[0].partition("$")[0] for x in info_data[cate][name] if x[0]]
-    url_hosts = [get_url_host(url) for url in urls]
+    urls = set([x[0].partition("$")[0] for x in info_data[cate][name] if x[0]])
+    url_hosts = set([get_url_host(url) for url in urls])
     for item in data:
         try:
             url, date, resolution, *rest = item
@@ -475,14 +475,14 @@ def append_data_to_info_data(info_data, cate, name, data, origin=None, check=Tru
                 url_host = get_url_host(url_partition[0])
                 url_info = url_partition[2]
                 white_info = url_info and url_info.startswith("!")
-                if not not white_info:
+                if not white_info:
                     if pure_url in urls:
                         continue
                     if url_host in url_hosts:
                         for p_url in urls:
                             if get_url_host(p_url) == url_host and len(p_url) < len(pure_url):
                                 urls.remove(p_url)
-                                urls.append(pure_url)
+                                urls.add(pure_url)
                                 for index, info in enumerate(info_data[cate][name]):
                                     if info[0] and get_url_host(info[0]) == url_host:
                                         info_data[cate][name][index] = (url, date, resolution, url_origin)
@@ -498,8 +498,8 @@ def append_data_to_info_data(info_data, cate, name, data, origin=None, check=Tru
                         check and check_url_ipv_type(pure_url) and not check_url_by_keywords(url, blacklist))
                 ):
                     info_data[cate][name].append((url, date, resolution, url_origin))
-                    urls.append(pure_url)
-                    url_hosts.append(url_host)
+                    urls.add(pure_url)
+                    url_hosts.add(url_host)
         except:
             continue
 
@@ -602,6 +602,7 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
     """
     ipv6_proxy = None if (not config.open_ipv6 or ipv6) else constants.ipv6_proxy
     open_filter_resolution = config.open_filter_resolution
+    min_resolution = config.min_resolution_value
     get_resolution = open_filter_resolution and check_ffmpeg_installed_status()
     sort_timeout = config.sort_timeout
     need_sort_data = copy.deepcopy(data)
@@ -609,9 +610,10 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
     result = {}
     semaphore = asyncio.Semaphore(10)
 
-    async def limited_get_speed(info, ipv6_proxy, filter_resolution, timeout, callback):
+    async def limited_get_speed(info, ipv6_proxy, filter_resolution, min_resolution, timeout, callback):
         async with semaphore:
-            return await get_speed(info[0], ipv6_proxy=ipv6_proxy, filter_resolution=filter_resolution, timeout=timeout,
+            return await get_speed(info[0], ipv6_proxy=ipv6_proxy, filter_resolution=filter_resolution,
+                                   min_resolution=min_resolution, timeout=timeout,
                                    callback=callback)
 
     tasks = [
@@ -620,6 +622,7 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
                 info,
                 ipv6_proxy=ipv6_proxy,
                 filter_resolution=get_resolution,
+                min_resolution=min_resolution,
                 timeout=sort_timeout,
                 callback=callback,
             )
@@ -633,7 +636,6 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
     open_supply = config.open_supply
     open_filter_speed = config.open_filter_speed
     min_speed = config.min_speed
-    min_resolution = config.min_resolution_value
     for cate, obj in data.items():
         for name, info_list in obj.items():
             info_list = sort_urls(name, info_list, supply=open_supply, filter_speed=open_filter_speed,
@@ -661,7 +663,7 @@ def write_channel_to_file(data, ipv6=False, callback=None):
         no_result_name = []
         open_empty_category = config.open_empty_category
         ipv_type_prefer = list(config.ipv_type_prefer)
-        if any(pref in ipv_type_prefer for pref in ["自动", "auto"]) or not ipv_type_prefer:
+        if any(pref in ipv_type_prefer for pref in ["自动", "auto"]):
             ipv_type_prefer = ["ipv6", "ipv4"] if ipv6 else ["ipv4", "ipv6"]
         origin_type_prefer = config.origin_type_prefer
         first_cate = True
