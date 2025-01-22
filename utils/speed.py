@@ -90,7 +90,7 @@ async def get_speed_m3u8(url: str, filter_resolution: bool = config.open_filter_
     info = {'speed': None, 'delay': None, 'resolution': None}
     location = None
     try:
-        url = quote(url, safe=':/?$&=@[]').partition('$')[0]
+        url = quote(url, safe=':/?$&=@[]%').partition('$')[0]
         async with ClientSession(connector=TCPConnector(ssl=False), trust_env=True) as session:
             headers = await get_m3u8_headers(url, session)
             location = headers.get('Location')

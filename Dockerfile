@@ -42,10 +42,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends cron \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-RUN (crontab -l ; \
-  if [ -n "$UPDATE_CRON1" ]; then echo "$UPDATE_CRON1 cd $APP_WORKDIR && /.venv/bin/python main.py"; fi; \
-  if [ -n "$UPDATE_CRON2" ]; then echo "$UPDATE_CRON2 cd $APP_WORKDIR && /.venv/bin/python main.py"; fi) | crontab -
-
 EXPOSE $APP_PORT
 
 COPY entrypoint.sh /iptv-api-entrypoint.sh

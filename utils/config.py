@@ -93,15 +93,17 @@ class ConfigManager:
 
     @property
     def ipv4_num(self):
-        return self.config.getint("Settings", "ipv4_num", fallback=5) if self.config.get(
-            "Settings", "ipv_type_prefer", fallback=""
-        ) else ""
+        try:
+            return self.config.getint("Settings", "ipv4_num", fallback=5)
+        except:
+            return ""
 
     @property
     def ipv6_num(self):
-        return self.config.getint("Settings", "ipv6_num", fallback=5) if self.config.get(
-            "Settings", "ipv_type_prefer", fallback=""
-        ) else ""
+        try:
+            return self.config.getint("Settings", "ipv6_num", fallback=5)
+        except:
+            return ""
 
     @property
     def ipv6_support(self):
