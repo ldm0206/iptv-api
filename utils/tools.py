@@ -157,9 +157,7 @@ def get_total_urls(info_list, ipv_type_prefer, origin_type_prefer):
         ipv_type_prefer = ["all"]
     if not origin_prefer_bool:
         origin_type_prefer = ["all"]
-    categorized_urls = {
-        origin: {ipv_type: []} for origin in origin_type_prefer for ipv_type in ipv_type_prefer
-    }
+    categorized_urls = {origin: {ipv_type: [] for ipv_type in ipv_type_prefer} for origin in origin_type_prefer}
     total_urls = []
     for url, _, resolution, origin in info_list:
         if not origin:
