@@ -191,7 +191,12 @@ def get_total_urls(info_list, ipv_type_prefer, origin_type_prefer):
         if not origin_prefer_bool:
             origin = "all"
 
-        categorized_urls[origin]["all" if not ipv_prefer_bool else "ipv6" if url_is_ipv6 else "ipv4"].append(url)
+        if ipv_prefer_bool:
+            key = "ipv6" if url_is_ipv6 else "ipv4"
+            if key in ipv_type_prefer:
+                categorized_urls[origin][key].append(url)
+        else:
+            categorized_urls[origin]["all"].append(url)
 
     ipv_num = {ipv_type: 0 for ipv_type in ipv_type_prefer}
     urls_limit = config.urls_limit
@@ -201,32 +206,21 @@ def get_total_urls(info_list, ipv_type_prefer, origin_type_prefer):
         for ipv_type in ipv_type_prefer:
             if len(total_urls) >= urls_limit:
                 break
-            if ipv_num[ipv_type] < config.ipv_limit[ipv_type]:
+            ipv_type_num = ipv_num[ipv_type]
+            ipv_type_limit = config.ipv_limit[ipv_type] or urls_limit
+            if ipv_type_num < ipv_type_limit:
                 urls = categorized_urls[origin][ipv_type]
                 if not urls:
                     break
                 limit = min(
-                    max(config.source_limits.get(origin, urls_limit) - ipv_num[ipv_type], 0),
-                    max(config.ipv_limit[ipv_type] - ipv_num[ipv_type], 0),
+                    max(config.source_limits.get(origin, urls_limit) - ipv_type_num, 0),
+                    max(ipv_type_limit - ipv_type_num, 0),
                 )
                 limit_urls = urls[:limit]
                 total_urls.extend(limit_urls)
                 ipv_num[ipv_type] += len(limit_urls)
             else:
                 continue
-
-    if config.open_supply:
-        ipv_type_total = list(dict.fromkeys(ipv_type_prefer + (["ipv4", "ipv6"] if ipv_prefer_bool else [])))
-        if len(total_urls) < urls_limit:
-            for origin in origin_type_prefer:
-                if len(total_urls) >= urls_limit:
-                    break
-                for ipv_type in ipv_type_total:
-                    if len(total_urls) >= urls_limit:
-                        break
-                    extra_urls = categorized_urls[origin][ipv_type][: config.source_limits.get(origin, urls_limit)]
-                    total_urls.extend(extra_urls)
-                    total_urls = list(dict.fromkeys(total_urls))[:urls_limit]
 
     total_urls = list(dict.fromkeys(total_urls))[:urls_limit]
 
