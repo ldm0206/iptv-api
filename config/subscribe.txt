@@ -15,3 +15,5 @@ https://ghproxy.cc/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv
 https://ghproxy.cc/https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt
 https://ghproxy.cc/https://raw.githubusercontent.com/YueChan/Live/main/APTV.m3u
 https://ghproxy.cc/https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u
+https://ghproxy.cc/https://raw.githubusercontent.com/yan-sheng-li/tvhub/main/tv.txt
+https://ghproxy.cc/https://raw.githubusercontent.com/zhumeng11/IPTV/main/IPTV.m3u
