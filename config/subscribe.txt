@@ -21,3 +21,4 @@ https://raw.githubusercontent.com/hujingguang/ChinaIPTV/main/cnTV_AutoUpdate.m3u
 https://www.freetv.top/migu.m3u
 https://raw.githubusercontent.com/kakaxi-1/IPTV/refs/heads/main/ipv4.1.txt
 https://raw.githubusercontent.com/kakaxi-1/IPTV/refs/heads/main/ipv6.m3u
+https://raw.githubusercontent.com/ssili126/tv/refs/heads/main/itvlist.m3u
