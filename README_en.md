@@ -73,11 +73,11 @@
 - Interface source:
 
 ```bash
-https://ghproxy.cc/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u
+https://gh-proxy.com/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u
 ```
 
 ```bash
-https://ghproxy.cc/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt
+https://gh-proxy.com/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt
 ```
 
 🙏 Thanks to [ghproxy.cc](https://ghproxy.cc) for providing proxy acceleration services
@@ -95,7 +95,7 @@ https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.txt
 - Data source:
 
 ```bash
-https://ghproxy.cc/https://raw.githubusercontent.com/Guovin/iptv-api/gd/source.json
+https://gh-proxy.com/https://raw.githubusercontent.com/Guovin/iptv-api/gd/source.json
 ```
 
 or
