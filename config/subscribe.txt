@@ -22,3 +22,4 @@ https://www.freetv.top/migu.m3u
 https://raw.githubusercontent.com/kakaxi-1/IPTV/refs/heads/main/ipv4.1.txt
 https://raw.githubusercontent.com/kakaxi-1/IPTV/refs/heads/main/ipv6.m3u
 https://raw.githubusercontent.com/ssili126/tv/refs/heads/main/itvlist.m3u
+http://35455.koyeb.app/tv.m3u
