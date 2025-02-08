@@ -211,7 +211,7 @@ def get_total_urls(info_list, ipv_type_prefer, origin_type_prefer):
             if ipv_type_num < ipv_type_limit:
                 urls = categorized_urls[origin][ipv_type]
                 if not urls:
-                    break
+                    continue
                 limit = min(
                     max(config.source_limits.get(origin, urls_limit) - ipv_type_num, 0),
                     max(ipv_type_limit - ipv_type_num, 0),

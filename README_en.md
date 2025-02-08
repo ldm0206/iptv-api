@@ -25,20 +25,24 @@
 
 [中文](./README.md) | English
 
-- [✅ Features](#features)
-- [🔗 Latest results](#latest-results)
-- [⚙️ Config parameter](#Config)
-- [🚀 Quick Start](#quick-start)
-    - [Workflow](#workflow)
-    - [Command Line](#command-line)
-    - [GUI Software](#gui-software)
-    - [Docker](#docker)
-- [📖 Detailed Tutorial](./docs/tutorial_en.md)
-- [🗓️ Changelog](./CHANGELOG.md)
-- [❤️ Appreciate](#appreciate)
-- [👀 Follow(Update Subscription + Q&A)](#follow)
-- [📣 Disclaimer](#disclaimer)
-- [⚖️ License](#license)
+- [Features](#features)
+- [Latest results](#latest-results)
+- [Config](#config)
+- [Quick Start](#quick-start)
+  - [Workflow](#workflow)
+  - [Command Line](#command-line)
+  - [GUI Software](#gui-software)
+  - [Docker](#docker)
+    - [1. Pull the image](#1-pull-the-image)
+    - [2. Run the container](#2-run-the-container)
+      - [Mount(Recommended):](#mountrecommended)
+      - [Environment Variables:](#environment-variables)
+    - [3. Update results](#3-update-results)
+- [Changelog](#changelog)
+- [Appreciate](#appreciate)
+- [Follow](#follow)
+- [Disclaimer](#disclaimer)
+- [License](#license)
 
 📍Subscription sources are from:
 
@@ -73,14 +77,12 @@
 - Interface source:
 
 ```bash
-https://gh-proxy.com/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u
+https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u
 ```
 
 ```bash
-https://gh-proxy.com/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt
+https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt
 ```
-
-🙏 Thanks to [ghproxy.cc](https://ghproxy.cc) for providing proxy acceleration services
 
 or
 
@@ -95,7 +97,7 @@ https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.txt
 - Data source:
 
 ```bash
-https://gh-proxy.com/https://raw.githubusercontent.com/Guovin/iptv-api/gd/source.json
+https://ghproxy.cc/https://raw.githubusercontent.com/Guovin/iptv-api/gd/source.json
 ```
 
 or
@@ -142,7 +144,7 @@ https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/source.json
 | ipv6_num               | The preferred number of IPv6 interfaces in the result                                                                                                                                                                                                                                                                                                                                                                            | 5                 |
 | ipv6_support           | It is forced to consider that the current network supports IPv6 and skip the check                                                                                                                                                                                                                                                                                                                                               | False             |
 | ipv_type               | The protocol type of interface in the generated result, optional values: ipv4, ipv6, all                                                                                                                                                                                                                                                                                                                                         | all               |
-| ipv_type_prefer        | Interface protocol type preference, prioritize interfaces of this type in the results, optional values: ipv4, ipv6, auto                                                                                                                                                                                                                                                                                                         | auto              |
+| ipv_type_prefer        | Interface protocol type preference, prioritize interfaces of this type in the results, optional values: ipv4, ipv6, auto                                                                                                                                                                                                                                                                                                         | ipv6,ipv4         |
 | local_file             | Local source file path                                                                                                                                                                                                                                                                                                                                                                                                           | config/local.txt  |
 | local_num              | Preferred number of local source interfaces in the result                                                                                                                                                                                                                                                                                                                                                                        | 10                |
 | min_resolution         | Minimum interface resolution, requires enabling open_filter_resolution to take effect                                                                                                                                                                                                                                                                                                                                            | 1920x1080         |

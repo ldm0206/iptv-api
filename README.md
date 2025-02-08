@@ -25,20 +25,24 @@
 
 [English](./README_en.md) | 中文
 
-- [✅ 特点](#特点)
-- [🔗 最新结果](#最新结果)
-- [⚙️ 配置参数](#配置)
-- [🚀 快速上手](#快速上手)
-    - [工作流](#工作流)
-    - [命令行](#命令行)
-    - [GUI软件](#GUI-软件)
-    - [Docker](#Docker)
-- [📖 详细教程](./docs/tutorial.md)
-- [🗓️ 更新日志](./CHANGELOG.md)
-- [❤️ 赞赏](#赞赏)
-- [👀 关注(更新订阅+答疑交流)](#关注)
-- [📣 免责声明](#免责声明)
-- [⚖️ 许可证](#许可证)
+- [特点](#特点)
+- [最新结果](#最新结果)
+- [配置](#配置)
+- [快速上手](#快速上手)
+  - [工作流](#工作流)
+  - [命令行](#命令行)
+  - [GUI 软件](#gui-软件)
+  - [Docker](#docker)
+    - [1. 拉取镜像](#1-拉取镜像)
+    - [2. 运行容器](#2-运行容器)
+      - [挂载（推荐）：](#挂载推荐)
+      - [环境变量：](#环境变量)
+    - [3. 更新结果](#3-更新结果)
+- [更新日志](#更新日志)
+- [赞赏](#赞赏)
+- [关注](#关注)
+- [免责声明](#免责声明)
+- [许可证](#许可证)
 
 📍订阅源来自：
 
@@ -72,14 +76,12 @@
 - 接口源：
 
 ```bash
-https://gh-proxy.com/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u
+https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u
 ```
 
 ```bash
-https://gh-proxy.com/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt
+https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt
 ```
-
-🙏 感谢由[ghproxy.cc](https://ghproxy.cc)提供的代理加速服务
 
 或
 
@@ -94,7 +96,7 @@ https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.txt
 - 数据源：
 
 ```bash
-https://gh-proxy.com/https://raw.githubusercontent.com/Guovin/iptv-api/gd/source.json
+https://raw.githubusercontent.com/Guovin/iptv-api/gd/source.json
 ```
 
 或
@@ -141,7 +143,7 @@ https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/source.json
 | ipv6_num               | 结果中偏好的 IPv6 接口数量                                                                                                                                                      | 5                 |
 | ipv6_support           | 强制认为当前网络支持IPv6，跳过检测                                                                                                                                                   | False             |
 | ipv_type               | 生成结果中接口的协议类型，可选值：ipv4、ipv6、全部、all                                                                                                                                     | 全部                |
-| ipv_type_prefer        | 接口协议类型偏好，优先将该类型的接口排在结果前面，可选值：ipv4、ipv6、自动、auto                                                                                                                        | 自动                |
+| ipv_type_prefer        | 接口协议类型偏好，优先将该类型的接口排在结果前面，可选值：ipv4、ipv6、自动、auto                                                                                                                        | ipv6,ipv4         |
 | local_file             | 本地源文件路径                                                                                                                                                               | config/local.txt  |
 | local_num              | 结果中偏好的本地源接口数量                                                                                                                                                         | 10                |
 | min_resolution         | 接口最小分辨率，需要开启 open_filter_resolution 才能生效                                                                                                                              | 1920x1080         |
