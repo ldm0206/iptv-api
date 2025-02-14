@@ -25,6 +25,9 @@
 
 [English](./README_en.md) | 中文
 
+✨💻[IPTV-Web](https://github.com/Guovin/iptv-web)：IPTV电视直播源管理平台，支持在线播放等功能，开发中...
+
+
 - [特点](#特点)
 - [最新结果](#最新结果)
 - [配置](#配置)
