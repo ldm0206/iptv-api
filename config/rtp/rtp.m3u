@@ -25,7 +25,7 @@ http://192.168.6.2:666/udp/239.93.6.102:5140
 http://192.168.6.2:666/udp/239.93.7.30:8124
 #EXTINF:-1 tvg-id="14" tvg-name="CCTV13" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV13.png" group-title="央视",CCTV-13高清
 http://192.168.6.2:666/udp/239.93.6.66:5140
-#EXTINF:-1 tvg-id="15" tvg-name="CCTV14" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV14.png" group-title="央视",CCTV-少儿高清
+#EXTINF:-1 tvg-id="15" tvg-name="CCTV14" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV14.png" group-title="央视",CCTV-14高清
 http://192.168.6.2:666/udp/239.93.7.29:6000
 #EXTINF:-1 tvg-id="16" tvg-name="CCTV15" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV15.png" group-title="央视",CCTV-15高清
 http://192.168.6.2:666/udp/239.93.6.103:5140
@@ -147,7 +147,7 @@ http://192.168.6.2:666/udp/239.93.6.100:5140
 http://192.168.6.2:666/udp/239.93.6.141:5140
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",安多卫视
 http://192.168.6.2:666/udp/239.93.6.234:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广元综合新闻
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广元综合
 http://192.168.6.2:666/udp/239.93.7.253:3001
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",广元文化生活
 http://192.168.6.2:666/udp/239.93.7.252:3002
@@ -195,7 +195,7 @@ http://192.168.6.2:666/udp/239.93.46.72:5140
 http://192.168.6.2:666/udp/239.93.6.62:5140
 #EXTINF:-1 tvg-id="6555" tvg-name="梨园" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/CCTVPAYFEE20.jpg" group-title="地方",梨园
 http://192.168.6.2:666/udp/239.93.7.195:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",家政频道高清
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",家政频道
 http://192.168.6.2:666/udp/239.93.46.48:5140
 #EXTINF:-1 tvg-id="73" tvg-name="中国教育1台" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/中国教育1台.png" group-title="地方",CETV-1高清
 http://192.168.6.2:666/udp/239.93.7.111:5140
@@ -237,9 +237,9 @@ http://192.168.6.2:666/udp/239.93.6.206:8028
 http://192.168.6.2:666/udp/239.93.6.116:9136
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",百变课堂专区
 http://192.168.6.2:666/udp/239.93.46.85:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱体育专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱体育
 http://192.168.6.2:666/udp/239.93.7.135:9008
-#EXTINF:-1 tvg-id="85" tvg-name="电竞天堂" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/dianjingtiantang.png" group-title="地方",电竞天堂高清专区
+#EXTINF:-1 tvg-id="85" tvg-name="电竞天堂" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/dianjingtiantang.png" group-title="地方",电竞天堂
 http://192.168.6.2:666/udp/239.93.6.135:5140
 #EXTINF:-1 tvg-id="1983" tvg-name="游戏风云" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/youxifengyun.png" group-title="上海",游戏风云
 http://192.168.6.2:666/udp/239.93.6.136:5140
@@ -267,39 +267,39 @@ http://192.168.6.2:666/udp/239.93.6.171:5140
 http://192.168.6.2:666/udp/239.93.7.165:5140
 #EXTINF:-1 tvg-id="7245" tvg-name="中国教育4台" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/中国教育4台.png" group-title="地方",4K视界专区
 http://192.168.6.2:666/udp/239.93.6.14:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱浪漫专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱浪漫
 http://192.168.6.2:666/udp/239.93.46.21:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱喜剧专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱喜剧
 http://192.168.6.2:666/udp/239.93.46.9:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱奇谈专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱奇谈
 http://192.168.6.2:666/udp/239.93.46.22:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱科幻专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱科幻
 http://192.168.6.2:666/udp/239.93.46.10:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱院线专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱院线
 http://192.168.6.2:666/udp/239.93.46.11:5140
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",都市剧场
 http://192.168.6.2:666/udp/239.93.46.30:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱谍战专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱谍战
 http://192.168.6.2:666/udp/239.93.46.14:5140
-#EXTINF:-1 tvg-id="7152" tvg-name="History" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/HistoryChannel.png" group-title="港澳台",爱历史专区
+#EXTINF:-1 tvg-id="7152" tvg-name="History" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/HistoryChannel.png" group-title="港澳台",IHOT爱历史
 http://192.168.6.2:666/udp/239.93.46.13:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱悬疑专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱悬疑
 http://192.168.6.2:666/udp/239.93.46.12:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱旅行专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱旅行
 http://192.168.6.2:666/udp/239.93.46.16:5140
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",少儿天地专区
 http://192.168.6.2:666/udp/239.93.46.34:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱幼教专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱幼教
 http://192.168.6.2:666/udp/239.93.46.17:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱玩具专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱玩具
 http://192.168.6.2:666/udp/239.93.46.18:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱动漫专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱动漫
 http://192.168.6.2:666/udp/239.93.46.23:5140
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",求索频道高清
 http://192.168.6.2:666/udp/239.93.46.24:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱体育专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱体育
 http://192.168.6.2:666/udp/239.93.46.19:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱赛车专区
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱赛车
 http://192.168.6.2:666/udp/239.93.46.20:5140
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",爱宠宠物专区
 http://192.168.6.2:666/udp/239.93.46.32:5140
