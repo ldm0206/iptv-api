@@ -1363,7 +1363,7 @@ http://175.18.189.238:9998/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=
 http://222.174.239.62:352/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV9.png" group-title="纪录频道",CCTV9
 http://113.101.119.26:8090/hls/121/index.m3u8
-#EXTINF:-1 tvg-name="求索频道" tvg-logo="https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/求索频道.png" group-title="纪录频道",求索频道
+#EXTINF:-1 tvg-name="求索纪录" tvg-logo="https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/求索纪录.png" group-title="纪录频道",求索纪录
 http://192.168.6.2:666/udp/239.93.46.24:5140
 #EXTINF:-1 tvg-name="金鹰纪实" tvg-logo="https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/金鹰纪实.png" group-title="纪录频道",金鹰纪实
 http://192.168.6.2:666/udp/239.93.6.130:5140

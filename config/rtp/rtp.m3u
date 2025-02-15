@@ -65,19 +65,19 @@ http://192.168.6.2:666/udp/239.93.6.181:5140
 http://192.168.6.2:666/udp/239.93.6.167:5140
 #EXTINF:-1 tvg-id="38" tvg-name="山东卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shandong.png" group-title="卫视",山东卫视高清
 http://192.168.6.2:666/udp/239.93.6.168:5140
-#EXTINF:-1 tvg-id="2054" tvg-name="SCTV2" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv2.png" group-title="四川",SCTV-2高清
+#EXTINF:-1 tvg-id="2054" tvg-name="SCTV2" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/SCTV2.png" group-title="四川",SCTV2
 http://192.168.6.2:666/udp/239.93.7.101:5140
-#EXTINF:-1 tvg-id="2055" tvg-name="SCTV3" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv3.png" group-title="四川",SCTV-3高清
+#EXTINF:-1 tvg-id="2055" tvg-name="SCTV3" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/SCTV3.png" group-title="四川",SCTV3
 http://192.168.6.2:666/udp/239.93.7.102:5140
-#EXTINF:-1 tvg-id="2056" tvg-name="SCTV4" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv4.png" group-title="四川",SCTV-4高清
+#EXTINF:-1 tvg-id="2056" tvg-name="SCTV4" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/SCTV4.png" group-title="四川",SCTV4
 http://192.168.6.2:666/udp/239.93.6.47:5140
-#EXTINF:-1 tvg-id="2057" tvg-name="SCTV5" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv5.png" group-title="四川",SCTV-5高清
+#EXTINF:-1 tvg-id="2057" tvg-name="SCTV5" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/SCTV5.png" group-title="四川",SCTV5
 http://192.168.6.2:666/udp/239.93.6.166:5140
-#EXTINF:-1 tvg-id="2059" tvg-name="SCTV7" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv7.png" group-title="四川",SCTV-6高清
+#EXTINF:-1 tvg-id="2059" tvg-name="SCTV6" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/SCTV7.png" group-title="四川",SCTV6
 http://192.168.6.2:666/udp/239.93.7.144:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",SCTV-7高清
+#EXTINF:-1 tvg-id="" tvg-name="SCTV7" tvg-logo="" group-title="未分类",SCTV7
 http://192.168.6.2:666/udp/239.93.6.219:5140
-#EXTINF:-1 tvg-id="2062" tvg-name="SCTV8" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/sctv8.png" group-title="四川",SCTV-科教高清
+#EXTINF:-1 tvg-id="2062" tvg-name="SCTV8" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/SCTV8.png" group-title="四川",SCTV8
 http://192.168.6.2:666/udp/239.93.46.44:5140
 #EXTINF:-1 tvg-id="7245" tvg-name="中国教育4台" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/中国教育4台.png" group-title="地方",四川乡村高清
 http://192.168.6.2:666/udp/239.93.6.52:5140
@@ -295,7 +295,7 @@ http://192.168.6.2:666/udp/239.93.46.17:5140
 http://192.168.6.2:666/udp/239.93.46.18:5140
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱动漫
 http://192.168.6.2:666/udp/239.93.46.23:5140
-#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",求索频道高清
+#EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",求索纪录
 http://192.168.6.2:666/udp/239.93.46.24:5140
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",IHOT爱体育
 http://192.168.6.2:666/udp/239.93.46.19:5140

@@ -757,7 +757,7 @@ CCTV9,http://218.58.136.82:352/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&aut
 CCTV9,http://175.18.189.238:9998/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
 CCTV9,http://222.174.239.62:352/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
 CCTV9,http://113.101.119.26:8090/hls/121/index.m3u8
-求索频道,http://192.168.6.2:666/udp/239.93.46.24:5140
+求索纪录,http://192.168.6.2:666/udp/239.93.46.24:5140
 金鹰纪实,http://192.168.6.2:666/udp/239.93.6.130:5140
 金鹰纪实,http://111.29.9.33:6610/000000001000/5000000011000031203/index.m3u8?channel-id=bestzb&Contentid=5000000011000031203&livemode=1&stbId=3
 北京纪实科教,http://192.168.6.2:666/udp/239.93.6.141:5140

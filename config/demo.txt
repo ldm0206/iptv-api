@@ -650,13 +650,13 @@ BTV纪实
 
 ☘️四川频道,#genre#
 四川卫视
-SCTV-2
-SCTV-3
-SCTV-4
-SCTV-5
-SCTV-6
-SCTV-7
-SCTV-科教
+SCTV2
+SCTV3
+SCTV4
+SCTV5
+SCTV6
+SCTV7
+SCTV8
 四川乡村
 峨眉电影
 万源新闻综合
@@ -1668,7 +1668,7 @@ CN卡通
 
 纪录频道,#genre#
 CCTV9
-求索频道
+求索纪录
 金鹰纪实
 北京纪实科教
 地理高清专区

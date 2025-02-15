@@ -18690,7 +18690,7 @@ Name: 广元综合, URL: https://m3u8.channel.dzsm.com/nmip-media/channellive/ch
 Name: 广安公共, URL: http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8?zsicd$订阅源, Date: None, Delay: 1688 ms, Speed: 0.00 M/s, Resolution: 720x576
 Name: 广安公共, URL: http://60.255.240.247:8090/live/gagg_2000.m3u8$订阅源, Date: None, Delay: -1 ms, Speed: 0.00 M/s, Resolution: None
 Name: 康巴卫视, URL: http://php.jdshipin.com/TVOD/hljyd.php?id=3221225660$订阅源, Date: None, Delay: 26 ms, Speed: 117.53 M/s, Resolution: 1920x1080
-Name: 康巴卫视, URL: http://scgctvshow.sctv.com/hdlive/kangba/1.m3u8$订阅源, Date: None, Delay: -1 ms, Speed: 0.00 M/s, Resolution: None
+Name: 康巴卫视, URL: http://scgctvshow.SCTV.com/hdlive/kangba/1.m3u8$订阅源, Date: None, Delay: -1 ms, Speed: 0.00 M/s, Resolution: None
 Name: 康巴卫视, URL: http://223.110.245.139/PLTV/4/224/3221227008/index.m3u8$订阅源, Date: None, Delay: -1 ms, Speed: 0.00 M/s, Resolution: None
 Name: 康巴卫视, URL: http://ct.370829.xyz:35455/itv/1000000005000266002.m3u8?cdn=ystenlive$订阅源, Date: None, Delay: -1 ms, Speed: 0.00 M/s, Resolution: None
 Name: 康巴卫视, URL: http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=4412&tk=aa0698566417$订阅源, Date: None, Delay: -1 ms, Speed: 0.00 M/s, Resolution: None
