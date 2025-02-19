@@ -348,8 +348,10 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
             continue
         cache_key_match = re.search(r"cache:(.*)", url.partition("$")[2])
         cache_key = cache_key_match.group(1) if cache_key_match else None
+        delay = -1
+        resolution = "720X480"
         if url in cache1:
-            avg_delay = cache1[url]["delay"]
+            delay = cache1[url]["delay"]
             resolution = cache1[url]["resolution"]
         if cache_key and cache_key in cache:
             cache_list = cache[cache_key]
@@ -360,15 +362,15 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
                 try:
                     if logger:
                         logger.info(
-                            f"Name: {name}, URL: {result["url"]}, Date: {date}, Delay: {avg_delay} ms, Speed: {avg_speed:.2f} M/s, Resolution: {resolution}"
+                            f"Name: {name}, URL: {result["url"]}, Date: {date}, Delay: {delay} ms, Speed: {avg_speed:.2f} M/s, Resolution: {resolution}"
                         )
                 except Exception as e:
                     print(e)
                 if (not supply and filter_speed and avg_speed < min_speed) or (
                         not supply and filter_resolution and get_resolution_value(resolution) < min_resolution) or (
-                        supply and avg_delay < 0):
+                        supply and delay < 0):
                     continue
-                result["delay"] = avg_delay
+                result["delay"] = delay
                 result["speed"] = avg_speed
                 result["resolution"] = resolution
                 filter_data.append(result)
