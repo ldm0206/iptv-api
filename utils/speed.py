@@ -271,7 +271,7 @@ async def check_stream_delay(url_info):
 
 
 cache = {}
-
+cache1 = {}
 
 async def get_speed(url, ipv6_proxy=None, filter_resolution=config.open_filter_resolution,
                     min_resolution=config.min_resolution_value, timeout=config.sort_timeout,
@@ -307,6 +307,7 @@ async def get_speed(url, ipv6_proxy=None, filter_resolution=config.open_filter_r
             data.update(await get_speed_m3u8(url, filter_resolution, timeout))
         if cache_key:
             cache.setdefault(cache_key, []).append(data)
+        cache1[url] = data
         return data
     except:
         return data
@@ -347,11 +348,14 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
             continue
         cache_key_match = re.search(r"cache:(.*)", url.partition("$")[2])
         cache_key = cache_key_match.group(1) if cache_key_match else None
+        if url in cache1:
+            avg_delay = cache1[url]["delay"]
+            resolution = cache1[url]["resolution"]
         if cache_key and cache_key in cache:
             cache_list = cache[cache_key]
             if cache_list:
                 avg_speed = sum(item['speed'] or 0 for item in cache_list) / len(cache_list)
-                avg_delay = max(int(sum(item['delay'] or -1 for item in cache_list) / len(cache_list)), -1)
+                # avg_delay = max(int(sum(item['delay'] or -1 for item in cache_list) / len(cache_list)), -1)
                 # resolution = max((item['resolution'] for item in cache_list), key=get_resolution_value) or resolution
                 try:
                     if logger:
