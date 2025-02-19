@@ -14,6 +14,7 @@ CCTV-12,http://192.168.6.2:666/udp/239.93.7.30:8124
 CCTV-13,http://192.168.6.2:666/udp/239.93.6.66:5140
 CCTV-14,http://192.168.6.2:666/udp/239.93.7.29:6000
 CCTV-15,http://192.168.6.2:666/udp/239.93.6.103:5140
+CCTV-16,http://z.b.bkpcp.top/m.php?id=cctv16
 CCTV-17,http://192.168.6.2:666/udp/239.93.6.92:5140
 CCTV-5+,http://192.168.6.2:666/udp/239.93.6.36:8004
 CGTN,http://192.168.6.2:666/udp/239.93.6.104:5140
@@ -108,6 +109,7 @@ IHOT爱赛车,http://192.168.6.2:666/udp/239.93.46.20:5140
 内蒙古卫视,http://192.168.6.2:666/udp/239.93.6.87:5140
 宁夏卫视,http://192.168.6.2:666/udp/239.93.6.74:5140
 青海卫视,http://192.168.6.2:666/udp/239.93.6.85:5140
+青海卫视,http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=f35a89681647856030
 山东卫视,http://192.168.6.2:666/udp/239.93.6.168:5140
 山西卫视,http://192.168.6.2:666/udp/239.93.6.127:5140
 陕西卫视,http://192.168.6.2:666/udp/239.93.6.143:5140
@@ -119,12 +121,15 @@ IHOT爱赛车,http://192.168.6.2:666/udp/239.93.46.20:5140
 新疆卫视,http://192.168.6.2:666/udp/239.93.6.82:5140
 云南卫视,http://192.168.6.2:666/udp/239.93.7.174:5140
 安多卫视,http://192.168.6.2:666/udp/239.93.6.234:5140
+安多卫视,http://stream.qhbtv.com/adws/playlist.m3u8?_upt=d60823ce1718441050
 
 🎬电影频道,#genre#
 CHC家庭影院,http://192.168.6.2:666/udp/239.93.46.6:5140
 CHC动作电影,http://192.168.6.2:666/udp/239.93.46.7:5140
 峨眉电影,http://192.168.6.2:666/udp/239.93.6.252:5140
 精彩影视,http://192.168.6.2:666/udp/239.93.46.92:5140
+东森超视,rtmp://f13h.mine.nu/sat/tv331
+东森超视,https://cdn.iptv8k.top/dl/jrys.php?id=216&time=20240926215313&ip=111.229.253.40
 都市剧场,http://192.168.6.2:666/udp/239.93.46.30:5140
 
 🎥咪咕直播,#genre#
@@ -132,6 +137,7 @@ CHC动作电影,http://192.168.6.2:666/udp/239.93.46.7:5140
 🏀体育频道,#genre#
 CCTV-5,http://192.168.6.2:666/udp/239.93.46.37:5140
 CCTV-5+,http://192.168.6.2:666/udp/239.93.6.36:8004
+纬来体育,rtmp://f13h.mine.nu:1935/sat/tv721
 魅力足球,http://192.168.6.2:666/udp/239.93.46.97:5140
 天元围棋,http://192.168.6.2:666/udp/239.93.46.55:5140
 快乐垂钓,http://192.168.6.2:666/udp/239.93.7.151:5140
@@ -184,10 +190,13 @@ CCTV-15,http://192.168.6.2:666/udp/239.93.6.103:5140
 
 ☘️重庆频道,#genre#
 重庆卫视,http://192.168.6.2:666/udp/239.93.7.107:5140
+万源新闻综合,http://live.wanyuannews.com/wytv/hd/live.m3u8?zsicd
 
 ☘️江苏频道,#genre#
 江苏卫视,http://192.168.6.2:666/udp/239.93.6.89:5140
 优漫卡通,http://192.168.6.2:666/udp/239.93.6.251:5140
+南京十八,http://live.nbs.cn/channels/njtv/sbpd/m3u8:500k/live.m3u8
+南京十八,https://live.nbs.cn/channels/njtv/sbpd/m3u8:500k/live.m3u8
 
 ☘️辽宁频道,#genre#
 辽宁卫视,http://192.168.6.2:666/udp/239.93.7.108:5140
@@ -198,9 +207,11 @@ CCTV-15,http://192.168.6.2:666/udp/239.93.6.103:5140
 
 ☘️湖北频道,#genre#
 湖北卫视,http://192.168.6.2:666/udp/239.93.6.250:5140
+十堰新闻,https://p8.vzan.com/slowlive/034028687228317362/live.m3u8?zbid=351104&tpid=868100086
 
 ☘️广西频道,#genre#
 广西卫视,http://192.168.6.2:666/udp/239.93.46.46:5140
+南宁新闻综合,rtmp://tv.qntv.net/channellive/ch1?zguizd
 
 ☘️天津频道,#genre#
 天津卫视,http://192.168.6.2:666/udp/239.93.6.167:5140
@@ -216,9 +227,18 @@ SCTV7,http://192.168.6.2:666/udp/239.93.6.219:5140
 SCTV8,http://192.168.6.2:666/udp/239.93.46.44:5140
 四川乡村,http://192.168.6.2:666/udp/239.93.6.52:5140
 峨眉电影,http://192.168.6.2:666/udp/239.93.6.252:5140
+万源新闻综合,http://live.wanyuannews.com/wytv/hd/live.m3u8?zsicd
+乐山新闻综合,http://m3u8file.lstv.org.cn/nmip-media/channellive/channel1/playlist.m3u8
+利州综合,http://tvfile.lzgbdst.com/nmip-media/channellive/channel106876/playlist.m3u8?zsicd
+广元公共,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel101257/playlist.m3u8
 广元新闻综合,http://192.168.6.2:666/udp/239.93.7.253:3001
 广元文化生活,http://192.168.6.2:666/udp/239.93.7.252:3002
 康巴卫视,http://192.168.6.2:666/udp/239.93.6.41:5140
+旺苍新闻综合,http://channel.wcrmt.cn:80/nmip-media/channellive/channel105268/playlist.m3u8
+汶川新闻综合,http://live.iwcmt.cn:90/live/zhxw.m3u8?zsicd
+沐川综合,rtmp://tv.mcrm.org.cn:1935/channellive/tv01
+金堂电视台,http://live.jtxwzx.com.cn:80/jtdst/hd/live.m3u8
+长宁综合,http://cnpull.sccnfb.com/live/123456.m3u8?zsicd
 
 ☘️陕西频道,#genre#
 陕西卫视,http://192.168.6.2:666/udp/239.93.6.143:5140
@@ -226,6 +246,9 @@ SCTV8,http://192.168.6.2:666/udp/239.93.46.44:5140
 
 ☘️福建频道,#genre#
 厦门卫视,http://192.168.6.2:666/udp/239.93.46.57:5140
+福建文体,http://8.138.7.223/tv/fjtv.php?id=10
+福建新闻,http://8.138.7.223/tv/fjtv.php?id=13
+福建经济,http://8.138.7.223/tv/fjtv.php?id=9
 
 ☘️海南频道,#genre#
 海南卫视,http://192.168.6.2:666/udp/239.93.6.90:5140
@@ -239,18 +262,32 @@ SCTV8,http://192.168.6.2:666/udp/239.93.46.44:5140
 
 ☘️贵州频道,#genre#
 贵州卫视,http://192.168.6.2:666/udp/239.93.6.131:5140
+七星关电视台,https://p8.vzan.com:443/slowlive/147077707554082780/live.m3u8
 
 ☘️甘肃频道,#genre#
 甘肃卫视,http://192.168.6.2:666/udp/239.93.6.81:5140
 
 ☘️新疆频道,#genre#
 新疆卫视,http://192.168.6.2:666/udp/239.93.6.82:5140
+伊犁维吾尔,http://110.153.180.106:55555/out_2/index.m3u8?zxinjd
+伊犁哈萨克,http://110.153.180.106:55555/out_3/index.m3u8?zxinjd
+伊犁经济法制,http://110.153.180.106:55555/out_4/index.m3u8?zxinjd
 
 ☘️山东频道,#genre#
 山东卫视,http://192.168.6.2:666/udp/239.93.6.168:5140
+济南新闻综合,rtmp://tv.qntv.net/channellive/ch1?zguizd
+临沂公共,https://m3u8-channel.lytv.tv/nmip-media/channellive/channel113571/playlist.m3u8
+临沂农科,https://m3u8-channel.lytv.tv/nmip-media/channellive/channel115062/playlist.m3u8
+临沂新闻综合,https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8
 
 ☘️山西频道,#genre#
 山西卫视,http://192.168.6.2:666/udp/239.93.6.127:5140
+定襄综合,http://lbyzztfe.live.sxmty.com/live/hls/645ff4c60e0a49f0a203abbd73dd8be9/0720e665f10f48e98c9639f4f492fb4a-1.m3u8?zshanxd
+平遥新闻综合,https://tntgjhjb.live.sxmty.com/live/hls/3a4585ac11ec4e1bb07b419101b370c3/baf63e2b313440c2a25d7859f9b73b05-1.m3u8?zshanxd
+怀仁综合,http://1yp7hc5p.live.sxmty.com/live/hls/bff8529922344209985b6e49baa9555a/efa2543628fc4a7ea93d3d6c975f77dc.m3u8?zshanxd
+潞城新闻综合,http://59.48.42.6:62204/lucheng.m3u8?zshanxd
+阳曲综合,https://83awgyp5.live.sxmty.com/live/hls/6f6f4b36f9bd42628b718b595ba507ed/724b7e8907a8414d873eb2a2f69bfa18.m3u8?zshanxd
+黎城综合,http://111.53.96.67:8081/live/1/index.m3u8
 
 ☘️安徽频道,#genre#
 安徽卫视,http://192.168.6.2:666/udp/239.93.7.106:5140
@@ -260,6 +297,12 @@ SCTV8,http://192.168.6.2:666/udp/239.93.46.44:5140
 
 ☘️吉林频道,#genre#
 延边卫视,http://192.168.6.2:666/udp/239.93.6.249:5140
+延边卫视,https://live.ybtvyun.com/video/s10006-2f92b9e0b123/index.m3u8
+延边卫视,http://live.ybtvyun.com/video/s10006-44f040627ca1/index.m3u8?zjild
+延边-1,http://live.ybtvyun.com/video/s10016-af95004b6d1a/index.m3u8?zjild
+延边-2,http://live.ybtvyun.com/video/s10006-04819ee234a7/index.m3u8?zjild
+延边朝鲜语综合,http://live.ybtvyun.com/video/s10006-b571c289a478/index.m3u8
+延边汉语综合,http://live.ybtvyun.com/video/s10016-7e5f23de35df/index.m3u8?zjild
 
 ☘️内蒙古频道,#genre#
 内蒙古卫视,http://192.168.6.2:666/udp/239.93.6.87:5140
@@ -269,14 +312,28 @@ SCTV8,http://192.168.6.2:666/udp/239.93.46.44:5140
 
 ☘️青海频道,#genre#
 青海卫视,http://192.168.6.2:666/udp/239.93.6.85:5140
+青海卫视,http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=f35a89681647856030
 安多卫视,http://192.168.6.2:666/udp/239.93.6.234:5140
+安多卫视,http://stream.qhbtv.com/adws/playlist.m3u8?_upt=d60823ce1718441050
+兴海综合,http://lived.dmqhyadmin.com/xhzhpd/sd/live.m3u8
+青海经视,http://stream.qhbtv.com/qhsh/sd/live.m3u8?_upt=e4e9fe741725348067
+青海都市,http://stream.qhbtv.com/qhds/sd/live.m3u8?_upt=ea03ed711725339376
 
 ☘️黑龙江频道,#genre#
 黑龙江卫视,http://192.168.6.2:666/udp/239.93.6.183:5140
 
 🌊港·澳·台,#genre#
+翡翠台,http://cdn9.163189.xyz/smt1.1.php?id=jade_twn
+凤凰中文,https://k44991.kylintv.tv/live/pxna_iphone.m3u8
+凤凰资讯,https://k44991.kylintv.tv/live/pxinhd_iphone.m3u8
+凤凰卫视,https://k44991.kylintv.tv/live/pxna_iphone.m3u8
+纬来体育,rtmp://f13h.mine.nu:1935/sat/tv721
+纬来育乐,rtmp://f13h.mine.nu/sat/tv701
+Viutv,https://turkmedya-live.ercdn.net/tv360/tv360.m3u8
+东森超视,rtmp://f13h.mine.nu/sat/tv331
+东森超视,https://cdn.iptv8k.top/dl/jrys.php?id=216&time=20240926215313&ip=111.229.253.40
 
 🏛经典剧场,#genre#
 
 🕘️更新时间,#genre#
-2025-02-19 21:13:31,http://192.168.6.2:666/udp/239.93.6.58:5140
+2025-02-19 21:43:05,http://192.168.6.2:666/udp/239.93.6.58:5140
