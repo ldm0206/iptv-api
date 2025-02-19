@@ -430,7 +430,7 @@ def remove_duplicates_from_tuple_list(tuple_list, seen, flag=None, force_str=Non
             if matcher:
                 part = matcher.group(1)
         seen_num = seen.get(part, 0)
-        if (seen_num < config.sort_duplicate_limit) or (seen_num == 0 and config.sort_duplicate_limit == 0):
+        if (config.sort_duplicate_limit == -1) or (seen_num < config.sort_duplicate_limit) or (seen_num == 0 and config.sort_duplicate_limit == 0):
             seen[part] = seen_num + 1
             unique_list.append(item)
     return unique_list
