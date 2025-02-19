@@ -345,7 +345,7 @@ def get_ip_address():
         s.close()
         return f"http://{ip}:{config.app_port}"
 
-
+logo_name_replace = [['峨眉电影','四川峨眉电影']]
 def convert_to_m3u(first_channel_name=None):
     """
     Convert result txt to m3u format
@@ -373,7 +373,12 @@ def convert_to_m3u(first_channel_name=None):
                                       + ("+" if m.group(3) else ""),
                             first_channel_name if current_group == "🕘️更新时间" else original_channel_name,
                         )
-                        m3u_output += f'#EXTINF:-1 tvg-name="{processed_channel_name}" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/{processed_channel_name}.png"'
+                        channel_logo_name = processed_channel_name
+                        for name1 in logo_name_replace:
+                            if name1[0] in channel_logo_name:
+                                channel_logo_name = name1[1]
+                                break
+                        m3u_output += f'#EXTINF:-1 tvg-name="{processed_channel_name}" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/{channel_logo_name}.png"'
                         if current_group:
                             m3u_output += f' group-title="{current_group}"'
                         m3u_output += f",{original_channel_name}\n{channel_link}\n"
