@@ -2,7 +2,6 @@
 # This is a list of subscription sources, with one subscription address per line
 
 https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv6.m3u
-https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt
 https://raw.githubusercontent.com/xzw832/cmys/main/S_CCTV.txt
 https://raw.githubusercontent.com/xzw832/cmys/main/S_weishi.txt
 https://raw.githubusercontent.com/asdjkl6/tv/tv/.m3u/整套直播源/测试/整套直播源/l.txt
