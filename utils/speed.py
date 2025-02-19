@@ -280,6 +280,7 @@ async def get_speed(url, ipv6_proxy=None, filter_resolution=config.open_filter_r
     Get the speed (response time and resolution) of the url
     """
     data = {'speed': None, 'delay': None, 'resolution': None}
+    cache1_url = remove_cache_info(url)
     try:
         cache_key = None
         url_is_ipv6 = is_ipv6(url)
@@ -307,7 +308,7 @@ async def get_speed(url, ipv6_proxy=None, filter_resolution=config.open_filter_r
             data.update(await get_speed_m3u8(url, filter_resolution, timeout))
         if cache_key:
             cache.setdefault(cache_key, []).append(data)
-        cache1[url] = data
+        cache1[cache1_url] = data
         return data
     except:
         return data
@@ -335,8 +336,9 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
     """
     filter_data = []
     for url, date, resolution, origin in data:
+        cache1_url = remove_cache_info(url)
         result = {
-            "url": remove_cache_info(url),
+            "url": cache1_url,
             "date": date,
             "delay": None,
             "speed": None,
@@ -350,9 +352,9 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
         cache_key = cache_key_match.group(1) if cache_key_match else None
         delay = -1
         resolution = "720X480"
-        if url in cache1:
-            delay = cache1[url]["delay"]
-            resolution = cache1[url]["resolution"]
+        if cache1_url in cache1:
+            delay = cache1[cache1_url]["delay"]
+            resolution = cache1[cache1_url]["resolution"]
         if cache_key and cache_key in cache:
             cache_list = cache[cache_key]
             if cache_list:
