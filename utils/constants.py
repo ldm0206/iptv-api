@@ -21,7 +21,7 @@ log_path = os.path.join(output_path, "log.log")
 
 url_host_pattern = re.compile(r"((https?|rtmp)://)?(\[[0-9a-fA-F:]+]|([\w-]+\.)+[\w-]+)")
 
-url_pattern = re.compile(url_host_pattern.pattern + r"(/.*)?")
+url_pattern = re.compile(url_host_pattern.pattern + r"(.*)?")
 
 rtmp_url_pattern = re.compile(r"^rtmp://.*$")
 

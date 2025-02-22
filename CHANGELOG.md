@@ -5,6 +5,7 @@
 ### 2025/2/21
 
 - 🎉 预告：💻[IPTV-Web](https://github.com/Guovin/iptv-web)：IPTV电视直播源管理平台，支持在线播放等功能，开发中...
+- ⚠️ 注意：若属于旧版本升级，更新该版本需要手动删除旧版本结果缓存文件`output/cache.pkl`
 - ✨ 新增支持`IPv6域名解析`，提升IPv6接口识别能力（#910）
 - ✨ Docker更新时间环境变量精简为`UPDATE_CRON`，支持多个时间设置（#920）
 - ✨ 更新组播源与酒店源离线数据
@@ -21,6 +22,8 @@
 
 - 🎉 Preview: 💻[IPTV-Web](https://github.com/Guovin/iptv-web): IPTV live stream management platform, supports online
   playback and other features, under development...
+- ⚠️ Note: If upgrading from an older version, you need to manually delete the old version's result cache file
+  `output/cache.pkl`
 - ✨ Added support for `IPv6 domain name resolution`, improving IPv6 interface recognition capability (#910)
 - ✨ Simplified Docker update time environment variable to `UPDATE_CRON`, supporting multiple time settings (#920)
 - ✨ Updated offline data for multicast sources and hotel sources
