@@ -341,7 +341,15 @@ def get_ip_address():
         s.close()
         return f"http://{ip}:{config.app_port}"
 
-logo_name_replace = [['峨眉电影','四川峨眉电影']]
+logo_name_replace = [['峨眉电影','四川峨眉电影'],
+                    ['SCTV2', 'sctv2'],
+                    ['SCTV3', 'sctv3'],
+                    ['SCTV4', 'sctv4'],
+                    ['SCTV5', 'sctv5'],
+                    ['SCTV6', 'sctv6'],
+                    ['SCTV7', 'sctv7'],
+                    ['SCTV8', 'sctv8'],
+                    ['SCTV9', 'sctv9']]
 def convert_to_m3u(first_channel_name=None):
     """
     Convert result txt to m3u format
