@@ -16,8 +16,8 @@ CCTV-12,http://192.168.6.2:666/udp/239.93.7.30:8124
 CCTV-13,http://192.168.6.2:666/udp/239.93.6.66:5140
 CCTV-14,http://192.168.6.2:666/udp/239.93.7.29:6000
 CCTV-15,http://192.168.6.2:666/udp/239.93.6.103:5140
-CCTV-16,http://z.b.bkpcp.top/m.php?id=cctv16
 CCTV-16,https://yunmei.tv/main/cctv-16.m3u8
+CCTV-16,http://z.b.bkpcp.top/m.php?id=cctv16
 CCTV-17,http://192.168.6.2:666/udp/239.93.6.92:5140
 CCTV-17,http://z.b.bkpcp.top/m.php?id=cctv17\
 CCTV-5+,http://192.168.6.2:666/udp/239.93.6.36:8004
@@ -156,8 +156,6 @@ CHC家庭影院,http://192.168.6.2:666/udp/239.93.46.6:5140
 CHC动作电影,http://192.168.6.2:666/udp/239.93.46.7:5140
 峨眉电影,http://192.168.6.2:666/udp/239.93.6.252:5140
 精彩影视,http://192.168.6.2:666/udp/239.93.46.92:5140
-东森电影,http://50.7.234.10:8278/ettvmovie/playlist.m3u8?tid=MBDB9268852192688521&ct=19254&tsum=7514b50ebc2e4b06f2e402578d0ac996
-东森洋片,http://50.7.234.10:8278/ettvwestern/playlist.m3u8?tid=mfdfc048e6c2416337202&ct=17874&tsum=cad39b26202d525ea820bee1d69e545f
 东森超视,https://cdn.iptv8k.top/dl/jrys.php?id=216&time=20240926215313&ip=111.229.253.40
 东森超视,http://38.64.72.148:80/hls/modn/list/2013/chunklist0.m3u8
 都市剧场,http://192.168.6.2:666/udp/239.93.46.30:5140
@@ -176,7 +174,6 @@ CCTV-5+,http://z.b.bkpcp.top/m.php?id=cctv5p⁭
 🪁动画频道,#genre#
 卡酷动画,http://192.168.6.2:666/udp/239.93.46.1:5140
 动漫秀场,http://192.168.6.2:666/udp/239.93.46.93:5140
-CN卡通,http://50.7.234.10:8278/momo1_twn/playlist.m3u8?ct=19225&tid=MA0A4898983648989836&tsum=bd109117d126916f203880b1f2063d5e
 优漫卡通,http://192.168.6.2:666/udp/239.93.6.251:5140
 金鹰卡通,http://192.168.6.2:666/udp/239.93.6.5:5140
 炫动卡通,http://192.168.6.2:666/udp/239.93.6.173:5140
@@ -207,12 +204,10 @@ CCTV-15,http://192.168.6.2:666/udp/239.93.6.103:5140
 翡翠台,https://cdn.iptv8k.top/dl/jrys.php?id=3&time=20240926215313&ip=111.229.253.40
 凤凰中文,https://k44991.kylintv.tv/live/pxna_iphone.m3u8
 凤凰资讯,https://k44991.kylintv.tv/live/pxinhd_iphone.m3u8
-凤凰香港,http://50.7.234.10:8278/hkphoenix_twn/playlist.m3u8?tid=MACA2858291128582911&ct=19225&tsum=0f01288bbaa6c0403d07e96b0a5db4ed
 纬来体育,https://cdn.iptv8k.top/dl/jrys.php?id=291&time=20240926215313&ip=111.229.253.40
 Viutv,https://turkmedya-live.ercdn.net/tv360/tv360.m3u8
 东森超视,https://cdn.iptv8k.top/dl/jrys.php?id=216&time=20240926215313&ip=111.229.253.40
 东森超视,http://38.64.72.148:80/hls/modn/list/2013/chunklist0.m3u8
-东森电影,http://50.7.234.10:8278/ettvmovie/playlist.m3u8?tid=MBDB9268852192688521&ct=19254&tsum=7514b50ebc2e4b06f2e402578d0ac996
 
 ☘️四川频道,#genre#
 四川卫视,http://192.168.6.2:666/udp/239.93.6.20:1235
@@ -226,18 +221,17 @@ SCTV7,http://192.168.6.2:666/udp/239.93.6.219:5140
 SCTV8,http://192.168.6.2:666/udp/239.93.46.44:5140
 四川乡村,http://192.168.6.2:666/udp/239.93.6.52:5140
 峨眉电影,http://192.168.6.2:666/udp/239.93.6.252:5140
-万源新闻综合,http://live.wanyuannews.com/wytv/hd/live.m3u8?zsicd
 乐山新闻综合,http://m3u8file.lstv.org.cn/nmip-media/channellive/channel1/playlist.m3u8
 利州综合,http://tvfile.lzgbdst.com/nmip-media/channellive/channel106876/playlist.m3u8?zsicd
-夹江新闻综合,http://tvfile.jjrm.org.cn/nmip-media/channellive/channel106282/playlist.m3u8?zsicd
+岳池新闻综合,http://liveyc.cmc.yuechirmt.cn:80/live/yctv.m3u8?auth_key=1714112398-0-0-d9a6bd74623c01c1c2f9576fe51e8b7b
 广元新闻综合,http://192.168.6.2:666/udp/239.93.7.253:3001
 广元文化生活,http://192.168.6.2:666/udp/239.93.7.252:3002
 康巴卫视,http://192.168.6.2:666/udp/239.93.6.41:5140
 旺苍新闻综合,http://channel.wcrmt.cn:80/nmip-media/channellive/channel105268/playlist.m3u8
 汉源综合,http://live.hyxrmt.com:85/live/xwpd.m3u8?zsicd
+汶川新闻综合,http://live.iwcmt.cn:90/live/zhxw.m3u8?zsicd
 沐川综合,rtmp://tv.mcrm.org.cn:1935/channellive/tv01
-沐川综合,http://tvfile.swrmt.com:80/nmip-media/channellive/channel100064/playlist.m3u8
-沙湾综合,http://tvfile.swrmt.com:80/nmip-media/channellive/channel100064/playlist.m3u8
+金川新闻综合,http://live.jinchuanrmt.com:90/live/zhxw.m3u8?zsicd
 长宁综合,http://cnpull.sccnfb.com/live/123456.m3u8?zsicd
 
 ☘️广东频道,#genre#
@@ -267,13 +261,12 @@ SCTV8,http://192.168.6.2:666/udp/239.93.46.44:5140
 ☘️重庆频道,#genre#
 重庆卫视,http://192.168.6.2:666/udp/239.93.7.107:5140
 重庆卫视,http://z.b.bkpcp.top/m.php?id=cqws
-万源新闻综合,http://live.wanyuannews.com/wytv/hd/live.m3u8?zsicd
 
 ☘️江苏频道,#genre#
 江苏卫视,http://192.168.6.2:666/udp/239.93.6.89:5140
 优漫卡通,http://192.168.6.2:666/udp/239.93.6.251:5140
-南京十八,https://live.nbs.cn/channels/njtv/sbpd/m3u8:500k/live.m3u8
 南京十八,http://live.nbs.cn/channels/njtv/sbpd/m3u8:500k/live.m3u8
+南京十八,https://live.nbs.cn/channels/njtv/sbpd/m3u8:500k/live.m3u8
 南京娱乐,https://live.nbs.cn/channels/njtv/ylpd/m3u8:500k/live.m3u8
 南京少儿,https://live.nbs.cn/channels/njtv/sepd/m3u8:500k/live.m3u8
 南京教科,http://live.nbs.cn/channels/njtv/jkpd/nbs06.m3u8
@@ -297,7 +290,6 @@ SCTV8,http://192.168.6.2:666/udp/239.93.46.44:5140
 湖北卫视,http://192.168.6.2:666/udp/239.93.6.250:5140
 十堰新闻,http://p8.vzan.com/slowlive/034028687228317362/live.m3u8
 十堰新闻,https://p8.vzan.com/slowlive/034028687228317362/live.m3u8?zbid=351104&tpid=868100086
-荆门新闻综合,http://stream.jmtv.com.cn/xwzh/sd/live.m3u8?zhubd
 
 ☘️广西频道,#genre#
 广西卫视,http://192.168.6.2:666/udp/239.93.46.46:5140
@@ -347,11 +339,15 @@ SCTV8,http://192.168.6.2:666/udp/239.93.46.44:5140
 山东卫视,http://192.168.6.2:666/udp/239.93.6.168:5140
 山东卫视,http://z.b.bkpcp.top/m.php?id=sdws
 济南新闻综合,rtmp://tv.qntv.net/channellive/ch1?zguizd
+临沂公共,https://m3u8-channel.lytv.tv/nmip-media/channellive/channel113571/playlist.m3u8
+临沂农科,https://m3u8-channel.lytv.tv/nmip-media/channellive/channel115062/playlist.m3u8
+临沂新闻综合,https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8
 
 ☘️山西频道,#genre#
 山西卫视,http://192.168.6.2:666/udp/239.93.6.127:5140
-平遥新闻综合,https://tntgjhjb.live.sxmty.com/live/hls/3a4585ac11ec4e1bb07b419101b370c3/baf63e2b313440c2a25d7859f9b73b05-1.m3u8?zshanxd
+定襄综合,http://lbyzztfe.live.sxmty.com/live/hls/645ff4c60e0a49f0a203abbd73dd8be9/0720e665f10f48e98c9639f4f492fb4a-1.m3u8?zshanxd
 阳曲综合,https://83awgyp5.live.sxmty.com/live/hls/6f6f4b36f9bd42628b718b595ba507ed/724b7e8907a8414d873eb2a2f69bfa18.m3u8?zshanxd
+黎城综合,http://111.53.96.67:8081/live/1/index.m3u8
 
 ☘️安徽频道,#genre#
 安徽卫视,http://192.168.6.2:666/udp/239.93.7.106:5140
@@ -392,4 +388,4 @@ SCTV8,http://192.168.6.2:666/udp/239.93.46.44:5140
 🏛经典剧场,#genre#
 
 🕘️更新时间,#genre#
-2025-03-01 18:35:30,http://192.168.6.2:666/udp/239.93.6.58:5140
+2025-03-02 06:29:43,http://192.168.6.2:666/udp/239.93.6.58:5140
