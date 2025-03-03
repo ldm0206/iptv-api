@@ -73,7 +73,7 @@ http://192.168.6.2:666/udp/239.93.7.102:5140
 http://192.168.6.2:666/udp/239.93.6.47:5140
 #EXTINF:-1 tvg-id="2057" tvg-name="SCTV5" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/SCTV5.png" group-title="四川",SCTV5
 http://192.168.6.2:666/udp/239.93.6.166:5140
-#EXTINF:-1 tvg-id="2059" tvg-name="SCTV6" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/SCTV7.png" group-title="四川",SCTV6
+#EXTINF:-1 tvg-id="2059" tvg-name="SCTV6" tvg-logo="http://epg.51zmt.top:8000/tb1/sheng/SCTV7.png" group-title="四川",星空购物
 http://192.168.6.2:666/udp/239.93.7.144:5140
 #EXTINF:-1 tvg-id="" tvg-name="SCTV7" tvg-logo="" group-title="未分类",SCTV7
 http://192.168.6.2:666/udp/239.93.6.219:5140

@@ -162,6 +162,8 @@ IPTV经典电影
 东森洋片
 东森超视
 都市剧场
+AXN
+
 🎥咪咕直播,#genre#
 咪咕直播1
 咪咕直播2
@@ -271,6 +273,9 @@ CN卡通
 少儿动画高清专区
 宝宝动画专区
 金熊猫卡通高清专区
+Nick Jr
+Nickelodeon
+ZooMoo
 
 纪录频道,#genre#
 CCTV9
@@ -280,6 +285,10 @@ CCTV9
 地理高清专区
 解密高清专区
 军事高清专区
+Loupe
+Love Nature
+Fashion
+Clarity
 🎮游戏频道,#genre#
 游戏风云
 游戏竞技
@@ -301,6 +310,7 @@ CCTV-15
 🌊港·澳·台,#genre#
 翡翠台
 黃金翡翠台
+TVB PLUS
 明珠台
 凤凰中文
 凤凰资讯
@@ -308,10 +318,10 @@ CCTV-15
 凤凰卫视
 香港卫视
 纬来体育
-纬来育乐
+纬来音乐
 J2
-Viutv
-无线新闻
+viutv
+无线新闻台
 东森超视
 东森电影
 Now剧集
@@ -319,14 +329,14 @@ Now华剧
 星卫娱乐
 卫视卡式
 NHK东京综合
-NHK世界
+NHK World
 ☘️四川频道,#genre#
 四川卫视
 SCTV2
 SCTV3
 SCTV4
 SCTV5
-SCTV6
+星空购物
 SCTV7
 SCTV8
 四川乡村
