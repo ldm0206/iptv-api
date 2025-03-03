@@ -22,3 +22,4 @@ https://raw.githubusercontent.com/rad168/iptv/main/live.m3u
 https://raw.githubusercontent.com/zwc456baby/iptv_alive/refs/heads/master/live.m3u
 https://raw.githubusercontent.com/ldm0206/iptv-api/refs/heads/master/config/rtp/rtp.m3u
 https://aktv.top/live.m3u
+https://raw.githubusercontent.com/0047ol/China-TV-Live-M3U8/refs/heads/main/tv.m3u
