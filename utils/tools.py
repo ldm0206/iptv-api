@@ -360,7 +360,7 @@ def convert_to_m3u(first_channel_name=None):
     user_final_file = resource_path(config.final_file)
     if os.path.exists(user_final_file):
         with open(user_final_file, "r", encoding="utf-8") as file:
-            m3u_output = '#EXTM3U x-tvg-url="https://raw.githubusercontent.com/fanmingming/live/main/e.xml"\n'
+            m3u_output = f'#EXTM3U x-tvg-url="{join_url(config.cdn_url, 'https://raw.githubusercontent.com/fanmingming/live/main/e.xml')}"\n'
             current_group = None
             for line in file:
                 trimmed_line = line.strip()
@@ -385,7 +385,7 @@ def convert_to_m3u(first_channel_name=None):
                             if name1[0] in channel_logo_name:
                                 channel_logo_name = name1[1]
                                 break
-                        m3u_output += f'#EXTINF:-1 tvg-name="{processed_channel_name}" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/{channel_logo_name}.png"'
+                        m3u_output += f'#EXTINF:-1 tvg-name="{processed_channel_name}" tvg-logo="{join_url(config.cdn_url, f'https://raw.githubusercontent.com/fanmingming/live/main/tv/{channel_logo_name}.png')}"'
                         if current_group:
                             m3u_output += f' group-title="{current_group}"'
                         m3u_output += f",{original_channel_name}\n{channel_link}\n"
@@ -616,3 +616,19 @@ def get_version_info():
     """
     with open(resource_path("version.json"), "r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def join_url(url1: str, url2: str) -> str:
+    """
+    Get the join url
+    :param url1: The first url
+    :param url2: The second url
+    :return: The join url
+    """
+    if not url1:
+        return url2
+    if not url2:
+        return url1
+    if not url1.endswith("/"):
+        url1 += "/"
+    return url1 + url2

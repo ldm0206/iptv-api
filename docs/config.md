@@ -26,6 +26,7 @@
 | open_use_cache         | 开启使用本地缓存数据，适用于查询请求失败场景（仅针对酒店源与组播源）                                                                                                                                    | True              |
 | open_history           | 开启使用历史更新结果（包含模板与结果文件的接口），合并至本次更新中                                                                                                                                     | True              |
 | app_port               | 页面服务端口，用于控制页面服务的端口号                                                                                                                                                   | 8000              |
+| cdn_url                | CDN代理加速地址，用于订阅源、频道图标等资源的加速访问                                                                                                                                          |                   |
 | final_file             | 生成结果文件路径                                                                                                                                                              | output/result.txt |
 | hotel_num              | 结果中偏好的酒店源接口数量                                                                                                                                                         | 10                |
 | hotel_page_num         | 酒店地区获取分页数量                                                                                                                                                            | 1                 |
