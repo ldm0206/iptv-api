@@ -704,7 +704,7 @@ http://38.64.72.148:80/hls/modn/list/2013/chunklist0.m3u8
 #EXTINF:-1 tvg-name="都市剧场" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/都市剧场.png" group-title="🎬电影频道",都市剧场
 http://192.168.6.2:666/udp/239.93.46.30:5140
 #EXTINF:-1 tvg-name="AXN" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/AXN.png" group-title="🎬电影频道",AXN
-http://aktv.top/AKTV/live/aktv2/axn/AKTV.m3u8
+http://aktv_stream1.m16tv.cfd/stream/aktv2/axn/AKTV.m3u8
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV5.png" group-title="🏀体育频道",CCTV-5
 http://192.168.6.2:666/udp/239.93.46.37:5140
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV5.png" group-title="🏀体育频道",CCTV-5
@@ -728,7 +728,7 @@ http://45.125.18.142:50001/TVOD/1000000005000265016/ystenlive/index.m3u8
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV5+.png" group-title="🏀体育频道",CCTV-5+
 http://111.14.181.15:9901/tsfile/live/0016_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="纬来体育" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/纬来体育.png" group-title="🏀体育频道",纬来体育
-http://aktv.top/AKTV/live/aktv3/null-1/AKTV.m3u8
+http://aktv_stream1.m16tv.cfd/stream/aktv3/null-1/AKTV.m3u8
 #EXTINF:-1 tvg-name="纬来体育" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/纬来体育.png" group-title="🏀体育频道",纬来体育
 https://cdn.iptv8k.top/dl/jrys.php?id=291&time=20240926215313&ip=111.229.253.40
 #EXTINF:-1 tvg-name="劲爆体育" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/劲爆体育.png" group-title="🏀体育频道",劲爆体育
@@ -774,11 +774,11 @@ http://192.168.6.2:666/udp/239.93.46.89:5140
 #EXTINF:-1 tvg-name="金熊猫卡通高清专区" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/金熊猫卡通高清专区.png" group-title="🪁动画频道",金熊猫卡通高清专区
 http://192.168.6.2:666/udp/239.93.6.172:5140
 #EXTINF:-1 tvg-name="Nick Jr" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/Nick Jr.png" group-title="🪁动画频道",Nick Jr
-http://aktv.top/AKTV/live/aktv3/nickjr/AKTV.m3u8
+http://aktv_stream1.m16tv.cfd/stream/aktv3/nickjr/AKTV.m3u8
 #EXTINF:-1 tvg-name="Nickelodeon" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/Nickelodeon.png" group-title="🪁动画频道",Nickelodeon
-http://aktv.top/AKTV/live/aktv3/nickelodeon/AKTV.m3u8
+http://aktv_stream1.m16tv.cfd/stream/aktv3/nickelodeon/AKTV.m3u8
 #EXTINF:-1 tvg-name="ZooMoo" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/ZooMoo.png" group-title="🪁动画频道",ZooMoo
-http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
+http://aktv_stream1.m16tv.cfd/stream/aktv3/zoomoo/AKTV.m3u8
 #EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV9.png" group-title="🔭纪录频道",CCTV9
 http://192.168.6.2:666/udp/239.93.7.24:5140
 #EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV9.png" group-title="🔭纪录频道",CCTV9
@@ -848,11 +848,11 @@ http://aktv.top/AKTV/live/aktv/null-5/AKTV.m3u8
 #EXTINF:-1 tvg-name="凤凰香港" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/凤凰卫视香港台.png" group-title="🌊海外",凤凰香港
 http://50.7.234.10:8278/hkphoenix_twn/playlist.m3u8?tid=MACA2858291128582911&ct=19225&tsum=0f01288bbaa6c0403d07e96b0a5db4ed
 #EXTINF:-1 tvg-name="纬来体育" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/纬来体育.png" group-title="🌊海外",纬来体育
-http://aktv.top/AKTV/live/aktv3/null-1/AKTV.m3u8
+http://aktv_stream1.m16tv.cfd/stream/aktv3/null-1/AKTV.m3u8
 #EXTINF:-1 tvg-name="纬来体育" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/纬来体育.png" group-title="🌊海外",纬来体育
 https://cdn.iptv8k.top/dl/jrys.php?id=291&time=20240926215313&ip=111.229.253.40
 #EXTINF:-1 tvg-name="viutv" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/viutv.png" group-title="🌊海外",viutv
-http://aktv.top/AKTV/live/aktv2/viutv696/AKTV.m3u8
+http://aktv_stream1.m16tv.cfd/stream/aktv2/viutv696/AKTV.m3u8
 #EXTINF:-1 tvg-name="viutv" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/viutv.png" group-title="🌊海外",viutv
 https://turkmedya-live.ercdn.net/tv360/tv360.m3u8
 #EXTINF:-1 tvg-name="RTHK32" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/RTHK32.png" group-title="🌊海外",RTHK32
@@ -864,9 +864,9 @@ http://38.64.72.148:80/hls/modn/list/2013/chunklist0.m3u8
 #EXTINF:-1 tvg-name="东森电影" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/东森电影.png" group-title="🌊海外",东森电影
 http://50.7.234.10:8278/ettvmovie/playlist.m3u8?tid=MBDB9268852192688521&ct=19254&tsum=7514b50ebc2e4b06f2e402578d0ac996
 #EXTINF:-1 tvg-name="NHK东京综合" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/NHK东京综合.png" group-title="🌊海外",NHK东京综合
-http://aktv.top/AKTV/live/aktv3/nhk/AKTV.m3u8
+http://aktv_stream1.m16tv.cfd/stream/aktv3/nhk/AKTV.m3u8
 #EXTINF:-1 tvg-name="NHK World" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/NHKWorld.png" group-title="🌊海外",NHK World
-http://aktv.top/AKTV/live/aktv3/nhkworldjapan/AKTV.m3u8
+http://aktv_stream1.m16tv.cfd/stream/aktv3/nhkworldjapan/AKTV.m3u8
 #EXTINF:-1 tvg-name="四川卫视" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/四川卫视.png" group-title="☘️四川频道",四川卫视
 http://192.168.6.2:666/udp/239.93.6.20:1235
 #EXTINF:-1 tvg-name="四川卫视" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/四川卫视.png" group-title="☘️四川频道",四川卫视
