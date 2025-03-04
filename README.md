@@ -49,6 +49,7 @@
 
 📍订阅源来自：
 
+- [Guovin/iptv-database](https://github.com/Guovin/iptv-database)
 - [iptv-org/iptv](https://github.com/iptv-org/iptv)
 - [suxuang/myIPTV](https://github.com/suxuang/myIPTV)
 - [kimwang1978/collect-tv-txt](https://github.com/kimwang1978/collect-tv-txt)
