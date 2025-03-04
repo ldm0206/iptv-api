@@ -39,7 +39,7 @@ CETV5
 世界地理
 兵器科技
 
-电信专区,#genre#
+☎️电信专区,#genre#
 精彩导视
 IHOT爱浪漫
 IHOT爱喜剧
@@ -163,6 +163,9 @@ IPTV经典电影
 东森超视
 都市剧场
 AXN
+HBO高清
+HBO签名
+TVB功夫
 
 🎥咪咕直播,#genre#
 咪咕直播1
@@ -277,11 +280,12 @@ Nick Jr
 Nickelodeon
 ZooMoo
 
-纪录频道,#genre#
+🔭纪录频道,#genre#
 CCTV9
 求索纪录
 金鹰纪实
 北京纪实科教
+之江纪录
 地理高清专区
 解密高清专区
 军事高清专区
@@ -307,7 +311,7 @@ CCTV-15
 音乐广播
 音乐调频广播
 
-🌊港·澳·台,#genre#
+🌊海外,#genre#
 翡翠台
 黃金翡翠台
 TVB PLUS
@@ -324,6 +328,7 @@ TVBJ2
 纬来音乐
 J2
 viutv
+无线新闻
 无线新闻台
 RTHK31
 RTHK32
@@ -505,7 +510,7 @@ NBTV-1
 NBTV-2
 NBTV-3
 NBTV-4
-浙江教科
+浙江教科影视
 浙江经济
 之江纪录
 浙江国际

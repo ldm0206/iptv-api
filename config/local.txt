@@ -6,7 +6,7 @@
 翡翠台,http://aktv.top/AKTV/live/aktv/null/AKTV.m3u8$!
 凤凰中文,http://aktv.top/AKTV/live/aktv/null-3/AKTV.m3u8$!
 凤凰资讯,http://aktv.top/AKTV/live/aktv/null-4/AKTV.m3u8$!
-无线新闻台,http://aktv.top/AKTV/live/aktv/null-1/AKTV.m3u8$!
+无线新闻,http://aktv.top/AKTV/live/aktv/null-1/AKTV.m3u8$!
 凤凰香港,http://aktv.top/AKTV/live/aktv/null-5/AKTV.m3u8$!
 明珠台,http://aktv.top/AKTV/live/aktv/null-2/AKTV.m3u8$!
 黃金翡翠台,http://aktv.top/AKTV/live/aktv/null-21/AKTV.m3u8$!
@@ -30,7 +30,7 @@ Clarity,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 HBO高清,http://ali.hlspull.yximgs.com/live/huanqiuhklivemjjljpwjdctdfhdvjdjdujlvcbeywejweefshjfhhjsjjcxhbo.flv
 HBO高清,https://stream1.freetv.fun/hbo-plus-1.m3u8
 HBO签名,http://ali.hlspull.yximgs.com/live/huanqiuhklivetjcvsjgcjyhpvobjxclmvhjogdjbodbsjhlelevendhbosignature.flv
-AXN香港,http://ali.hlspull.yximgs.com/live/huanqiuhklivejejcxlvofbjbvbjjjfjvjhslcfybjssxsjbcjcfdvsfcbjbnjtyjxn.flv
+AXN,http://ali.hlspull.yximgs.com/live/huanqiuhklivejejcxlvofbjbvbjjjfjvjhslcfybjssxsjbcjcfdvsfcbjbnjtyjxn.flv
 翡翠台,http://ali.hlspull.yximgs.com/live/huanqiuhklivefhwwjpthjyjtjjjxcxbfhjjfjvhdtjdvbtvjsjxjfsjjcvbctvbfc.flv
 TVBJ2,http://ali.hlspull.yximgs.com/live/huanqiuhklivefhwohdpthjyfiplhdftujfbvdimhdjnbjsjbcvxjfjsehbvbjtvbd2.flv
 明珠台,http://ali.hlspull.yximgs.com/live/huanqiuhklivetcfjhvdjjxcodwoetjmncthvbstyreyhbnnvbdjjwthjyjtvbmj.flv
@@ -46,3 +46,12 @@ RTHK34,https://epg.pw/stream/6e369058eba43ac78a0c076f78eaa1227afd471bdccf9df7007
 RTHK34,https://news.cgtn.com/resource/live/document/cgtn-doc.m3u8
 RTHK34,https://livedoc.cgtn.com/1000d/prog_index.m3u8
 耀才财经,https://v3.mediacast.hk/webcast/bshdlive-pc/chunklist_w99771165.m3u8
+浙江卫视,https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
+浙江新闻,https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8
+浙江少儿,https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8
+浙江民生休闲,https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8
+浙江钱江都市,https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8
+浙江国际,https://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8
+浙江教科影视,https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8
+浙江经济生活,https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
+之江纪录,https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8
