@@ -281,9 +281,9 @@ http://192.168.6.2:666/udp/239.93.46.55:5140
 http://192.168.6.2:666/udp/239.93.7.151:5140
 #EXTINF:-1 tvg-name="快乐垂钓" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/快乐垂钓.png" group-title="☎️电信专区",快乐垂钓
 http://tvbox6.icu/tv/mgtv.php?id=218
-#EXTINF:-1 tvg-name="茶频道" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/茶频道.png" group-title="☎️电信专区",茶频道
+#EXTINF:-1 tvg-name="茶" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/茶.png" group-title="☎️电信专区",茶
 http://192.168.6.2:666/udp/239.93.6.114:5140
-#EXTINF:-1 tvg-name="茶频道" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/茶频道.png" group-title="☎️电信专区",茶频道
+#EXTINF:-1 tvg-name="茶" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/茶.png" group-title="☎️电信专区",茶
 http://tvbox6.icu/tv/mgtv.php?id=578
 #EXTINF:-1 tvg-name="金色学堂" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/金色学堂.png" group-title="☎️电信专区",金色学堂
 http://192.168.6.2:666/udp/239.93.46.95:5140
@@ -307,11 +307,11 @@ http://192.168.6.2:666/udp/239.93.46.71:5140
 http://192.168.6.2:666/udp/239.93.46.72:5140
 #EXTINF:-1 tvg-name="汽摩" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/汽摩.png" group-title="☎️电信专区",汽摩
 http://192.168.6.2:666/udp/239.93.6.62:5140
-#EXTINF:-1 tvg-name="梨园" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/梨园.png" group-title="☎️电信专区",梨园
+#EXTINF:-1 tvg-name="河南梨园" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/河南梨园.png" group-title="☎️电信专区",河南梨园
 http://192.168.6.2:666/udp/239.93.7.195:5140
-#EXTINF:-1 tvg-name="梨园" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/梨园.png" group-title="☎️电信专区",梨园
+#EXTINF:-1 tvg-name="河南梨园" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/河南梨园.png" group-title="☎️电信专区",河南梨园
 http://183.196.87.176:880/hls/57/index.m3u8
-#EXTINF:-1 tvg-name="梨园" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/梨园.png" group-title="☎️电信专区",梨园
+#EXTINF:-1 tvg-name="河南梨园" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/河南梨园.png" group-title="☎️电信专区",河南梨园
 http://42.225.117.174:11199/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="家政频道" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/家政频道.png" group-title="☎️电信专区",家政频道
 http://192.168.6.2:666/udp/239.93.46.48:5140
@@ -1581,11 +1581,11 @@ http://110.81.206.138:49231/tsfile/live/23047_1.m3u8?key=txiptv&playlive=1&authi
 http://42.225.117.174:11199/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="河南卫视" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/河南卫视.png" group-title="☘️河南频道",河南卫视
 http://221.226.215.162:352/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="梨园" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/梨园.png" group-title="☘️河南频道",梨园
+#EXTINF:-1 tvg-name="河南梨园" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/河南梨园.png" group-title="☘️河南频道",河南梨园
 http://192.168.6.2:666/udp/239.93.7.195:5140
-#EXTINF:-1 tvg-name="梨园" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/梨园.png" group-title="☘️河南频道",梨园
+#EXTINF:-1 tvg-name="河南梨园" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/河南梨园.png" group-title="☘️河南频道",河南梨园
 http://183.196.87.176:880/hls/57/index.m3u8
-#EXTINF:-1 tvg-name="梨园" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/梨园.png" group-title="☘️河南频道",梨园
+#EXTINF:-1 tvg-name="河南梨园" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/河南梨园.png" group-title="☘️河南频道",河南梨园
 http://42.225.117.174:11199/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="项城新闻" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/项城新闻.png" group-title="☘️河南频道",项城新闻
 https://play-hsbj.vzan.com/978354/446938712125478466/live.m3u8?zbid=978354&tpid=1651937429#@http://tvpull.dxhmt.cn:9081/tv/11681-1.m3u8#@http://live.dxhmt.cn:9081/tv/11681-1.m3u8

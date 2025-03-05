@@ -193,7 +193,7 @@ http://192.168.6.2:666/udp/239.93.46.71:5140
 http://192.168.6.2:666/udp/239.93.46.72:5140
 #EXTINF:-1 tvg-id="6573" tvg-name="汽摩" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/CCTVPAYFEE22.jpg" group-title="地方",汽摩
 http://192.168.6.2:666/udp/239.93.6.62:5140
-#EXTINF:-1 tvg-id="6555" tvg-name="梨园" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/CCTVPAYFEE20.jpg" group-title="地方",梨园
+#EXTINF:-1 tvg-id="6555" tvg-name="河南梨园" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/CCTVPAYFEE20.jpg" group-title="地方",河南梨园
 http://192.168.6.2:666/udp/239.93.7.195:5140
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",家政频道
 http://192.168.6.2:666/udp/239.93.46.48:5140
@@ -319,7 +319,7 @@ http://192.168.6.2:666/udp/239.93.46.56:5140
 http://192.168.6.2:666/udp/239.93.46.55:5140
 #EXTINF:-1 tvg-id="6595" tvg-name="快乐垂钓" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/KUAILECHUIDIAO.jpg" group-title="地方",快乐垂钓
 http://192.168.6.2:666/udp/239.93.7.151:5140
-#EXTINF:-1 tvg-id="6585" tvg-name="茶频道" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/DOCUMENTARY-CHANNEL.jpg" group-title="地方",茶频道
+#EXTINF:-1 tvg-id="6585" tvg-name="茶" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/DOCUMENTARY-CHANNEL.jpg" group-title="地方",茶
 http://192.168.6.2:666/udp/239.93.6.114:5140
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="未分类",乐龄学堂专区
 http://192.168.6.2:666/udp/239.93.7.179:5140
