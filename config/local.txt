@@ -125,11 +125,11 @@ cctv14,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/806
 辽宁卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/808
 重庆卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/809
 HBO高清,https://dko29we9nm1rd.cloudfront.net/hls/CH115/index.m3u8$!
-Now 爆谷台,https://dko29we9nm1rd.cloudfront.net/hls/CH133/index.m3u8$!
+Now爆谷台,https://dko29we9nm1rd.cloudfront.net/hls/CH133/index.m3u8$!
 Now爆谷星影台,https://dko29we9nm1rd.cloudfront.net/hls/CH138/index.m3u8$!
 Now直播台,https://dko29we9nm1rd.cloudfront.net/hls/CH331/index.m3u8$!
-Now新聞台,https://dko29we9nm1rd.cloudfront.net/hls/CH332/index.m3u8$!
-Now財經台,https://dko29we9nm1rd.cloudfront.net/hls/CH333/index.m3u8$!
+Now新闻台,https://dko29we9nm1rd.cloudfront.net/hls/CH332/index.m3u8$!
+Now财经台,https://dko29we9nm1rd.cloudfront.net/hls/CH333/index.m3u8$!
 Now Sports 英超1台,https://dko29we9nm1rd.cloudfront.net/hls/CH621/index.m3u8$!
 Now Sports 英超2台,https://dko29we9nm1rd.cloudfront.net/hls/CH622/index.m3u8$!
 Now Sports 英超3台,https://dko29we9nm1rd.cloudfront.net/hls/CH623/index.m3u8$!

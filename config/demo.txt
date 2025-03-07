@@ -245,6 +245,7 @@ CCTV-5+
 天元围棋
 快乐垂钓
 JJ斗地主
+HBO高清
 Now Sports 英超1台
 Now Sports 英超2台
 Now Sports 英超3台
@@ -386,11 +387,11 @@ Love The Planet
 Fashion
 Clarity
 美亚C+
-Now 爆谷台
+Now爆谷台
 Now爆谷星影台
 Now直播台
-Now新聞台
-Now財經台
+Now新闻台
+Now财经台
 Now Sports 英超1台
 Now Sports 英超2台
 Now Sports 英超3台
