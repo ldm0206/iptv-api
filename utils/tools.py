@@ -353,7 +353,6 @@ logo_name_replace = [['峨眉电影','四川峨眉电影'],
                     ['凤凰香港', '凤凰卫视香港台'],
                     ['TVB PLUS', 'TVBPlus'],
                     ['NHK World','NHKWorld'],
-                    ['TVB News','无线新闻台'],
                     ['福建体育','福建文体'],
                     ['浙江钱江都市','钱江都市']]
 def convert_to_m3u(first_channel_name=None):

@@ -2,15 +2,16 @@
 # 支持设置白名单：接口后添加$!
 # The local source list, one line per source, format: channel name, interface address
 # Support setting whitelist: add $! after the interface
-#https://aktv.top/live.txt
+#https://aktv.space/
 翡翠台,http://aktv_stream1.m16tv.cfd/stream/aktv/null/AKTV.m3u8$!
 凤凰中文,http://aktv_stream1.m16tv.cfd/stream/aktv/null-3/AKTV.m3u8$!
 凤凰资讯,http://aktv_stream1.m16tv.cfd/stream/aktv/null-4/AKTV.m3u8$!
-TVB News,http://aktv_stream1.m16tv.cfd/stream/aktv/null-1/AKTV.m3u8$!
+无线新闻台,http://aktv_stream1.m16tv.cfd/stream/aktv/null-1/AKTV.m3u8$!
 凤凰香港,http://aktv_stream1.m16tv.cfd/stream/aktv/null-5/AKTV.m3u8$!
 明珠台,http://aktv_stream1.m16tv.cfd/stream/aktv/null-2/AKTV.m3u8$!
 黃金翡翠台,http://aktv_stream1.m16tv.cfd/stream/aktv/null-21/AKTV.m3u8$!
 NHK World,http://aktv_stream1.m16tv.cfd/stream/aktv3/nhkworldjapan/AKTV.m3u8$!
+myTV SUPER,http://aktv_stream1.m16tv.cfd/stream/aktv/mytvsuper18/AKTV.m3u8$!
 NHK东京综合,http://aktv_stream1.m16tv.cfd/stream/aktv3/nhk/AKTV.m3u8$!
 纬来体育,http://aktv_stream1.m16tv.cfd/stream/aktv3/null-1/AKTV.m3u8$!
 viutv,http://aktv_stream1.m16tv.cfd/stream/aktv2/viutv696/AKTV.m3u8$!
@@ -21,11 +22,12 @@ Nick Jr,http://aktv_stream1.m16tv.cfd/stream/aktv3/nickjr/AKTV.m3u8$!
 Nickelodeon,http://aktv_stream1.m16tv.cfd/stream/aktv3/nickelodeon/AKTV.m3u8$!
 AXN,http://aktv_stream1.m16tv.cfd/stream/aktv2/axn/AKTV.m3u8$!
 ZooMoo,http://aktv_stream1.m16tv.cfd/stream/aktv3/zoomoo/AKTV.m3u8$!
+Love The Planet,http://aktv_stream1.m16tv.cfd/stream/aktv2/lovetheplanet/AKTV.m3u8$!
 Fashion,https://fash2043.cloudycdn.services/slive/ftv_ftv_4k_hevc_73d_42080_default_466_hls.smil/playlist.m3u8
 Clarity,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 凤凰中文,http://ali.hlspull.yximgs.com/live/huanqiuhklivetvjjpcpvuejljydjjyfjoxvchjwhjwdojjjhjjlsjhbjfhjw.flv
 凤凰资讯,http://ali.hlspull.yximgs.com/live/huanqiuhklivetvjjpcpdvuejljyjjyfjoxvchjwhjwojjjhdjjlsjhbjfhjx.flv
-无线新闻,http://ali.hlspull.yximgs.com/live/huanqiuhklivefhwjpthljjsjsjjbvdljdmnbjhdhyjyjtvbwxxw.flv
+无线新闻台,http://ali.hlspull.yximgs.com/live/huanqiuhklivefhwjpthljjsjsjjbvdljdmnbjhdhyjyjtvbwxxw.flv
 无线财经,http://ali.hlspull.yximgs.com/live/huanqiuhklivefhwylwpthjyjjfjxvjlmnduhyjmtvbwxcd.flv
 HBO高清,http://ali.hlspull.yximgs.com/live/huanqiuhklivemjjljpwjdctdfhdvjdjdujlvcbeywejweefshjfhhjsjjcxhbo.flv
 HBO高清,https://stream1.freetv.fun/hbo-plus-1.m3u8
@@ -55,3 +57,96 @@ RTHK34,https://livedoc.cgtn.com/1000d/prog_index.m3u8
 浙江教科影视,https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8$!
 浙江经济生活,https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8$!
 之江纪录,https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8$!
+美亚C+,http://ottproxy2.ist.ooo/livehls/MOB-U1-NO/03.m3u8
+CCTV1,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/101
+CCTV2,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/801
+CCTV3,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/103
+CCTV4,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/39
+CCTV5,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/105
+CCTV5+,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/107
+CCTV6,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/12
+CCTV7,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/802
+CCTV8,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/118
+CCTV9,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/803
+CCTV10,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/804
+CCTV11,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/55
+CCTV12,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/805
+CCTV13,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/5
+CCTV14,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/806
+CCTV15,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/70
+CCTV17,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/817
+cctv13,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/5
+cctv6,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/12
+cctv4,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/39
+cctv11,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/55
+cctv15,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/70
+东南卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/77
+河南卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/79
+四川卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/83
+cctv1,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/101
+cctv3,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/103
+cctv5,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/105
+cctv5+,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/107
+深圳卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/109
+北京卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/110
+湖南卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/111
+江苏卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/112
+浙江卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/113
+广东卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/114
+东方卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/115
+影视文艺,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/116
+山东卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/117
+cctv8,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/118
+天津卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/119
+湖北卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/120
+黑龙江卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/121
+云南卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/136
+贵州卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/138
+陕西卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/201
+江西卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/202
+广西卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/207
+吉林卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/208
+甘肃卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/209
+内蒙古卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/217
+文化旅游,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/301
+经济,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/302
+sctv7,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/303
+科教,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/304
+峨眉电影,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/306
+cetv2,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/391
+陕西卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/555
+cctv2,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/801
+cctv7,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/802
+cctv9,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/803
+cctv10,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/804
+cctv12,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/805
+cctv14,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/806
+安徽卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/807
+辽宁卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/808
+重庆卫视,http://api.dbkan.cdn.iptv.xin:2052/api.dbkan.com/hn/809
+HBO高清,https://dko29we9nm1rd.cloudfront.net/hls/CH115/index.m3u8
+Now 爆谷台,https://dko29we9nm1rd.cloudfront.net/hls/CH133/index.m3u8
+Now爆谷星影台,https://dko29we9nm1rd.cloudfront.net/hls/CH138/index.m3u8
+Now直播台,https://dko29we9nm1rd.cloudfront.net/hls/CH331/index.m3u8
+Now新聞台,https://dko29we9nm1rd.cloudfront.net/hls/CH332/index.m3u8
+Now財經台,https://dko29we9nm1rd.cloudfront.net/hls/CH333/index.m3u8
+Now Sports 英超1台,https://dko29we9nm1rd.cloudfront.net/hls/CH621/index.m3u8
+Now Sports 英超2台,https://dko29we9nm1rd.cloudfront.net/hls/CH622/index.m3u8
+Now Sports 英超3台,https://dko29we9nm1rd.cloudfront.net/hls/CH623/index.m3u8
+Now Sports 英超4台,https://dko29we9nm1rd.cloudfront.net/hls/CH624/index.m3u8
+Now Sports 英超5台,https://dko29we9nm1rd.cloudfront.net/hls/CH625/index.m3u8
+Now Sports 英超6台,https://dko29we9nm1rd.cloudfront.net/hls/CH626/index.m3u8
+Now Sports 2,https://dko29we9nm1rd.cloudfront.net/hls/CH632/index.m3u8
+Now Sports 3,https://dko29we9nm1rd.cloudfront.net/hls/CH633/index.m3u8
+Now Sports 4,https://dko29we9nm1rd.cloudfront.net/hls/CH634/index.m3u8
+Now Sports 5,https://dko29we9nm1rd.cloudfront.net/hls/CH635/index.m3u8
+Now Sports 6,https://dko29we9nm1rd.cloudfront.net/hls/CH636/index.m3u8
+Now Sports 7,https://dko29we9nm1rd.cloudfront.net/hls/CH637/index.m3u8
+beIN SPORTS 1,https://dko29we9nm1rd.cloudfront.net/hls/CH638/index.m3u8
+beIN SPORTS 2,https://dko29we9nm1rd.cloudfront.net/hls/CH639/index.m3u8
+Now Sports 641,https://dko29we9nm1rd.cloudfront.net/hls/CH641/index.m3u8
+NBATV,https://dko29we9nm1rd.cloudfront.net/hls/CH642/index.m3u8
+Now Sports 651,https://dko29we9nm1rd.cloudfront.net/hls/CH651/index.m3u8
+Now Sports 652,https://dko29we9nm1rd.cloudfront.net/hls/CH652/index.m3u8
+Premier Sports,https://dko29we9nm1rd.cloudfront.net/hls/CH679/index.m3u8
+Now Sports PLUS,https://dko29we9nm1rd.cloudfront.net/hls/CH680/index.m3u8
