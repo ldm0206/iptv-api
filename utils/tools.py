@@ -351,6 +351,8 @@ logo_name_replace = [['峨眉电影','四川峨眉电影'],
                     ['SCTV8', 'sctv8'],
                     ['SCTV9', 'sctv9'],
                     ['凤凰香港', '凤凰卫视香港台'],
+                    ['凤凰中文', '凤凰卫视中文台'],
+                    ['凤凰资讯', '凤凰卫视资讯台'],
                     ['TVB PLUS', 'TVBPlus'],
                     ['NHK World','NHKWorld'],
                     ['福建体育','福建文体'],
@@ -362,8 +364,10 @@ def convert_to_m3u(first_channel_name=None):
     user_final_file = resource_path(config.final_file)
     if os.path.exists(user_final_file):
         with open(user_final_file, "r", encoding="utf-8") as file:
-            m3u_output = f'#EXTM3U x-tvg-url="{join_url(config.cdn_url, 'https://raw.githubusercontent.com/fanmingming/live/main/e.xml')}"\n'
+            m3u_output = f'#EXTM3U x-tvg-url="{join_url(config.cdn_url, 'https://raw.githubusercontent.com/fanmingming/live/main/e.xml')}",https://assets.livednow.com/epg.xml,https://epg.v1.mk/fy.xml,http://epg.51zmt.top:8000/e.xml\n'
             current_group = None
+            logo_urls = [join_url(
+                config.cdn_url, f'https://raw.githubusercontent.com/fanmingming/live/main/tv/'), "https://epg.v1.mk/logo/", "https://assets.livednow.com/logo/"]
             for line in file:
                 trimmed_line = line.strip()
                 if trimmed_line != "":
@@ -387,7 +391,12 @@ def convert_to_m3u(first_channel_name=None):
                             if name1[0] in channel_logo_name:
                                 channel_logo_name = name1[1]
                                 break
-                        m3u_output += f'#EXTINF:-1 tvg-name="{processed_channel_name}" tvg-logo="{join_url(config.cdn_url, f'https://raw.githubusercontent.com/fanmingming/live/main/tv/{channel_logo_name}.png')}"'
+                        logo_url = logo_urls[0] + channel_logo_name + ".png"
+                        for logo_url_prefix in logo_urls:
+                            if requests.get(f"{logo_url_prefix}{channel_logo_name}.png").status_code == 200:
+                                logo_url = logo_url_prefix + channel_logo_name + ".png"
+                                break
+                        m3u_output += f'#EXTINF:-1 tvg-name="{processed_channel_name}" tvg-logo="{logo_url}"'
                         if current_group:
                             m3u_output += f' group-title="{current_group}"'
                         m3u_output += f",{original_channel_name}\n{channel_link}\n"
