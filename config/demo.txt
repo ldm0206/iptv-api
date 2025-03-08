@@ -339,7 +339,7 @@ CCTV-15
 🌊海外,#genre#
 翡翠台
 黃金翡翠台
-myTV SUPER
+MYTV SUPER 18
 明珠台
 TVB PLUS
 TVB星河
@@ -378,8 +378,7 @@ ZooMoo
 龙祥电影
 东森洋片
 AXN
-HBO高清
-HBO签名
+HBO
 TVB功夫
 Loupe
 Love Nature

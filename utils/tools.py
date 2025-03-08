@@ -356,7 +356,8 @@ logo_name_replace = [['峨眉电影','四川峨眉电影'],
                     ['TVB PLUS', 'TVBPlus'],
                     ['NHK World','NHKWorld'],
                     ['福建体育','福建文体'],
-                    ['浙江钱江都市','钱江都市']]
+                    ['浙江钱江都市','钱江都市'],
+                    ['MYTV SUPER 18','MYTVSUPER18']]
 def convert_to_m3u(first_channel_name=None):
     """
     Convert result txt to m3u format
