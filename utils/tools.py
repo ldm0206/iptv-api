@@ -368,7 +368,10 @@ def convert_to_m3u(first_channel_name=None):
             m3u_output = f'#EXTM3U x-tvg-url="{join_url(config.cdn_url, 'https://raw.githubusercontent.com/fanmingming/live/main/e.xml')}",https://assets.livednow.com/epg.xml,https://epg.v1.mk/fy.xml,http://epg.51zmt.top:8000/e.xml\n'
             current_group = None
             logo_urls = [join_url(
-                config.cdn_url, f'https://raw.githubusercontent.com/fanmingming/live/main/tv/'), "https://epg.v1.mk/logo/", "https://assets.livednow.com/logo/"]
+                config.cdn_url, f'https://raw.githubusercontent.com/fanmingming/live/main/tv/'), join_url(
+                config.cdn_url, f'https://raw.githubusercontent.com/ldm0206/iptv-api/master/logo/'),join_url(
+                config.cdn_url, f'https://raw.githubusercontent.com/wanglindl/TVlogo/refs/heads/main/img/'), 
+                "https://epg.v1.mk/logo/", "https://assets.livednow.com/logo/",]
             for line in file:
                 trimmed_line = line.strip()
                 if trimmed_line != "":

@@ -60,7 +60,7 @@ RTHK34,https://livedoc.cgtn.com/1000d/prog_index.m3u8
 美亚C+,http://ottproxy2.ist.ooo/livehls/MOB-U1-NO/03.m3u8
 HBO高清,https://dko29we9nm1rd.cloudfront.net/hls/CH115/index.m3u8$!
 Now爆谷台,https://dko29we9nm1rd.cloudfront.net/hls/CH133/index.m3u8$!
-Now爆谷星影台,https://dko29we9nm1rd.cloudfront.net/hls/CH138/index.m3u8$!
+Now星影台,https://dko29we9nm1rd.cloudfront.net/hls/CH138/index.m3u8$!
 Now直播台,https://dko29we9nm1rd.cloudfront.net/hls/CH331/index.m3u8$!
 Now新闻台,https://dko29we9nm1rd.cloudfront.net/hls/CH332/index.m3u8$!
 Now财经台,https://dko29we9nm1rd.cloudfront.net/hls/CH333/index.m3u8$!
@@ -84,3 +84,8 @@ Now Sports 651,https://dko29we9nm1rd.cloudfront.net/hls/CH651/index.m3u8$!
 Now Sports 652,https://dko29we9nm1rd.cloudfront.net/hls/CH652/index.m3u8$!
 Premier Sports,https://dko29we9nm1rd.cloudfront.net/hls/CH679/index.m3u8$!
 Now Sports PLUS,https://dko29we9nm1rd.cloudfront.net/hls/CH680/index.m3u8$!
+广元新闻综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel100999/playlist.m3u8
+广元文化生活,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel101257/playlist.m3u8
+旺苍综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel105549/playlist.m3u8
+剑阁综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel105549/playlist.m3u8
+朝天综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel104601/playlist.m3u8

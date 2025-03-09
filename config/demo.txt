@@ -164,8 +164,7 @@ IPTV经典电影
 东森洋片
 都市剧场
 AXN
-HBO高清
-HBO签名
+HBO
 TVB功夫
 
 🎥咪咕直播,#genre#
@@ -245,7 +244,6 @@ CCTV-5+
 天元围棋
 快乐垂钓
 JJ斗地主
-HBO高清
 Now Sports 英超1台
 Now Sports 英超2台
 Now Sports 英超3台
@@ -264,6 +262,7 @@ Now Sports 641
 NBATV
 Now Sports 651
 Now Sports 652
+Now Sports PLUS
 Premier Sports
 🪁动画频道,#genre#
 少儿动画
@@ -387,7 +386,7 @@ Fashion
 Clarity
 美亚C+
 Now爆谷台
-Now爆谷星影台
+Now星影台
 Now直播台
 Now新闻台
 Now财经台
@@ -409,6 +408,7 @@ Now Sports 641
 NBATV
 Now Sports 651
 Now Sports 652
+Now Sports PLUS
 Premier Sports
 ☘️四川频道,#genre#
 四川卫视
@@ -421,6 +421,15 @@ SCTV7
 SCTV8
 四川乡村
 峨眉电影
+广元公共
+广元新闻综合
+广元文化生活
+利州综合
+旺苍综合
+昭化综合
+朝天综合
+剑阁综合
+青川综合
 万源新闻综合
 东兴综合
 乐山公共
@@ -433,7 +442,6 @@ SCTV8
 仁寿综合
 凉山新闻综合
 凉山语
-利州综合
 前锋电视台
 剑阁综合
 北川电视一套
@@ -459,9 +467,6 @@ SCTV8
 峨边电视台
 平昌新闻综合
 平武综合
-广元公共
-广元新闻综合
-广元文化生活
 广安公共
 康定综合
 康巴卫视
@@ -471,9 +476,6 @@ SCTV8
 成都高新电视
 攀枝花新闻综合
 新都综合
-旺苍新闻综合
-昭化综合
-朝天综合
 松潘新闻综合
 梓潼新闻综合
 武胜综合
@@ -514,7 +516,6 @@ SCTV8
 雅安公共
 雅安新闻综合
 雅安雨城
-青川综合
 青神综合
 马尔康综合
 马边电视台
