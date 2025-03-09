@@ -84,8 +84,8 @@ Now Sports 651,https://dko29we9nm1rd.cloudfront.net/hls/CH651/index.m3u8$!
 Now Sports 652,https://dko29we9nm1rd.cloudfront.net/hls/CH652/index.m3u8$!
 Premier Sports,https://dko29we9nm1rd.cloudfront.net/hls/CH679/index.m3u8$!
 Now Sports PLUS,https://dko29we9nm1rd.cloudfront.net/hls/CH680/index.m3u8$!
-广元新闻综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel100999/playlist.m3u8
-广元文化生活,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel101257/playlist.m3u8
-旺苍综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel105549/playlist.m3u8
-剑阁综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel105549/playlist.m3u8
-朝天综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel104601/playlist.m3u8
+广元新闻综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel100999/playlist.m3u8$!
+广元文化生活,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel101257/playlist.m3u8$!
+旺苍综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel105549/playlist.m3u8$!
+剑阁综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel105549/playlist.m3u8$!
+朝天综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel104601/playlist.m3u8$!
