@@ -383,7 +383,7 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
                     print(e)
                 if (not supply and filter_speed and avg_speed < min_speed) or (
                         not supply and filter_resolution and get_resolution_value(resolution) < min_resolution) or (
-                        supply and delay < 0):
+                        delay < 0):
                     continue
                 result["delay"] = delay
                 result["speed"] = avg_speed
