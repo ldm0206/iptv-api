@@ -353,7 +353,7 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
         cache_key_match = re.search(r"cache:(.*)", url.partition("$")[2])
         cache_key = cache_key_match.group(1) if cache_key_match else None
         delay = -1
-        resolution = "720X480"
+        resolution = "480X320"
         speed = 0.0
         if cache1_url in cache1:
             delay = cache1[cache1_url]["delay"]
