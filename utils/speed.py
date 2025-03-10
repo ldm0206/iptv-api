@@ -362,7 +362,10 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
         if cache_key and cache_key in cache:
             cache_list = cache[cache_key]
             if cache_list:
-                avg_speed: int | float | None = sum(item['speed'] or 0 for item in cache_list) / len(cache_list)
+                cache_list_nonezero = [
+                    item for item in cache_list if (item['speed'] > 0)]
+                avg_speed: int | float | None = sum(
+                    item['speed'] for item in cache_list_nonezero) / len(cache_list_nonezero)
                 avg_speed = max(avg_speed, speed)
                 avg_delay: int | float | None = max(
                     int(sum(item['delay'] or -1 for item in cache_list) / len(cache_list)), -1)
