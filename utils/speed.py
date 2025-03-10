@@ -354,20 +354,23 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
         cache_key = cache_key_match.group(1) if cache_key_match else None
         delay = -1
         resolution = "720X480"
+        speed = 0.0
         if cache1_url in cache1:
             delay = cache1[cache1_url]["delay"]
             resolution = cache1[cache1_url]["resolution"]
+            speed = cache1[cache1_url]["speed"]
         if cache_key and cache_key in cache:
             cache_list = cache[cache_key]
             if cache_list:
                 avg_speed: int | float | None = sum(item['speed'] or 0 for item in cache_list) / len(cache_list)
+                avg_speed = max(avg_speed, speed)
                 avg_delay: int | float | None = max(
                     int(sum(item['delay'] or -1 for item in cache_list) / len(cache_list)), -1)
                 # resolution = max((item['resolution'] for item in cache_list), key=get_resolution_value) or resolution
                 try:
                     if logger:
                         logger.info(
-                            f"Name: {name}, URL: {result["url"]}, IPv_Type: {ipv_type}, Date: {date}, Delay: {delay} ms, avgDelay:{avg_delay} ms, Speed: {avg_speed:.2f} M/s, Resolution: {resolution}"
+                            f"Name: {name}, URL: {result["url"]}, IPv_Type: {ipv_type}, Date: {date}, Delay: {delay} ms, avgDelay:{avg_delay} ms, maxSpeed: {avg_speed:.2f} M/s, Resolution: {resolution}"
                         )
                 except Exception as e:
                     print(e)
