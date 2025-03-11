@@ -166,6 +166,9 @@ IPTV经典电影
 AXN
 HBO
 TVB功夫
+Disney Channel
+Disney XD
+Astro 爱奇艺
 
 🎥咪咕直播,#genre#
 咪咕直播1
@@ -384,6 +387,9 @@ Love The Planet
 Fashion
 Clarity
 美亚C+
+Disney Channel
+Disney XD
+Astro 爱奇艺
 Now爆谷台
 Now星影台
 Now直播台

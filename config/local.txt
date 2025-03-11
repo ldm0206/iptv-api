@@ -18,11 +18,16 @@ viutv,http://aktv_stream1.m16tv.cfd/stream/aktv2/viutv696/AKTV.m3u8$!
 TVB PLUS,http://aktv_stream1.m16tv.cfd/stream/aktv/tvbplus/AKTV.m3u8$!
 Loupe,https://d2dw21aq0j0l5c.cloudfront.net/playlist_3840x2160.m3u8
 Love Nature,https://d18dyiwu97wm6q.cloudfront.net/playlist2160p.m3u8
+Love Nature,http://aktv_stream1.m16tv.cfd/stream/tuntun/lovenature4k/AKTV.m3u8
 Nick Jr,http://aktv_stream1.m16tv.cfd/stream/aktv3/nickjr/AKTV.m3u8$!
 Nickelodeon,http://aktv_stream1.m16tv.cfd/stream/aktv3/nickelodeon/AKTV.m3u8$!
 AXN,http://aktv_stream1.m16tv.cfd/stream/aktv2/axn/AKTV.m3u8$!
 ZooMoo,http://aktv_stream1.m16tv.cfd/stream/aktv3/zoomoo/AKTV.m3u8$!
 Love The Planet,http://aktv_stream1.m16tv.cfd/stream/aktv2/lovetheplanet/AKTV.m3u8$!
+NBATV,http://aktv_stream1.m16tv.cfd/stream/astro_a1/ch84/AKTV.m3u8$!
+Astro 爱奇艺,http://aktv_stream1.m16tv.cfd/stream/tuntun/fashiontv4k/AKTV.m3u8$!
+Disney Channel,http://aktv_stream1.m16tv.cfd/stream/tuntun/disneychannel/AKTV.m3u8$!
+Disney XD,http://aktv_stream1.m16tv.cfd/stream/tuntun/disneyxd/AKTV.m3u8$!
 Fashion,https://fash2043.cloudycdn.services/slive/ftv_ftv_4k_hevc_73d_42080_default_466_hls.smil/playlist.m3u8
 Clarity,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 凤凰中文,http://ali.hlspull.yximgs.com/live/huanqiuhklivetvjjpcpvuejljydjjyfjoxvchjwhjwdojjjhjjlsjhbjfhjw.flv
