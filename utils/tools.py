@@ -554,16 +554,24 @@ def format_name(name: str) -> str:
     return name.lower()
 
 
-def get_name_url(content, pattern, check_url=True):
+def get_name_url(content, pattern, check_url=True, isTxt=False):
     """
     Get name and url from content
     """
     matches = pattern.findall(content)
-    channels = [
-        {"name": match[0].strip(), "url": match[1].strip()}
-        for match in matches
-        if (check_url and match[1].strip()) or not check_url
-    ]
+    if isTxt:
+        channels = [
+            {"name": match[0].strip(), "url": url.strip()}
+            for match in matches
+                for url in match[1].split("#")
+            if (check_url and url.strip()) or not check_url
+        ]
+    else:
+        channels = [
+            {"name": match[0].strip(), "url": match[1].strip()}
+            for match in matches
+            if (check_url and match[1].strip()) or not check_url
+        ]
     return channels
 
 
