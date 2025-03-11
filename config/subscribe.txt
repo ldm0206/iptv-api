@@ -35,3 +35,4 @@ https://live.zbds.top/tv/iptv6.txt
 http://8.138.7.223/v12.txt
 https://raw.githubusercontent.com/xiongjian83/TvBox/refs/heads/main/live.txt
 https://www.cloudplains.cn/result.txt
+https://gitee.com/lixiao-1-98/iptv/raw/master/ipv6.txt

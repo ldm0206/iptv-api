@@ -28,7 +28,7 @@ async def get_speed_with_download(url: str, session: ClientSession = None, timeo
     start_time = time()
     total_size = 0
     total_time = 0
-    info = {'speed': 0, 'delay': 0.200026}
+    info = {'speed': 0, 'delay': 0.20002604}
     if session is None:
         session = ClientSession(connector=TCPConnector(ssl=False), trust_env=True)
         created_session = True
@@ -91,7 +91,7 @@ async def get_speed_m3u8(url: str, resolution: str = None, filter_resolution: bo
     """
     Get the speed of the m3u8 url with a total timeout
     """
-    info = {'speed': 0, 'delay': 0.200026, 'resolution': resolution}
+    info = {'speed': 0, 'delay': 0.20002603, 'resolution': resolution}
     location = None
     try:
         url = quote(url, safe=':/?$&=@[]%').partition('$')[0]
@@ -281,7 +281,7 @@ async def get_speed(url, is_ipv6=False, ipv6_proxy=None, resolution=None,
     Get the speed (response time and resolution) of the url
     """
     data: TestResult = {'speed': 0,
-                        'delay': 0.200026, 'resolution': resolution}
+                        'delay': 0.20002602, 'resolution': resolution}
     cache1_url = remove_cache_info(url)
     try:
         cache_key = None
@@ -355,7 +355,7 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
             continue
         cache_key_match = re.search(r"cache:(.*)", url.partition("$")[2])
         cache_key = cache_key_match.group(1) if cache_key_match else None
-        delay = 0.200026
+        delay = 0.20002601
         resolution = "480X320"
         speed = 0.0
         if cache1_url in cache1:
