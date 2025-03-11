@@ -28,7 +28,7 @@ async def get_speed_with_download(url: str, session: ClientSession = None, timeo
     start_time = time()
     total_size = 0
     total_time = 0
-    info = {'speed': 0, 'delay': -1}
+    info = {'speed': 0, 'delay': 0.200026}
     if session is None:
         session = ClientSession(connector=TCPConnector(ssl=False), trust_env=True)
         created_session = True
@@ -43,6 +43,7 @@ async def get_speed_with_download(url: str, session: ClientSession = None, timeo
                 if chunk:
                     total_size += len(chunk)
     except:
+        info['delay'] = -1
         pass
     finally:
         if total_size > 0:
@@ -90,7 +91,7 @@ async def get_speed_m3u8(url: str, resolution: str = None, filter_resolution: bo
     """
     Get the speed of the m3u8 url with a total timeout
     """
-    info = {'speed': 0, 'delay': -1, 'resolution': resolution}
+    info = {'speed': 0, 'delay': 0.200026, 'resolution': resolution}
     location = None
     try:
         url = quote(url, safe=':/?$&=@[]%').partition('$')[0]
@@ -279,7 +280,8 @@ async def get_speed(url, is_ipv6=False, ipv6_proxy=None, resolution=None,
     """
     Get the speed (response time and resolution) of the url
     """
-    data: TestResult = {'speed': 0, 'delay': -1, 'resolution': resolution}
+    data: TestResult = {'speed': 0,
+                        'delay': 0.200026, 'resolution': resolution}
     cache1_url = remove_cache_info(url)
     try:
         cache_key = None
@@ -291,7 +293,7 @@ async def get_speed(url, is_ipv6=False, ipv6_proxy=None, resolution=None,
         if cache_key in cache:
             cache_list = cache[cache_key]
             for cache_item in cache_list:
-                if cache_item['speed'] > 0 and cache_item['delay'] != -1 and get_resolution_value(
+                if cache_item['speed'] > 0 and cache_item['delay'] >= 0 and get_resolution_value(
                         cache_item['resolution']) > min_resolution:
                     data = cache_item
                     break
@@ -353,7 +355,7 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
             continue
         cache_key_match = re.search(r"cache:(.*)", url.partition("$")[2])
         cache_key = cache_key_match.group(1) if cache_key_match else None
-        delay = -1
+        delay = 0.200026
         resolution = "480X320"
         speed = 0.0
         if cache1_url in cache1:
