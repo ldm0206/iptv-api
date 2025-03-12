@@ -63,7 +63,7 @@ RTHK34,https://livedoc.cgtn.com/1000d/prog_index.m3u8
 浙江经济生活,https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8$!
 之江纪录,https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8$!
 美亚C+,http://ottproxy2.ist.ooo/livehls/MOB-U1-NO/03.m3u8
-HBO高清,https://dko29we9nm1rd.cloudfront.net/hls/CH115/index.m3u8$!
+HBO,https://dko29we9nm1rd.cloudfront.net/hls/CH115/index.m3u8$!
 Now爆谷台,https://dko29we9nm1rd.cloudfront.net/hls/CH133/index.m3u8$!
 Now星影台,https://dko29we9nm1rd.cloudfront.net/hls/CH138/index.m3u8$!
 Now直播台,https://dko29we9nm1rd.cloudfront.net/hls/CH331/index.m3u8$!
