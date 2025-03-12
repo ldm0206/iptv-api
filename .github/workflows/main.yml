@@ -55,11 +55,11 @@ jobs:
       - name: Install selenium
         if: env.OPEN_DRIVER == 'True'
         run: pipenv install selenium
-      - name: Update
-        run: pipenv run dev
       - name: Download local.txt from GIST_IPTV
         run: |
           curl -o ./config/local.txt ${{ secrets.GIST_IPTV}}local.txt
+      - name: Update
+        run: pipenv run dev
       - name: Commit and push if changed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
