@@ -57,7 +57,7 @@ jobs:
         run: pipenv install selenium
       - name: Download local.txt
         run: |
-          curl -o config/local.txt ${{ secrets.GIST_IPTV}}local.txt
+          curl -o ./config/local.txt ${{ secrets.GIST_IPTV}}local.txt
           print("config/local.txt")')
       - name: Update
         run: pipenv run dev
