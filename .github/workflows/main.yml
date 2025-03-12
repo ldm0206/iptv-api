@@ -60,6 +60,34 @@ jobs:
           curl -o config/local.txt ${{ secrets.GIST_IPTV}}local.txt
       - name: Update
         run: pipenv run dev
+      - name: Deploy ouput text to gist
+        uses: Raphiiko/actions-deploy-gist@main
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gist_id: ${{ secrets.GIST_IPTV_ID }}
+          file_path: output/result.txt
+          file_type: text
+      - name: Deploy ouput m3u to gist
+        uses: Raphiiko/actions-deploy-gist@main
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gist_id: ${{ secrets.GIST_IPTV_ID }}
+          file_path: output/result.m3u
+          file_type: text
+      - name: Deploy ouput cache to gist
+        uses: Raphiiko/actions-deploy-gist@main
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gist_id: ${{ secrets.GIST_IPTV_ID }}
+          file_path: output/cache.pkl
+          file_type: binary
+      - name: Deploy ouput log to gist
+        uses: Raphiiko/actions-deploy-gist@main
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gist_id: ${{ secrets.GIST_IPTV_ID }}
+          file_path: output/sort.log
+          file_type: text
       - name: Commit and push if changed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -82,26 +110,18 @@ jobs:
             final_m3u_file = "output/result.m3u"
           # print(final_m3u_file)')
           if [[ -f "$final_file" ]]; then
-              final_file_content=$(cat $final_file)
-              curl -L -X PATCH -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GIST_TOKEN }}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/gists/${{ secrets.GIST_IPTV_ID }}   -d '{"description":"Github Action Auto Updated txt","files":{"result.txt":{"content":"$final_file_content"}}}'
           #   git add -f "$final_file"
               rm -f "$final_file"
           fi
           if [[ -f "$final_m3u_file" ]]; then
-              final_m3u_file_content=$(cat $final_m3u_file)
-              curl -L -X PATCH -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GIST_TOKEN }}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/gists/${{ secrets.GIST_IPTV_ID }}   -d '{"description":"Github Action Auto Updated m3u","files":{"result.m3u":{"content":"$final_m3u_file_content"}}}'
           #   git add -f "$final_m3u_file"
               rm -f "$final_m3u_file"
           fi
           if [[ -f "output/cache.pkl" ]]; then
             # git add -f "output/cache.pkl"
-            cache_content=$(cat output/cache.pkl)
-              curl -L -X PATCH -H "Accept: application/vnd.github.base64+json" -H "Authorization: Bearer ${{ secrets.GIST_TOKEN }}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/gists/${{ secrets.GIST_IPTV_ID }}   -d '{"description":"Github Action Auto Updated cache",\"files":{"cache.pkl":{"content":"$cache_content"}}}'
             rm -f "output/cache.pkl"
           fi
           if [[ -f "output/sort.log" ]]; then
-              sort_log_content=$(cat output/sort.log)
-              curl -L -X PATCH -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/gists/${{ secrets.GIST_IPTV_ID }}   -d '{"description":"Github Action Auto Updated sort.log","files":{"sort.log":{"content":"$sort_log_content"}}}'
           #   git add -f "output/sort.log"
               rm -f "output/sort.log"
           fi
