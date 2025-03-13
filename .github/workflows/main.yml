@@ -60,31 +60,31 @@ jobs:
           curl -o config/local.txt ${{ secrets.GIST_IPTV}}a_local.txt
           curl -o config/subscribe.txt ${{ secrets.GIST_IPTV}}a_subscribe.txt
           curl -o config/whitelist.txt ${{ secrets.GIST_IPTV}}a_whitelist.txt
-          curl -o ouput/cache.pkl ${{ secrets.GIST_IPTV}}cache.pkl
+          curl -o output/cache.pkl ${{ secrets.GIST_IPTV}}cache.pkl
       - name: Update
         run: pipenv run dev
-      - name: Deploy ouput text to gist
+      - name: Deploy output text to gist
         uses: Raphiiko/actions-deploy-gist@main
         with:
           token: ${{ secrets.GIST_TOKEN }}
           gist_id: ${{ secrets.GIST_IPTV_ID }}
           file_path: output/result.txt
           file_type: text
-      - name: Deploy ouput m3u to gist
+      - name: Deploy output m3u to gist
         uses: Raphiiko/actions-deploy-gist@main
         with:
           token: ${{ secrets.GIST_TOKEN }}
           gist_id: ${{ secrets.GIST_IPTV_ID }}
           file_path: output/result.m3u
           file_type: text
-      - name: Deploy ouput cache to gist
+      - name: Deploy output cache to gist
         uses: Raphiiko/actions-deploy-gist@main
         with:
           token: ${{ secrets.GIST_TOKEN }}
           gist_id: ${{ secrets.GIST_IPTV_ID }}
           file_path: output/cache.pkl
           file_type: binary
-      - name: Deploy ouput log to gist
+      - name: Deploy output log to gist
         uses: Raphiiko/actions-deploy-gist@main
         with:
           token: ${{ secrets.GIST_TOKEN }}
