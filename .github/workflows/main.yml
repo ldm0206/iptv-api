@@ -134,6 +134,9 @@ jobs:
           if [[ -f "updates/fofa/fofa_multicast_region_result.pkl" ]]; then
             git add -f "updates/fofa/fofa_multicast_region_result.pkl"
           fi
+          rm -f "config/local.txt"
+          rm -f "config/subscribe.txt"
+          rm -f "config/whitelist.txt"
           if ! git diff --staged --quiet; then
             git commit -m "Github Action Auto Updated"
             git push --force
