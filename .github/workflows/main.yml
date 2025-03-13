@@ -55,9 +55,12 @@ jobs:
       - name: Install selenium
         if: env.OPEN_DRIVER == 'True'
         run: pipenv install selenium
-      - name: Download local.txt
+      - name: Download setting
         run: |
           curl -o config/local.txt ${{ secrets.GIST_IPTV}}local.txt
+          curl -o config/subscribe.txt ${{ secrets.GIST_IPTV}}subscribe.txt
+          curl -o config/whitelist.txt ${{ secrets.GIST_IPTV}}whitelist.txt
+          curl -o ouput/cache.pkl ${{ secrets.GIST_IPTV}}cache.pkl
       - name: Update
         run: pipenv run dev
       - name: Deploy ouput text to gist
