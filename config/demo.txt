@@ -166,8 +166,6 @@ IPTV经典电影
 AXN
 HBO
 TVB功夫
-Disney Channel
-Disney XD
 Astro 爱奇艺
 
 🎥咪咕直播,#genre#
@@ -301,9 +299,11 @@ CN卡通
 Nick Jr
 Nickelodeon
 ZooMoo
+Disney Channel
+Disney XD
 
 🔭纪录频道,#genre#
-CCTV9
+CCTV-9
 求索纪录
 求索科学
 求索生活
@@ -315,10 +315,12 @@ CCTV9
 解密高清专区
 军事高清专区
 Loupe
+CGTN纪录
 Love Nature
 Love The Planet
 Fashion
 Clarity
+
 🎮游戏频道,#genre#
 游戏风云
 游戏竞技
