@@ -18,6 +18,7 @@ CCTV-16
 CCTV-17
 CCTV-5+
 CCTV-4K
+CCTV-8K
 CGTN
 CGTN西语
 CGTN法语
@@ -140,6 +141,9 @@ IHOT爱赛车
 CHC家庭影院
 CHC动作电影
 CHC高清电影
+第一剧场
+风云剧场
+怀旧剧场
 淘剧场
 淘娱乐
 淘电影
@@ -305,6 +309,8 @@ Disney XD
 
 🔭纪录频道,#genre#
 CCTV-9
+世界地理
+兵器科技
 求索纪录
 求索科学
 求索生活
