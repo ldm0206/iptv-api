@@ -1,0 +1,4 @@
+# NAME: China IPTV
+# AUTHOR: ldm2060
+payload:
+  - DOMAIN-SUFFIX,iptv.xin
