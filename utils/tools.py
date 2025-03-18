@@ -365,7 +365,7 @@ def convert_to_m3u(first_channel_name=None):
     user_final_file = resource_path(config.final_file)
     if os.path.exists(user_final_file):
         with open(user_final_file, "r", encoding="utf-8") as file:
-            m3u_output = f'#EXTM3U x-tvg-url="{join_url(config.cdn_url, 'https://raw.githubusercontent.com/fanmingming/live/main/e.xml')},https://assets.livednow.com/epg.xml"\n'
+            m3u_output = f'#EXTM3U x-tvg-url="{join_url(config.cdn_url, 'https://raw.githubusercontent.com/ldm0206/iptv-api/master/output/epg.tar.gz')}"\n'
             current_group = None
             logo_urls = [join_url(
                 config.cdn_url, f'https://raw.githubusercontent.com/fanmingming/live/main/tv/'), join_url(
