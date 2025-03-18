@@ -91,6 +91,8 @@ jobs:
           gist_id: ${{ secrets.GIST_IPTV_ID }}
           file_path: output/sort.log
           file_type: text
+      - name: Update EPG
+        run: pipenv run epg
       - name: Commit and push if changed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -133,6 +135,12 @@ jobs:
           fi
           if [[ -f "updates/fofa/fofa_multicast_region_result.pkl" ]]; then
             git add -f "updates/fofa/fofa_multicast_region_result.pkl"
+          fi
+          if [[ -f "output/epg.xml" ]]; then
+            git add -f "output/epg.xml"
+          fi
+          if [[ -f "output/epg.tar.gz" ]]; then
+            git add -f "output/epg.tar.gz"
           fi
           rm -f "config/local.txt"
           rm -f "config/subscribe.txt"

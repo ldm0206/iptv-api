@@ -5,6 +5,7 @@ verify_ssl = true
 
 [scripts]
 dev = "python main.py"
+epg = "python merge.py"
 service = "python service/app.py"
 ui = "python tkinter_ui/tkinter_ui.py"
 docker_run = "docker run -v ./config:/iptv-api/config -v ./output:/iptv-api/output -d -p 8000:8000 guovern/iptv-api"
