@@ -673,9 +673,9 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
                                 callback):
         async with semaphore:
             return await get_speed(url, cache_key, is_ipv6=is_ipv6, ipv6_proxy=ipv6_proxy,
-                                   resolution=resolution, filter_resolution=filter_resolution,
-                                   min_resolution=min_resolution, timeout=timeout,
-                                   callback=callback)
+                                    resolution=resolution, filter_resolution=filter_resolution,
+                                    min_resolution=min_resolution, timeout=timeout,
+                                    callback=callback)
 
     tasks = [
         asyncio.create_task(
@@ -703,8 +703,8 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
     for cate, obj in data.items():
         for name, info_list in obj.items():
             info_list = sort_urls(name, info_list, supply=open_supply, filter_speed=open_filter_speed,
-                                  min_speed=min_speed, filter_resolution=open_filter_resolution,
-                                  min_resolution=min_resolution_value, logger=logger)
+                                    min_speed=min_speed, filter_resolution=open_filter_resolution,
+                                    min_resolution=min_resolution_value, logger=logger)
             append_data_to_info_data(
                 result,
                 cate,
@@ -717,15 +717,15 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
 
 
 def process_write_content(path: str,
-                          data: CategoryChannelData,
-                          rtmp_url: str = None,
-                          open_empty_category: bool = False,
-                          ipv_type_prefer: list[str] = None,
-                          origin_type_prefer: list[str] = None,
-                          first_channel_name: str = None,
-                          enable_print: bool = False,
-                          callback=None
-                          ):
+                            data: CategoryChannelData,
+                            rtmp_url: str = None,
+                            open_empty_category: bool = False,
+                            ipv_type_prefer: list[str] = None,
+                            origin_type_prefer: list[str] = None,
+                            first_channel_name: str = None,
+                            enable_print: bool = False,
+                            callback=None
+                            ):
     """
     Get channel write content
     :param path: write into path
@@ -771,8 +771,8 @@ def process_write_content(path: str,
     if config.open_update_time:
         update_time_item = next(
             (urls[0] for channel_obj in data.values()
-             for info_list in channel_obj.values()
-             if (urls := get_total_urls(info_list, ipv_type_prefer, origin_type_prefer))),
+                for info_list in channel_obj.values()
+                if (urls := get_total_urls(info_list, ipv_type_prefer, origin_type_prefer))),
             {"id": "id", "url": "url"}
         )
         now = get_datetime_now()
@@ -826,9 +826,9 @@ def write_channel_to_file(data, ipv6=False, first_channel_name=None, callback=No
             file_list += [
                 {"path": constants.rtmp_result_path, "rtmp_url": rtmp_url},
                 {"path": constants.ipv4_rtmp_result_path, "rtmp_url": rtmp_url,
-                 "ipv_type_prefer": ["ipv4"]},
+                "ipv_type_prefer": ["ipv4"]},
                 {"path": constants.ipv6_rtmp_result_path, "rtmp_url": rtmp_url,
-                 "ipv_type_prefer": ["ipv6"]},
+                "ipv_type_prefer": ["ipv6"]},
             ]
         for file in file_list:
             process_write_content(
@@ -876,9 +876,9 @@ def get_multicast_fofa_search_urls():
         (parts[0], parts[1])
         for name in rtp_file_names
         if (parts := name.partition("_"))[0] in region_list
-           or "all" in region_list
-           or "ALL" in region_list
-           or "全部" in region_list
+            or "all" in region_list
+            or "ALL" in region_list
+            or "全部" in region_list
     ]
     search_urls = []
     for region, r_type in region_type_list:
