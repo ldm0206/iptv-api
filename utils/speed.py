@@ -1,4 +1,5 @@
 import asyncio
+import copy
 import http.cookies
 import json
 import re
@@ -134,6 +135,8 @@ async def get_speed_m3u8(url: str, resolution: str = None, filter_resolution: bo
     finally:
         if not resolution and filter_resolution and not location and info['delay'] is not None:
             info['resolution'] = await get_resolution_ffprobe(url, timeout)
+        if info['delay'] is None:
+            info['delay'] = -1
         return info
 
 
@@ -283,32 +286,40 @@ async def get_speed(url, cache_key=None, is_ipv6=False, ipv6_proxy=None, resolut
     data: TestResult = {'speed': None, 'delay': None, 'resolution': resolution}
     cache1_url = remove_cache_info(url)
     try:
-        if cache_key in cache:
-            cache_list = cache[cache_key]
-            for cache_item in cache_list:
-                if cache_item['speed'] > 0 and cache_item['delay'] >= 0 and get_resolution_value(
-                        cache_item['resolution']) > min_resolution:
-                    data = cache_item
-                    break
+        # if cache_key in cache:
+        #     cache_list = cache[cache_key]
+        #     for cache_item in cache_list:
+        #         if cache_item['speed'] > 0 and cache_item['delay'] >= 0 and get_resolution_value(
+        #                 cache_item['resolution']) > min_resolution:
+        #             data = cache_item
+        #             break
+        # else:
+        if cache1_url in cache1:
+            data = cache1[cache1_url]
+            if data['speed'] is not None and data['speed'] > 0 and \
+                data['delay'] is not None and data['delay'] >= 0 and \
+                get_resolution_value(data['resolution']) > min_resolution:
+                if callback:
+                    callback()
+                return data
+        if is_ipv6 and ipv6_proxy:
+            data['speed'] = float("inf")
+            data['delay'] = 0.1
+            data['resolution'] = "1920x1080" 
+        elif constants.rt_url_pattern.match(url) is not None:
+            start_time = time()
+            if not data['resolution'] and filter_resolution:
+                data['resolution'] = await get_resolution_ffprobe(url, timeout)
+            data['delay'] = int(round((time() - start_time) * 1000))
+            data['speed'] = float("inf") if data['resolution'] is not None else 0
         else:
-            if is_ipv6 and ipv6_proxy:
-                data['speed'] = float("inf")
-                data['delay'] = 0.1
-                data['resolution'] = "1920x1080"
-            elif constants.rt_url_pattern.match(url) is not None:
-                start_time = time()
-                if not data['resolution'] and filter_resolution:
-                    data['resolution'] = await get_resolution_ffprobe(url, timeout)
-                data['delay'] = int(round((time() - start_time) * 1000))
-                data['speed'] = float("inf") if data['resolution'] is not None else 0
-            else:
-                data.update(await get_speed_m3u8(url, resolution, filter_resolution, timeout))
-            if cache_key:
-                cache.setdefault(cache_key, []).append(data)
+            data.update(await get_speed_m3u8(url, resolution, filter_resolution, timeout))
+        if cache_key:
+            cache.setdefault(cache_key, []).append(data)
     finally:
         if callback:
             callback()
-        cache1[cache1_url] = data
+        cache1[cache1_url] = copy.deepcopy(data)
         return data
 
 
@@ -351,9 +362,9 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
         speed = 0.0
         cache1_url = remove_cache_info(item["url"])
         if cache1_url in cache1:
-            delay = cache1[cache1_url]["delay"]
-            resolution = cache1[cache1_url]["resolution"]
-            speed = cache1[cache1_url]["speed"]
+            delay = cache1[cache1_url]["delay"] if cache1[cache1_url]["delay"] is not None else delay
+            resolution = cache1[cache1_url]["resolution"] if cache1[cache1_url]["resolution"] is not None else resolution
+            speed = cache1[cache1_url]["speed"] if cache1[cache1_url]["speed"] is not None else speed
         if host and host in cache:
             cache_list = cache[host]
             if cache_list:
@@ -368,6 +379,8 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
                     avg_speed = max(avg_speed, speed)
                 elif speed is not None:
                     avg_speed = speed
+                elif avg_speed is None:
+                    avg_speed = 0
                 avg_delay: int | float | None = max(
                     int(sum(item['delay'] or -1 for item in cache_list) / len(cache_list)), -1)
                 # resolution = max((item['resolution'] for item in cache_list), key=get_resolution_value) or resolution
