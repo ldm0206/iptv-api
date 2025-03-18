@@ -13,7 +13,7 @@ from multidict import CIMultiDictProxy
 
 import utils.constants as constants
 from utils.config import config
-from utils.tools import get_resolution_value
+from utils.tools import remove_cache_info, get_resolution_value
 from utils.types import TestResult, ChannelTestResult, TestResultCacheData
 
 http.cookies._is_legal_key = lambda _: True
@@ -87,7 +87,7 @@ def check_m3u8_valid(headers: CIMultiDictProxy[str] | dict[any, any]) -> bool:
 
 
 async def get_speed_m3u8(url: str, resolution: str = None, filter_resolution: bool = config.open_filter_resolution,
-                         timeout: int = config.sort_timeout) -> dict[str, float | None]:
+                        timeout: int = config.sort_timeout) -> dict[str, float | None]:
     """
     Get the speed of the m3u8 url with a total timeout
     """
@@ -281,6 +281,7 @@ async def get_speed(url, cache_key=None, is_ipv6=False, ipv6_proxy=None, resolut
     Get the speed (response time and resolution) of the url
     """
     data: TestResult = {'speed': None, 'delay': None, 'resolution': resolution}
+    cache1_url = remove_cache_info(url)
     try:
         if cache_key in cache:
             cache_list = cache[cache_key]
@@ -337,7 +338,6 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
             item["origin"],
             item["ipv_type"]
         )
-        cache1_url = remove_cache_info(url)
         result: ChannelTestResult = {
             **item,
             "delay": None,
@@ -349,6 +349,7 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
         delay = 0.20002601
         resolution = "480X320"
         speed = 0.0
+        cache1_url = remove_cache_info(item["url"])
         if cache1_url in cache1:
             delay = cache1[cache1_url]["delay"]
             resolution = cache1[cache1_url]["resolution"]
@@ -374,7 +375,7 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
                         )
                 except Exception as e:
                     print(e)
-                if avg_delay < 0 or (not supply and ((filter_speed and avg_speed < min_speed) or (
+                if delay < 0 or (not supply and ((filter_speed and avg_speed < min_speed) or (
                         filter_resolution and get_resolution_value(resolution) < min_resolution))):
                     continue
                 result["delay"] = delay
