@@ -6,6 +6,7 @@ import pickle
 import re
 from collections import defaultdict
 from logging import INFO
+from tqdm import tqdm
 
 from bs4 import NavigableString
 
@@ -615,7 +616,7 @@ def append_total_data(
             print(f"{name}:", end=" ")
             if old_info_list and (config.open_history or config.open_local):
                 append_old_data_to_info_data(data, cate, name, old_info_list, whitelist=whitelist, blacklist=blacklist,
-                                             ipv_type_data=url_hosts_ipv_type)
+                                            ipv_type_data=url_hosts_ipv_type)
             for method, result in total_result:
                 if config.open_method[method]:
                     origin_method = get_origin_method_name(method)
@@ -654,7 +655,7 @@ def append_total_data(
                         print_channel_number(data, cate, name)
 
 
-async def process_sort_channel_list(data, ipv6=False, callback=None):
+async def process_sort_channel_list(data, ipv6=False, father=None):
     """
     Process the sort channel list
     """
@@ -666,6 +667,8 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
     need_sort_data = data#copy.deepcopy(data)
     # process_nested_dict(need_sort_data, seen={}, force_str="!")
     result = {}
+    father.pbar = tqdm(total=father.total, desc="Speed ​​Testing")
+    speed_callback = lambda: father.pbar_update(name="测速", item_name="接口")
     semaphore = asyncio.Semaphore(20)
 
     async def limited_get_speed(url, cache_key, origin, is_ipv6, ipv6_proxy, resolution, filter_resolution, min_resolution,
@@ -689,7 +692,7 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
                 filter_resolution=get_resolution,
                 min_resolution=min_resolution_value,
                 timeout=sort_timeout,
-                callback=callback,
+                callback=speed_callback,
             )
         )
         for channel_obj in need_sort_data.values()
@@ -699,8 +702,12 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
     await asyncio.gather(*tasks)
     logger = get_logger(constants.sort_log_path, level=INFO, init=True)
     open_supply = config.open_supply
+    father.pbar.close()
     open_filter_speed = config.open_filter_speed
     min_speed = config.min_speed
+    print("进行排序作业")
+    father.total = len(data)
+    father.pbar = tqdm(total=father.total, desc="Sorting")
     for cate, obj in data.items():
         for name, info_list in obj.items():
             info_list = sort_urls(name, info_list, supply=open_supply, filter_speed=open_filter_speed,
@@ -713,7 +720,9 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
                 info_list,
                 check=False,
             )
+        father.pbar_update(name="排序", item_name="接口")
     logger.handlers.clear()
+    print("排序作业完成")
     return result
 
 

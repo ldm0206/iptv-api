@@ -75,7 +75,7 @@ class UpdateSource:
                     whitelist_urls = get_urls_from_file(constants.whitelist_path)
                     if not os.environ.get("GITHUB_ACTIONS") and config.cdn_url:
                         subscribe_urls = [join_url(config.cdn_url, url) if "raw.githubusercontent.com" in url else url
-                                          for url in subscribe_urls]
+                                        for url in subscribe_urls]
                     task = asyncio.create_task(
                         task_func(subscribe_urls, whitelist=whitelist_urls, callback=self.update_progress)
                     )
@@ -141,17 +141,16 @@ class UpdateSource:
                     urls_total = self.get_urls_len()
                     self.total = self.get_urls_len(is_filter=True)
                     print(f"Total urls: {urls_total}, need to sort: {self.total}")
-                    sort_callback = lambda: self.pbar_update(name="测速", item_name="接口")
+                    
                     self.update_progress(
                         f"正在测速排序, 共{urls_total}个接口, {self.total}个接口需要进行测速",
                         0,
                     )
                     self.start_time = time()
-                    self.pbar = tqdm(total=self.total, desc="Sorting")
                     self.channel_data = await process_sort_channel_list(
                         self.channel_data,
                         ipv6=ipv6_support,
-                        callback=sort_callback,
+                        father = self
                     )
                 self.total = 12
                 self.pbar = tqdm(total=self.total, desc="Writing")
