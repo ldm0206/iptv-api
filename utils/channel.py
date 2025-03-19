@@ -471,7 +471,7 @@ def init_info_data(data, cate, name):
         data[cate][name] = []
 
 
-async def append_data_to_info_data(info_data, cate, name, data, origin=None, check=True, whitelist=None, blacklist=None,
+def append_data_to_info_data(info_data, cate, name, data, origin=None, check=True, whitelist=None, blacklist=None,
                             ipv_type_data=None):
     """
     Append channel data to total info data
@@ -732,17 +732,17 @@ async def process_sort_channel_list(data, ipv6=False, father=None):
                             min_resolution_value, logger, cate,
                             callback):
         async with semaphore:
-            info_list = await sort_urls(name, info_list, supply=open_supply, filter_speed=open_filter_speed,
+            info_list = sort_urls(name, info_list, supply=open_supply, filter_speed=open_filter_speed,
                                     min_speed=min_speed, filter_resolution=open_filter_resolution,
                                     min_resolution=min_resolution_value, logger=logger)
-        async with semaphore1:
-            append_data_to_info_data(
-                result,
-                cate,
-                name,
-                info_list,
-                check=False,
-            )
+            async with semaphore1:
+                append_data_to_info_data(
+                    result,
+                    cate,
+                    name,
+                    info_list,
+                    check=False,
+                )
         callback()
     father.total = len(data)
     father.pbar = tqdm(total=father.total, desc="Sorting")

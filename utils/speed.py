@@ -339,7 +339,7 @@ def sort_urls_key(item: ChannelTestResult) -> float:
         return speed + get_resolution_value(resolution)
 
 
-async def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_filter_speed, min_speed=config.min_speed,
+def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_filter_speed, min_speed=config.min_speed,
               filter_resolution=config.open_filter_resolution, min_resolution=config.min_resolution_value,
               logger=None) -> list[ChannelTestResult]:
     """
