@@ -669,7 +669,7 @@ async def process_sort_channel_list(data, ipv6=False, father=None):
     result = {}
     father.pbar = tqdm(total=father.total, desc="Speed ​​Testing")
     speed_callback = lambda: father.pbar_update(name="测速", item_name="接口")
-    semaphore = asyncio.Semaphore(20)
+    semaphore = asyncio.Semaphore(40)
 
     async def limited_get_speed(url, cache_key, origin, is_ipv6, ipv6_proxy, resolution, filter_resolution, min_resolution,
                                 timeout,
