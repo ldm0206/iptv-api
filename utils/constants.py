@@ -23,11 +23,11 @@ ipv6_rtmp_result_path = os.path.join(output_dir, "ipv6/rtmp.txt")
 
 rtmp_data_path = os.path.join(output_dir, "data/rtmp.db")
 
-cache_path = os.path.join(output_dir, "data/cache.pkl")
+cache_path = os.path.join(output_dir, "cache.pkl")
 
-sort_log_path = os.path.join(output_dir, "log/sort.log")
+sort_log_path = os.path.join(output_dir, "sort.log")
 
-log_path = os.path.join(output_dir, "log/log.log")
+log_path = os.path.join(output_dir, "log.log")
 
 url_host_pattern = re.compile(r"((https?|rtmp|rtsp)://)?([^:@/]+(:[^:@/]*)?@)?(\[[0-9a-fA-F:]+]|([\w-]+\.)+[\w-]+)")
 
