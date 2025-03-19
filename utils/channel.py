@@ -609,6 +609,7 @@ def append_total_data(
     """
     Append all method data to total info data
     """
+    print("Appending total data...")
     total_result = [
         ("hotel_fofa", hotel_fofa_result),
         ("multicast", multicast_result),
@@ -670,6 +671,7 @@ def append_total_data(
                         print(name, f"{method.capitalize()}:",
                             len(urls), end=", ")
                         print_channel_number(data, cate, name)
+    print("Appending total data finished")
 
 
 async def process_sort_channel_list(data, ipv6=False, father=None):

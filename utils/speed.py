@@ -88,7 +88,7 @@ def check_m3u8_valid(headers: CIMultiDictProxy[str] | dict[any, any]) -> bool:
 
 
 async def get_speed_m3u8(url: str, resolution: str = None, filter_resolution: bool = config.open_filter_resolution,
-                        timeout: int = config.sort_timeout) -> dict[str, float | None]:
+                         timeout: int = config.sort_timeout, recursion_times = 0) -> dict[str, float | None]:
     """
     Get the speed of the m3u8 url with a total timeout
     """
@@ -100,7 +100,10 @@ async def get_speed_m3u8(url: str, resolution: str = None, filter_resolution: bo
             headers = await get_m3u8_headers(url, session)
             location = headers.get('Location')
             if location:
-                info.update(await get_speed_m3u8(location, resolution, filter_resolution, timeout))
+                if recursion_times > 10: # 递归次数大于10
+                    info['delay'] = -1.484250
+                    return info
+                info.update(await get_speed_m3u8(location, resolution, filter_resolution, timeout, recursion_times + 1))
             elif check_m3u8_valid(headers):
                 m3u8_obj = m3u8.load(url, timeout=2)
                 playlists = m3u8_obj.data.get('playlists')
