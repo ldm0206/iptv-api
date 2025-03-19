@@ -666,7 +666,7 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
     need_sort_data = data#copy.deepcopy(data)
     # process_nested_dict(need_sort_data, seen={}, force_str="!")
     result = {}
-    semaphore = asyncio.Semaphore(10)
+    semaphore = asyncio.Semaphore(20)
 
     async def limited_get_speed(url, cache_key, is_ipv6, ipv6_proxy, resolution, filter_resolution, min_resolution,
                                 timeout,

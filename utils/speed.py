@@ -283,7 +283,7 @@ async def get_speed(url, cache_key=None, is_ipv6=False, ipv6_proxy=None, resolut
     """
     Get the speed (response time and resolution) of the url
     """
-    data: TestResult = {'speed': None, 'delay': None, 'resolution': resolution}
+    data: TestResult = {'speed': 0, 'delay': 0.20002602, 'resolution': resolution}
     cache1_url = remove_cache_info(url)
     try:
         # if cache_key in cache:
@@ -295,12 +295,13 @@ async def get_speed(url, cache_key=None, is_ipv6=False, ipv6_proxy=None, resolut
         #             break
         # else:
         if cache1_url in cache1:
-            data = cache1[cache1_url]
-            if data['speed'] is not None and data['speed'] > 0 and \
-                data['delay'] is not None and data['delay'] >= 0 and \
-                get_resolution_value(data['resolution']) > min_resolution:
+            data1 = cache1[cache1_url]
+            if data1['speed'] is not None and data1['speed'] > 0 and \
+                data1['delay'] is not None and data1['delay'] >= 0 and \
+                get_resolution_value(data1['resolution']) > min_resolution:
                 if callback:
                     callback()
+                data = data1
                 return data
         if is_ipv6 and ipv6_proxy:
             data['speed'] = float("inf")
@@ -351,8 +352,8 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
         )
         result: ChannelTestResult = {
             **item,
-            "delay": None,
-            "speed": None,
+            "delay": 0.20002601,
+            "speed": 0,
         }
         if origin == "whitelist":
             filter_data.append(result)
