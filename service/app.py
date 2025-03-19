@@ -1,5 +1,4 @@
 import os
-import sqlite3
 import sys
 
 sys.path.append(os.path.dirname(sys.path[0]))
@@ -7,6 +6,7 @@ from flask import Flask, send_from_directory, make_response, jsonify, redirect
 from utils.tools import get_result_file_content, get_ip_address, resource_path
 from utils.config import config
 import utils.constants as constants
+from utils.db import get_db_connection, return_db_connection
 import subprocess
 import atexit
 
@@ -138,11 +138,14 @@ def show_log():
 def run_rtmp(channel_id):
     if not channel_id:
         return jsonify({'Error': 'Channel ID is required'}), 400
-    with sqlite3.connect(constants.rtmp_data_path) as conn:
+    conn = get_db_connection(constants.rtmp_data_path)
+    try:
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM result_data WHERE id=?", (channel_id,))
         data = cursor.fetchone()
         url = data[1] if data else ''
+    finally:
+        return_db_connection(constants.rtmp_data_path, conn)
     if not url:
         return jsonify({'Error': 'Url not found'}), 400
     cmd = [

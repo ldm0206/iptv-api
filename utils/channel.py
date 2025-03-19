@@ -4,7 +4,6 @@ import copy
 import os
 import pickle
 import re
-import sqlite3
 from collections import defaultdict
 from logging import INFO
 
@@ -12,6 +11,7 @@ from bs4 import NavigableString
 
 import utils.constants as constants
 from utils.config import config
+from utils.db import get_db_connection, return_db_connection
 from utils.speed import (
     get_speed,
     sort_urls,
@@ -783,7 +783,8 @@ def process_write_content(path: str,
         else:
             content += f"\n\n🕘️更新时间,#genre#\n{now},{value}"
     if rtmp_url:
-        with sqlite3.connect(constants.rtmp_data_path) as conn:
+        conn = get_db_connection(constants.rtmp_data_path)
+        try:
             cursor = conn.cursor()
             cursor.execute(
                 "CREATE TABLE IF NOT EXISTS result_data (id TEXT PRIMARY KEY, url TEXT, ipv_type TEXT)"
@@ -794,6 +795,8 @@ def process_write_content(path: str,
                     (item["id"], item["url"], item["ipv_type"])
                 )
             conn.commit()
+        finally:
+            return_db_connection(constants.rtmp_data_path, conn)
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
         if callback:
