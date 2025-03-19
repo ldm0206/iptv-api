@@ -276,7 +276,7 @@ async def check_stream_delay(url_info):
         print(e)
         return -1
     
-async def get_speed(url, cache_key=None, is_ipv6=False, ipv6_proxy=None, resolution=None,
+async def get_speed(url, cache_key=None, origin = None, is_ipv6=False, ipv6_proxy=None, resolution=None,
                     filter_resolution=config.open_filter_resolution,
                     min_resolution=config.min_resolution_value, timeout=config.sort_timeout,
                     callback=None) -> TestResult:
@@ -303,7 +303,11 @@ async def get_speed(url, cache_key=None, is_ipv6=False, ipv6_proxy=None, resolut
                     callback()
                 data = data1
                 return data
-        if is_ipv6 and ipv6_proxy:
+        if origin is not None and origin == "whitelist":
+            data['speed'] = float("inf")
+            data['delay'] = 0.01
+            data['resolution'] = "1920x1080"
+        elif is_ipv6 and ipv6_proxy:
             data['speed'] = float("inf")
             data['delay'] = 0.1
             data['resolution'] = "1920x1080" 

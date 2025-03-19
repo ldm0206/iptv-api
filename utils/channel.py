@@ -668,11 +668,11 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
     result = {}
     semaphore = asyncio.Semaphore(20)
 
-    async def limited_get_speed(url, cache_key, is_ipv6, ipv6_proxy, resolution, filter_resolution, min_resolution,
+    async def limited_get_speed(url, cache_key, origin, is_ipv6, ipv6_proxy, resolution, filter_resolution, min_resolution,
                                 timeout,
                                 callback):
         async with semaphore:
-            return await get_speed(url, cache_key, is_ipv6=is_ipv6, ipv6_proxy=ipv6_proxy,
+            return await get_speed(url, cache_key, origin, is_ipv6=is_ipv6, ipv6_proxy=ipv6_proxy,
                                     resolution=resolution, filter_resolution=filter_resolution,
                                     min_resolution=min_resolution, timeout=timeout,
                                     callback=callback)
@@ -682,6 +682,7 @@ async def process_sort_channel_list(data, ipv6=False, callback=None):
             limited_get_speed(
                 info["url"],
                 cache_key=info["host"],
+                origin = info["origin"],
                 is_ipv6=info["ipv_type"] == "ipv6",
                 ipv6_proxy=ipv6_proxy_url,
                 resolution=info["resolution"],
