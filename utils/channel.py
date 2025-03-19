@@ -694,11 +694,17 @@ async def process_sort_channel_list(data, ipv6=False, father=None):
     async def limited_get_speed(url, cache_key, origin, is_ipv6, ipv6_proxy, resolution, filter_resolution, min_resolution,
                                 timeout,
                                 callback):
-        async with semaphore:
-            return await get_speed(url, cache_key, origin, is_ipv6=is_ipv6, ipv6_proxy=ipv6_proxy,
-                                    resolution=resolution, filter_resolution=filter_resolution,
-                                    min_resolution=min_resolution, timeout=timeout,
-                                    callback=callback)
+        try:
+            async with semaphore, asyncio.timeout(60):
+                return await get_speed(url, cache_key, origin, is_ipv6=is_ipv6, ipv6_proxy=ipv6_proxy,
+                                        resolution=resolution, filter_resolution=filter_resolution,
+                                        min_resolution=min_resolution, timeout=timeout,
+                                        callback=callback)
+        except TimeoutError:
+            print(f"❌ Speed test timeout: {url}")
+            if callback:
+                callback()
+            return {'speed': 0, 'delay': -1.078, 'resolution': resolution}
 
     tasks = [
         asyncio.create_task(
