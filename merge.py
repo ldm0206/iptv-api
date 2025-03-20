@@ -5,6 +5,7 @@ import asyncio
 from datetime import datetime
 import tarfile
 from xml.dom import minidom
+import re
 
 urls = [
     "https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
@@ -20,7 +21,15 @@ async def fetch_epg(url):
 
 
 async def parse_epg(epg_content):
-    root = ET.fromstring(epg_content)
+    try:
+        # Remove invalid XML characters (optional)
+        epg_content = re.sub(r'[^\x09\x0A\x0D\x20-\x7F]', '', epg_content)
+        root = ET.fromstring(epg_content)
+    except ET.ParseError as e:
+        print(f"Error parsing XML: {e}")
+        print(f"Problematic content: {epg_content[:500]}")  # Print the first 500 characters for debugging
+        return {}, defaultdict(list)
+
     channels = {}
     programmes = defaultdict(list)
 
