@@ -13,7 +13,8 @@ urls = [
 
 
 async def fetch_epg(url):
-    async with aiohttp.ClientSession(limit=16, verify_ssl=False, trust_env=True) as session:
+    connector = aiohttp.TCPConnector(limit=16, verify_ssl=False)
+    async with aiohttp.ClientSession(connector=connector, trust_env=True) as session:
         async with session.get(url) as response:
             return await response.text()
 
