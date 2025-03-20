@@ -498,7 +498,7 @@ def remove_cache_info(string):
     """
     Remove the cache info from the string
     """
-    return re.sub(r"[.*]?\$?-?cache:.*", "", string)
+    return re.sub(r"\$.*-?cache:.*", "", string)
 
 
 def resource_path(relative_path, persistent=False):

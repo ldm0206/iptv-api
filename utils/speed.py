@@ -134,6 +134,7 @@ async def get_speed_m3u8(url: str, resolution: str = None, filter_resolution: bo
             elif headers.get('Content-Length'):
                 info.update(await get_speed_with_download(url, session, timeout))
     except:
+        info['delay'] = -1.23333
         pass
     finally:
         if not resolution and filter_resolution and not location and info['delay'] is not None:
