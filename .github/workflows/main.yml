@@ -55,6 +55,8 @@ jobs:
       - name: Install selenium
         if: env.OPEN_DRIVER == 'True'
         run: pipenv install selenium
+      - name: Update EPG
+        run: pipenv run epg
       - name: Download setting
         run: |
           curl -o config/local.txt ${{ secrets.GIST_IPTV}}a_local.txt
@@ -91,8 +93,6 @@ jobs:
           gist_id: ${{ secrets.GIST_IPTV_ID }}
           file_path: output/sort.log
           file_type: text
-      - name: Update EPG
-        run: pipenv run epg
       - name: Commit and push if changed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

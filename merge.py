@@ -17,17 +17,16 @@ async def fetch_epg(url):
     connector = aiohttp.TCPConnector(limit=16, verify_ssl=False)
     async with aiohttp.ClientSession(connector=connector, trust_env=True) as session:
         async with session.get(url) as response:
-            return await response.text()
+            return await response.text(encoding='utf-8')
 
 
 async def parse_epg(epg_content):
     try:
-        # Remove invalid XML characters (optional)
-        epg_content = re.sub(r'[^\x09\x0A\x0D\x20-\x7F]', '', epg_content)
-        root = ET.fromstring(epg_content)
+        parser = ET.XMLParser(encoding='UTF-8')
+        root = ET.fromstring(epg_content, parser=parser)
     except ET.ParseError as e:
         print(f"Error parsing XML: {e}")
-        print(f"Problematic content: {epg_content[:500]}")  # Print the first 500 characters for debugging
+        print(f"Problematic content: {epg_content[:500]}")  
         return {}, defaultdict(list)
 
     channels = {}
