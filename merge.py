@@ -13,8 +13,6 @@ urls = [
 
 
 async def fetch_epg(url):
-    policy = asyncio.WindowsSelectorEventLoopPolicy()
-    asyncio.set_event_loop_policy(policy)
     async with aiohttp.ClientSession(limit=16, verify_ssl=False, trust_env=True) as session:
         async with session.get(url) as response:
             return await response.text()
