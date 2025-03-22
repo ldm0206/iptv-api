@@ -1,5 +1,6 @@
 from time import sleep
 from utils.config import config
+from urllib.parse import urlparse  # 添加导入
 
 if config.open_driver:
     try:
@@ -16,18 +17,19 @@ def retry_func(func, retries=max_retries, name=""):
     """
     Retry the function
     """
+    host = urlparse(name).hostname if name else name
     for i in range(retries):
         try:
             sleep(1)
             return func()
         except Exception as e:
             if name and i < retries - 1:
-                print(f"Failed to connect to the {name}. Retrying {i+1}...")
+                print(f"Failed to connect to the {host}. Retrying {i+1}...")
             elif i == retries - 1:
                 raise Exception(
-                    f"Failed to connect to the {name} reached the maximum retries."
+                    f"Failed to connect to the {host} reached the maximum retries."
                 )
-    raise Exception(f"Failed to connect to the {name} reached the maximum retries.")
+    raise Exception(f"Failed to connect to the {host} reached the maximum retries.")
 
 
 def locate_element_with_retry(
