@@ -364,6 +364,9 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
             "speed": 0,
         }
         if origin == "whitelist":
+            result["speed"] = float("inf")
+            result["delay"] = 0.01
+            result["resolution"] = "1920x1080"
             filter_data.append(result)
             continue
         delay = 0.20002601

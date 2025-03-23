@@ -6,6 +6,7 @@ import pickle
 import re
 from collections import defaultdict
 from logging import INFO
+import traceback
 from tqdm import tqdm
 
 from bs4 import NavigableString
@@ -904,6 +905,7 @@ def write_channel_to_file(data, ipv6=False, first_channel_name=None, callback=No
             )
     except Exception as e:
         print(f"❌ Write channel to file failed: {e}")
+        traceback.print_exc()  # 打印完整的错误堆栈信息
 
 
 def get_multicast_fofa_search_org(region, org_type):

@@ -403,7 +403,7 @@ def convert_to_m3u(path=None, first_channel_name=None):
                             try:
                                 request = requests.get(
                                     f"{logo_url_prefix}{channel_logo_name}.png")
-                            except:
+                            except Exception as e:
                                 request = None
                             if request is not None and request.status_code == 200:
                                 logo_url = logo_url_prefix + channel_logo_name + ".png"
