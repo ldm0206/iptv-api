@@ -399,7 +399,13 @@ def convert_to_m3u(path=None, first_channel_name=None):
                                 break
                         logo_url = logo_urls[0] + channel_logo_name + ".png"
                         for logo_url_prefix in logo_urls:
-                            if requests.get(f"{logo_url_prefix}{channel_logo_name}.png").status_code == 200:
+                            request = None
+                            try:
+                                request = requests.get(
+                                    f"{logo_url_prefix}{channel_logo_name}.png")
+                            except:
+                                request = None
+                            if request is not None and request.status_code == 200:
                                 logo_url = logo_url_prefix + channel_logo_name + ".png"
                                 break
                         m3u_output += f'#EXTINF:-1 tvg-name="{processed_channel_name}" tvg-logo="{logo_url}"'

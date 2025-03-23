@@ -120,7 +120,8 @@ async def get_channels_by_subscribe_urls(
                                 channels[name] = [value]
         except Exception as e:
             if error_print:
-                print(f"Error on {subscribe_url}: {e}")
+                host = subscribe_url.split("/")[2]
+                print(f"Error on {host}: {e}")
         finally:
             session.close()
             pbar.update()
