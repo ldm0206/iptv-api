@@ -40,7 +40,17 @@ def parse_epg(epg_content):
 
     for programme in root.findall('programme'):
         channel_id = programme.get('channel')
-        programmes[channel_id].append(programme)
+        channel_start = datetime.strptime(
+            re.sub(r'\s+', '', programme.get('start')), "%Y%m%d%H%M%S%z")
+        channel_stop = datetime.strptime(
+            re.sub(r'\s+', '', programme.get('stop')), "%Y%m%d%H%M%S%z")
+        channel_text = programme.find('title').text
+        channel_elem = ET.SubElement(
+            root, 'programme', attrib={"channel": channel_id, "start": channel_start.strftime("%Y%m%d%H%M%S +0800"), "stop": channel_stop.strftime("%Y%m%d%H%M%S +0800")})
+        channel_elem_s = ET.SubElement(
+            channel_elem, 'title', attrib={"lang": "zh"})
+        channel_elem_s.text = channel_text
+        programmes[channel_id].append(channel_elem)
 
     return channels, programmes
 
