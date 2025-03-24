@@ -6,13 +6,24 @@ from datetime import datetime
 import tarfile
 from xml.dom import minidom
 import re
+import zhconv
 
 urls = [
+    "http://epg.51zmt.top:8000/e.xml",
     "https://e.erw.cc/e.xml",
     "https://raw.githubusercontent.com/fanmingming/live/main/e.xml",
     "https://assets.livednow.com/epg.xml"
 ]
 
+
+def transform2_zh_hant(string):
+    new_str = zhconv.convert(string, 'zh-hant')
+    return new_str
+
+
+def transform2_zh_hans(string):
+    new_str = zhconv.convert(string, 'zh-cn')
+    return new_str
 
 async def fetch_epg(url):
     connector = aiohttp.TCPConnector(limit=16, ssl=False)
@@ -34,17 +45,17 @@ def parse_epg(epg_content):
     programmes = defaultdict(list)
 
     for channel in root.findall('channel'):
-        channel_id = channel.get('id')
-        display_name = channel.find('display-name').text
+        channel_id = transform2_zh_hans(channel.get('id'))
+        display_name = transform2_zh_hans(channel.find('display-name').text)
         channels[channel_id] = display_name
 
     for programme in root.findall('programme'):
-        channel_id = programme.get('channel')
+        channel_id = transform2_zh_hans(programme.get('channel'))
         channel_start = datetime.strptime(
             re.sub(r'\s+', '', programme.get('start')), "%Y%m%d%H%M%S%z")
         channel_stop = datetime.strptime(
             re.sub(r'\s+', '', programme.get('stop')), "%Y%m%d%H%M%S%z")
-        channel_text = programme.find('title').text
+        channel_text = transform2_zh_hans(programme.find('title').text)
         channel_elem = ET.SubElement(
             root, 'programme', attrib={"channel": channel_id, "start": channel_start.strftime("%Y%m%d%H%M%S +0800"), "stop": channel_stop.strftime("%Y%m%d%H%M%S +0800")})
         channel_elem_s = ET.SubElement(
@@ -91,7 +102,7 @@ async def main():
                 if not channel_id.isdigit():
                     all_channels_verify.add(channel_id)
                 all_channels.add(display_name)
-                all_channels.add(display_name)
+                all_channels_verify.add(display_name)
                 all_programmes[display_name] = programmes[channel_id]
     write_to_xml(all_channels, all_programmes, 'output/epg.xml')
     compress_to_tar_gz('output/epg.xml', 'output/epg.tar.gz')
