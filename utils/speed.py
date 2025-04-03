@@ -337,7 +337,7 @@ def sort_urls_key(item: ChannelTestResult) -> float:
     Sort the urls with key
     """
     speed, resolution, origin = item["speed"], item["resolution"], item["origin"]
-    if origin == "whitelist":
+    if origin in ["whitelist", "live", "hls"]:
         return float("inf")
     else:
         return speed + get_resolution_value(resolution)
@@ -363,7 +363,7 @@ def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_fi
             "delay": 0.20002601,
             "speed": 0,
         }
-        if origin == "whitelist":
+        if origin in ["whitelist", "live", "hls"]:
             result["speed"] = float("inf")
             result["delay"] = 0.01
             result["resolution"] = "1920x1080"
