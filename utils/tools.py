@@ -10,6 +10,7 @@ import urllib.parse
 from collections import defaultdict
 from logging.handlers import RotatingFileHandler
 from time import time
+import zhconv
 
 import pytz
 import requests
@@ -557,6 +558,7 @@ def format_name(name: str) -> str:
     """
     Format the  name with sub and replace and lower
     """
+    name = transform2_zh_hans(name)
     cc = OpenCC("t2s")
     name = cc.convert(name)
     for region in constants.region_list:
@@ -566,6 +568,10 @@ def format_name(name: str) -> str:
         name = name.replace(old, new)
     return name.lower()
 
+
+def transform2_zh_hans(string):
+    new_str = zhconv.convert(string, 'zh-cn')
+    return new_str
 
 def get_name_url(content, pattern, check_url=True, isTxt=False):
     """
