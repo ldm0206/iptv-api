@@ -171,8 +171,15 @@ def get_total_urls(info_list: list[ChannelData], ipv_type_prefer, origin_type_pr
             info["resolution"],
             info["ipv_type"]
         )
-        if not origin or (rtmp_type and origin in ["live", "hls"] and origin not in rtmp_type):
+        if not origin:
             continue
+
+        if origin in ["live", "hls"]:
+            if not rtmp_type or (rtmp_type and origin in rtmp_type):
+                total_urls.append(info)
+                continue
+            else:
+                continue
 
         if origin == "whitelist":
             w_url, _, w_info = url.partition("$")
@@ -180,10 +187,6 @@ def get_total_urls(info_list: list[ChannelData], ipv_type_prefer, origin_type_pr
                 w_info_value = w_info.partition("!")[2] or "白名单"
                 w_url = add_url_info(w_url, w_info_value)
             info["url"] = w_url
-            total_urls.append(info)
-            continue
-
-        if not rtmp_type or (origin in rtmp_type):
             total_urls.append(info)
             continue
 
