@@ -3,7 +3,8 @@ from collections import defaultdict
 import aiohttp
 import asyncio
 from datetime import datetime
-import tarfile
+import gzip
+import shutil
 from xml.dom import minidom
 import re
 import zhconv
@@ -83,9 +84,10 @@ def write_to_xml(channels, programmes, filename):
         f.write(reparsed.toprettyxml(indent='\t', newl='\n'))
 
 
-def compress_to_tar_gz(input_filename, output_filename):
-    with tarfile.open(output_filename, "w:gz") as tar:
-        tar.add(input_filename, arcname="epg.xml")
+def compress_to_gz(input_filename, output_filename):
+    with open(input_filename, 'rb') as f_in:
+        with gzip.open(output_filename, 'wb') as f_out:
+            shutil.copyfileobj(f_in, f_out)
 
 async def main():
     tasks = [fetch_epg(url) for url in urls]
@@ -105,7 +107,7 @@ async def main():
                 all_channels_verify.add(display_name)
                 all_programmes[display_name] = programmes[channel_id]
     write_to_xml(all_channels, all_programmes, 'output/epg.xml')
-    compress_to_tar_gz('output/epg.xml', 'output/epg.tar.gz')
+    compress_to_gz('output/epg.xml', 'output/epg.gz')
 
 if __name__ == '__main__':
     asyncio.run(main())
