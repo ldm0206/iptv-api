@@ -141,8 +141,8 @@ jobs:
           if [[ -f "output/epg.xml" ]]; then
             git add -f "output/epg.xml"
           fi
-          if [[ -f "output/epg.tar.gz" ]]; then
-            git add -f "output/epg.tar.gz"
+          if [[ -f "output/epg.gz" ]]; then
+            git add -f "output/epg.gz"
           fi
           rm -f "config/local.txt"
           rm -f "config/subscribe.txt"
