@@ -562,9 +562,12 @@ def format_name(name: str) -> str:
     """
     cc = OpenCC("t2s")
     name = cc.convert(name)
+    # Remove content inside () and []
+    name = re.sub(r"\(.*?\)|\[.*?\]", "", name)
     for region in constants.region_list:
         name = name.replace(f"{region}｜", "")
     name = constants.sub_pattern.sub("", name)
+
     for old, new in constants.replace_dict.items():
         name = name.replace(old, new)
     return name.lower()
