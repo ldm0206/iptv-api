@@ -7,7 +7,7 @@ import gzip
 import shutil
 from xml.dom import minidom
 import re
-import zhconv
+from opencc import OpenCC
 
 urls = [
     "http://epg.51zmt.top:8000/e.xml",
@@ -17,13 +17,10 @@ urls = [
 ]
 
 
-def transform2_zh_hant(string):
-    new_str = zhconv.convert(string, 'zh-hant')
-    return new_str
-
 
 def transform2_zh_hans(string):
-    new_str = zhconv.convert(string, 'zh-cn')
+    cc = OpenCC("t2s")
+    new_str = cc.convert(string)
     return new_str
 
 async def fetch_epg(url):

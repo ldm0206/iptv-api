@@ -29,6 +29,5 @@ pillow = "==11.1.0"
 m3u8 = "==6.0.0"
 pytz = "==2025.1"
 pystray = "==0.19.5"
-zhconv = "==1.4.3"
 [requires]
 python_version = "3.13"
