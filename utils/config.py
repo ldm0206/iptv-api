@@ -354,6 +354,10 @@ class ConfigManager:
     def open_rtmp(self):
         return self.config.getboolean("Settings", "open_rtmp", fallback=False)
 
+    @property
+    def open_headers(self):
+        return self.config.getboolean("Settings", "open_headers", fallback=False)
+
     def load(self):
         """
         Load the config

@@ -11,6 +11,7 @@ import subprocess
 import atexit
 from collections import OrderedDict
 import threading
+import json
 
 app = Flask(__name__)
 nginx_dir = resource_path(os.path.join('utils', 'nginx-rtmp-win32'))
@@ -177,16 +178,23 @@ def show_log():
     return response
 
 
-def get_channel_url(channel_id):
+def get_channel_data(channel_id):
     conn = get_db_connection(constants.rtmp_data_path)
+    channel_data = {}
     try:
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM result_data WHERE id=?", (channel_id,))
+        cursor.execute("SELECT url, headers FROM result_data WHERE id=?", (channel_id,))
         data = cursor.fetchone()
-        url = data[1] if data else ''
+        if data:
+            channel_data = {
+                'url': data[0],
+                'headers': json.loads(data[1]) if data[1] else None
+            }
+    except Exception as e:
+        print(f"❌ Error retrieving channel data: {e}")
     finally:
         return_db_connection(constants.rtmp_data_path, conn)
-    return url
+    return channel_data
 
 
 def monitor_stream_process(streams, process, channel_id):
@@ -210,9 +218,11 @@ def cleanup_streams(streams):
 def run_live(channel_id):
     if not channel_id:
         return jsonify({'Error': 'Channel ID is required'}), 400
-    url = get_channel_url(channel_id)
+    data = get_channel_data(channel_id)
+    url = data.get("url", "")
     if not url:
         return jsonify({'Error': 'Url not found'}), 400
+    headers = data.get("headers", None)
     if channel_id in live_running_streams:
         process = live_running_streams[channel_id]
         if process.poll() is None:
@@ -224,6 +234,7 @@ def run_live(channel_id):
         'ffmpeg',
         '-loglevel', 'error',
         '-re',
+        '-headers', ''.join(f'{k}: {v}\r\n' for k, v in headers.items()) if headers else '',
         '-i', url.partition('$')[0],
         '-c:v', 'copy',
         '-c:a', 'copy',
@@ -253,9 +264,11 @@ def run_live(channel_id):
 def run_hls(channel_id):
     if not channel_id:
         return jsonify({'Error': 'Channel ID is required'}), 400
-    url = get_channel_url(channel_id)
+    data = get_channel_data(channel_id)
+    url = data.get("url", "")
     if not url:
         return jsonify({'Error': 'Url not found'}), 400
+    headers = data.get("headers", None)
     channel_file = f'{channel_id}.m3u8'
     m3u8_path = os.path.join(hls_temp_path, channel_file)
     if channel_id in hls_running_streams:
@@ -272,6 +285,7 @@ def run_hls(channel_id):
         'ffmpeg',
         '-loglevel', 'error',
         '-re',
+        '-headers', ''.join(f'{k}: {v}\r\n' for k, v in headers.items()) if headers else '',
         '-stream_loop', '-1',
         '-i', url.partition('$')[0],
         '-c:v', 'copy',

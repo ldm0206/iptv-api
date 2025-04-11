@@ -1,4 +1,4 @@
-from typing import TypedDict, Literal, Union
+from typing import TypedDict, Literal, Union, NotRequired
 
 OriginType = Literal["live", "hls", "local", "whitelist", "subscribe", "hotel", "multicast", "online_search"]
 IPvType = Literal["ipv4", "ipv6", None]
@@ -11,10 +11,11 @@ class ChannelData(TypedDict):
     id: int
     url: str
     host: str
-    date: str | None
-    resolution: str | None
+    date: NotRequired[str | None]
+    resolution: NotRequired[str | None]
     origin: OriginType
     ipv_type: IPvType
+    headers: NotRequired[dict[str, str] | None]
 
 
 CategoryChannelData = dict[str, dict[str, list[ChannelData]]]

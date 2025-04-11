@@ -111,14 +111,16 @@ Like editing templates, modify the runtime configuration.
 Adjust the configuration as needed, here is the default configuration description:
 [Configuration parameters](./config.md)
 
-#### Tips:
-
-1. For enabling interface information display, since some players (such as `PotPlayer`) do not support parsing interface
-   supplementary information, causing playback failure, you can modify the configuration: `open_url_info = False` (GUI:
-   uncheck display interface information) to disable this feature.
-2. If your network supports IPv6, you can modify the configuration: `ipv6_support = True` (GUI: check skip IPv6
-   detection) to skip the support check.
-3. Enabling keyword search (disabled by default) will significantly increase the update time, not recommended to enable.
+> [!NOTE]
+> 1. For enabling interface information display, since some players (such as `PotPlayer`) do not support parsing
+     interface
+     supplementary information, causing playback failure, you can modify the configuration: `open_url_info = False` (
+     GUI:
+     uncheck display interface information) to disable this feature.
+> 2. If your network supports IPv6, you can modify the configuration: `ipv6_support = True` (GUI: check skip IPv6
+     detection) to skip the support check.
+> 3. Enabling keyword search (disabled by default) will significantly increase the update time, not recommended to
+     enable.
 
 #### Similarly, you can customize subscription sources, blacklists, and whitelists (it is recommended to copy files and rename them with the
 
@@ -199,9 +201,10 @@ Now you can run the update workflow.
 ##### (3) Workflow in progress:
 
 Wait a moment, and you will see that your first update workflow is running!
-(Note: The running time depends on the number of channels and pages in your template and other configurations, and also
-largely depends on the current network conditions. Please be patient. The default template and configuration usually
-take about 15 minutes.)
+> [!NOTE]\
+> The running time depends on the number of channels and pages in your template and other configurations, and also
+> largely depends on the current network conditions. Please be patient. The default template and configuration usually
+> take about 15 minutes.
 ![Workflow in progress](./images/workflow-running.png 'Workflow in progress')
 
 ##### (4) Cancel the running Workflow:
@@ -230,10 +233,11 @@ https://cdn.jsdelivr.net/gh/your\_github\_username/repository\_name (correspondi
 If you can access this link and it returns the updated interface content, then your live source interface link has been
 successfully created! Simply copy and paste this link into software like `TVBox` in the configuration field to use~
 
-- Note: Except for the first execution of the workflow, which requires you to manually trigger it, subsequent
-  executions (default: 6:00 AM and 18:00 PM Beijing time daily) will be automatically triggered. If you have modified
-  the template or configuration files and want to execute the update immediately, you can manually trigger (2)
-  `Run workflow`.
+> [!NOTE]\
+> Except for the first execution of the workflow, which requires you to manually trigger it, subsequent
+> executions (default: 6:00 AM and 18:00 PM Beijing time daily) will be automatically triggered. If you have modified
+> the template or configuration files and want to execute the update immediately, you can manually trigger (2)
+`Run workflow`.
 
 #### 4. Modify Workflow Update Frequency (optional)
 
@@ -246,16 +250,21 @@ If you want to perform updates every 2 days, you can modify it like this:
 ```bash
 - cron: '0 22 */2 * *'
 - cron: '0 10 */2 * *'
+```
 
-```markdown
-##### 1. It is strongly recommended not to set the update frequency too high, as there is no significant difference in interface content over a short period. High update frequency and long-running workflows may be considered resource abuse, leading to the risk of repository and account suspension.
-
-##### 2. Please monitor the runtime of your workflows. If you find the execution time too long, reduce the number of channels in the template, adjust the pagination and interface count in the configuration to comply with runtime requirements.
+> [!WARNING]
+> 1. It is strongly recommended not to set the update frequency too high, as there is no significant difference in
+     interface content over a short period. High update frequency and long-running workflows may be considered resource
+     abuse, leading to the risk of repository and account suspension.
+> 2. Please monitor the runtime of your workflows. If you find the execution time too long, reduce the number of
+     channels in the template, adjust the pagination and interface count in the configuration to comply with runtime
+     requirements.
 
 ## Command Line
 
 1. Install Python
-   Please download and install Python from the official website, and select the option to add Python to the system environment variable Path during installation.
+   Please download and install Python from the official website, and select the option to add Python to the system
+   environment variable Path during installation.
 
 2. Run the update
    Open the terminal CMD in the project directory and run the following commands in sequence:
@@ -329,7 +338,11 @@ Taking the host path /etc/docker as an example:
 -v /etc/docker/output:/iptv-api/output
 ```
 
-##### Note: If you pull the image again to update the version, and there are changes or additions to the configuration files, be sure to overwrite the old configuration files in the host (config directory), as the host configuration files cannot be updated automatically. Otherwise, the container will still run with the old configuration.
+> [!WARNING]\
+> If you pull the image again to update the version, and there are changes or additions to the configuration files, be
+> sure to overwrite the old configuration files in the host (config directory), as the host configuration files cannot
+> be
+> updated automatically. Otherwise, the container will still run with the old configuration.
 
 #### Environment Variables:
 
@@ -356,6 +369,13 @@ Taking the host path /etc/docker as an example:
 | /log      | Speed test log        |
 
 - RTMP Streaming:
+
+> [!NOTE]
+> 1. To stream local video sources, create a `live` or `hls` (recommended) folder in the `config` directory.
+> 2. The `live` folder is used for live streaming interfaces, and the `hls` folder is used for HLS streaming interfaces.
+> 3. Place video files named after the `channel name` into these folders, and the program will automatically stream them
+     to the corresponding channels.
+> 4. Visit http://localhost:8080/stat to view real-time streaming status statistics.
 
 | Streaming Endpoint | Description                      |
 |:-------------------|:---------------------------------|

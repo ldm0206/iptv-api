@@ -15,13 +15,15 @@ from multidict import CIMultiDictProxy
 import utils.constants as constants
 from utils.config import config
 from utils.tools import remove_cache_info, get_resolution_value
-from utils.types import TestResult, ChannelTestResult, TestResultCacheData
+from utils.types import TestResult, ChannelTestResult, TestResultCacheData, ChannelData
 
 http.cookies._is_legal_key = lambda _: True
 cache: TestResultCacheData = {}
 cache1 = {}
 
-async def get_speed_with_download(url: str, session: ClientSession = None, timeout: int = config.sort_timeout) -> dict[
+
+async def get_speed_with_download(url: str, headers: dict = None, session: ClientSession = None,
+                                  timeout: int = config.sort_timeout) -> dict[
     str, float | None]:
     """
     Get the speed of the url with a total timeout
@@ -36,7 +38,7 @@ async def get_speed_with_download(url: str, session: ClientSession = None, timeo
     else:
         created_session = False
     try:
-        async with session.get(url, timeout=timeout) as response:
+        async with session.get(url, headers=headers, timeout=timeout) as response:
             if response.status != 200:
                 raise Exception("Invalid response")
             info['delay'] = int(round((time() - start_time) * 1000))
@@ -55,8 +57,9 @@ async def get_speed_with_download(url: str, session: ClientSession = None, timeo
         return info
 
 
-async def get_m3u8_headers(url: str, session: ClientSession = None, timeout: int = 5) -> CIMultiDictProxy[str] | dict[
-    any, any]:
+async def get_m3u8_headers(url: str, headers: dict = None, session: ClientSession = None, timeout: int = 5) -> \
+        CIMultiDictProxy[str] | dict[
+            any, any]:
     """
     Get the headers of the m3u8 url
     """
@@ -65,16 +68,16 @@ async def get_m3u8_headers(url: str, session: ClientSession = None, timeout: int
         created_session = True
     else:
         created_session = False
-    headers = {}
+    m3u8_headers = {}
     try:
-        async with session.head(url, timeout=timeout) as response:
-            headers = response.headers
+        async with session.head(url, headers=headers, timeout=timeout) as response:
+            m3u8_headers = response.headers
     except:
         pass
     finally:
         if created_session:
             await session.close()
-        return headers
+        return m3u8_headers
 
 
 def check_m3u8_valid(headers: CIMultiDictProxy[str] | dict[any, any]) -> bool:
@@ -87,7 +90,8 @@ def check_m3u8_valid(headers: CIMultiDictProxy[str] | dict[any, any]) -> bool:
     return any(item in content_type for item in ['application/vnd.apple.mpegurl', 'audio/mpegurl', 'audio/x-mpegurl'])
 
 
-async def get_speed_m3u8(url: str, resolution: str = None, filter_resolution: bool = config.open_filter_resolution,
+async def get_speed_m3u8(url: str, headers: dict = None, resolution: str = None,
+                         filter_resolution: bool = config.open_filter_resolution,
                          timeout: int = config.sort_timeout, recursion_times = 0) -> dict[str, float | None]:
     """
     Get the speed of the m3u8 url with a total timeout
@@ -97,26 +101,26 @@ async def get_speed_m3u8(url: str, resolution: str = None, filter_resolution: bo
     try:
         url = quote(url, safe=':/?$&=@[]%').partition('$')[0]
         async with ClientSession(connector=TCPConnector(ssl=False), trust_env=True) as session:
-            headers = await get_m3u8_headers(url, session)
-            location = headers.get('Location')
+            m3u8_headers = await get_m3u8_headers(url, headers, session)
+            location = m3u8_headers.get('Location')
             if location:
                 if recursion_times > 10: # 递归次数大于10
                     info['delay'] = -1.484250
                     return info
-                info.update(await get_speed_m3u8(location, resolution, filter_resolution, timeout, recursion_times + 1))
-            elif check_m3u8_valid(headers):
-                m3u8_obj = m3u8.load(url, timeout=2)
+                info.update(await get_speed_m3u8(location, headers, resolution, filter_resolution, timeout, recursion_times + 1))
+            elif check_m3u8_valid(m3u8_headers):
+                m3u8_obj = m3u8.load(url, headers=headers, timeout=2)
                 playlists = m3u8_obj.data.get('playlists')
                 segments = m3u8_obj.segments
                 if not segments and playlists:
                     parsed_url = urlparse(url)
                     uri = f"{parsed_url.scheme}://{parsed_url.netloc}{parsed_url.path.rsplit('/', 1)[0]}/{playlists[0].get('uri', '')}"
-                    uri_headers = await get_m3u8_headers(uri, session)
+                    uri_headers = await get_m3u8_headers(uri, headers, session)
                     if not check_m3u8_valid(uri_headers):
                         if uri_headers.get('Content-Length'):
-                            info.update(await get_speed_with_download(uri, session, timeout))
+                            info.update(await get_speed_with_download(uri, headers, session, timeout))
                         raise Exception("Invalid m3u8")
-                    m3u8_obj = m3u8.load(uri, timeout=2)
+                    m3u8_obj = m3u8.load(uri, headers=headers, timeout=2)
                     segments = m3u8_obj.segments
                 if not segments:
                     raise Exception("Segments not found")
@@ -126,19 +130,19 @@ async def get_speed_m3u8(url: str, resolution: str = None, filter_resolution: bo
                 for ts_url in ts_urls:
                     if time() - start_time > timeout:
                         break
-                    download_info = await get_speed_with_download(ts_url, session, timeout)
+                    download_info = await get_speed_with_download(ts_url, headers, session, timeout)
                     speed_list.append(download_info['speed'])
                     if info['delay'] is None and download_info['delay'] is not None:
                         info['delay'] = download_info['delay']
                 info['speed'] = (sum(speed_list) / len(speed_list)) if speed_list else 0
-            elif headers.get('Content-Length'):
-                info.update(await get_speed_with_download(url, session, timeout))
+            elif m3u8_headers.get('Content-Length'):
+                info.update(await get_speed_with_download(url, headers, session, timeout))
     except:
         info['delay'] = -1.23333
         pass
     finally:
         if not resolution and filter_resolution and not location and info['delay'] is not None:
-            info['resolution'] = await get_resolution_ffprobe(url, timeout)
+            info['resolution'] = await get_resolution_ffprobe(url, headers, timeout)
         if info['delay'] is None:
             info['delay'] = -1
         return info
@@ -216,7 +220,7 @@ async def ffmpeg_url(url, timeout=config.sort_timeout):
         return res
 
 
-async def get_resolution_ffprobe(url: str, timeout: int = config.sort_timeout) -> str | None:
+async def get_resolution_ffprobe(url: str, headers: dict = None, timeout: int = config.sort_timeout) -> str | None:
     """
     Get the resolution of the url by ffprobe
     """
@@ -226,6 +230,7 @@ async def get_resolution_ffprobe(url: str, timeout: int = config.sort_timeout) -
         probe_args = [
             'ffprobe',
             '-v', 'error',
+            '-headers', ''.join(f'{k}: {v}\r\n' for k, v in headers.items()) if headers else '',
             '-select_streams', 'v:0',
             '-show_entries', 'stream=width,height',
             "-of", 'json',
@@ -280,7 +285,7 @@ async def check_stream_delay(url_info):
         print(e)
         return -1
     
-async def get_speed(url, cache_key=None, origin = None, is_ipv6=False, ipv6_proxy=None, resolution=None,
+async def get_speed(url, headers=None, cache_key=None, origin = None, is_ipv6=False, ipv6_proxy=None, resolution=None,
                     filter_resolution=config.open_filter_resolution,
                     min_resolution=config.min_resolution_value, timeout=config.sort_timeout,
                     callback=None) -> TestResult:
@@ -318,11 +323,11 @@ async def get_speed(url, cache_key=None, origin = None, is_ipv6=False, ipv6_prox
         elif constants.rt_url_pattern.match(url) is not None:
             start_time = time()
             if not data['resolution'] and filter_resolution:
-                data['resolution'] = await get_resolution_ffprobe(url, timeout)
+                data['resolution'] = await get_resolution_ffprobe(url, headers,  timeout)
             data['delay'] = int(round((time() - start_time) * 1000))
             data['speed'] = float("inf") if data['resolution'] is not None else 0
         else:
-            data.update(await get_speed_m3u8(url, resolution, filter_resolution, timeout))
+            data.update(await get_speed_m3u8(url, headers,  resolution, filter_resolution, timeout))
         if cache_key:
             cache.setdefault(cache_key, []).append(data)
     finally:
@@ -332,15 +337,15 @@ async def get_speed(url, cache_key=None, origin = None, is_ipv6=False, ipv6_prox
         return data
 
 
-def sort_urls_key(item: ChannelTestResult) -> float:
+def sort_urls_key(item: TestResult | ChannelData) -> float:
     """
     Sort the urls with key
     """
-    speed, resolution, origin = item["speed"], item["resolution"], item["origin"]
+    speed, origin = item["speed"], item["origin"]
     if origin in ["whitelist", "live", "hls"]:
         return float("inf")
     else:
-        return speed + get_resolution_value(resolution)
+        return speed
 
 
 def sort_urls(name, data, supply=config.open_supply, filter_speed=config.open_filter_speed, min_speed=config.min_speed,

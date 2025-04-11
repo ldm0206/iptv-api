@@ -421,7 +421,17 @@ def convert_to_m3u(path=None, first_channel_name=None):
                         m3u_output += f'#EXTINF:-1 tvg-name="{processed_channel_name}" tvg-logo="{logo_url}"'
                         if current_group:
                             m3u_output += f' group-title="{current_group}"'
-                        m3u_output += f",{original_channel_name}\n{channel_link}\n"
+                        m3u_output += f",{original_channel_name}\n"
+                        if data and config.open_headers:
+                            item_list = data.get(original_channel_name, [])
+                            for item in item_list:
+                                if item["url"] == channel_link:
+                                    headers = item.get("headers")
+                                    if headers:
+                                        for key, value in headers.items():
+                                            m3u_output += f"#EXTVLCOPT:http-{key.lower()}={value}\n"
+                                    break
+                        m3u_output += f"{channel_link}\n"
             m3u_file_path = os.path.splitext(path)[0] + ".m3u"
             with open(m3u_file_path, "w", encoding="utf-8") as m3u_file:
                 m3u_file.write(m3u_output)
@@ -572,25 +582,50 @@ def format_name(name: str) -> str:
         name = name.replace(old, new)
     return name.lower()
 
-def get_name_url(content, pattern, check_url=True, isTxt=False):
+
+def get_headers_key_value(content: str) -> dict:
     """
-    Get name and url from content
+    Get the headers key value from content
     """
-    matches = pattern.findall(content)
-    if isTxt:
-        channels = [
-            {"name": match[0].strip(), "url": url.strip()}
-            for match in matches
-                for url in match[1].split("#")
-            if (check_url and url.strip()) or not check_url
-        ]
-    else:
-        channels = [
-            {"name": match[0].strip(), "url": match[1].strip()}
-            for match in matches
-            if (check_url and match[1].strip()) or not check_url
-        ]
-    return channels
+    key_value = {}
+    for match in constants.key_value_pattern.finditer(content):
+        key = match.group("key").strip().replace("http-", "").lower()
+        if "refer" in key:
+            key = "referer"
+        value = match.group("value").replace('"', "").strip()
+        if key and value:
+            key_value[key] = value
+    return key_value
+
+
+def get_name_url(content, pattern, open_headers=False, check_url=True):
+    """
+    Extract name and URL from content using a regex pattern.
+    :param content: str, the input content to search.
+    :param pattern: re.Pattern, the compiled regex pattern to match.
+    :param open_headers: bool, whether to extract headers.
+    :param check_url: bool, whether to validate the presence of a URL.
+    """
+    result = []
+    for match in pattern.finditer(content):
+        group_dict = match.groupdict()
+        name = (group_dict.get("name", "") or "").strip()
+        url = (group_dict.get("url", "") or "").strip()
+        if not name or (check_url and not url):
+            continue
+        data = {"name": name, "url": url}
+        if open_headers:
+            attributes = {**get_headers_key_value(group_dict.get("attributes", "")),
+                          **get_headers_key_value(group_dict.get("options", ""))}
+            headers = {
+                "User-Agent": attributes.get("useragent", ""),
+                "Referer": attributes.get("referer", ""),
+                "Origin": attributes.get("origin", "")
+            }
+            headers = {k: v for k, v in headers.items() if v}
+            data["headers"] = headers
+        result.append(data)
+    return result
 
 
 def get_real_path(path) -> str:

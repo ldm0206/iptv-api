@@ -31,6 +31,8 @@ other features, under development...
 
 - [Features](#features)
 - [Latest results](#latest-results)
+  - [Live Sources](#live-sources)
+  - [VOD source](#vod-source)
 - [Config](#config)
 - [Quick Start](#quick-start)
   - [Workflow](#workflow)
@@ -41,12 +43,21 @@ other features, under development...
     - [2. Run the container](#2-run-the-container)
       - [Mount(Recommended):](#mountrecommended)
       - [Environment Variables:](#environment-variables)
-    - [3. Update results](#3-update-results)
+    - [3. Update Results](#3-update-results)
 - [Changelog](#changelog)
 - [Appreciate](#appreciate)
 - [Follow](#follow)
 - [Disclaimer](#disclaimer)
 - [License](#license)
+
+> [!IMPORTANT]
+> 1. The default data sources, such as subscription sources, come from open-source projects on GitHub and are for
+     demonstration purposes only. They may have stability issues.
+> 2. This project does not guarantee or explain the stability of the interface results.
+> 3. To achieve optimal stability, it is recommended to maintain the data sources yourself.
+
+<details>
+  <summary>Default Data Sources</summary>
 
 📍Subscription sources are from:
 
@@ -66,6 +77,8 @@ other features, under development...
 
 - [fanmingming/live](https://github.com/fanmingming/live)
 
+</details>
+
 ## Features
 
 - ✅ Customize the template to generate the channel you want
@@ -80,36 +93,34 @@ other features, under development...
 
 ## Latest results
 
-- Interface source:
+> [!IMPORTANT]\
+> The following addresses may fail to be accessed domestically. It is recommended to prepend a proxy address for use.
+> The public account can reply with `CDN` to obtain it.
+
+### Live Sources
+
+- Default
 
 ```bash
 https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u
 ```
 
+- IPv6
+
 ```bash
-https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt
+https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv6/result.m3u
 ```
 
-or
+- IPv4
 
 ```bash
-https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u
+https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u
 ```
 
-```bash
-https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.txt
-```
-
-- Data source:
+### VOD source
 
 ```bash
-https://ghproxy.cc/https://raw.githubusercontent.com/Guovin/iptv-api/gd/source.json
-```
-
-or
-
-```bash
-https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/source.json
+https://raw.githubusercontent.com/Guovin/iptv-api/gd/source.json
 ```
 
 ## Config
@@ -142,6 +153,7 @@ https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/source.json
 | open_url_info          | Enable to display interface description information, used to control whether to display interface source, resolution, protocol type and other information, the content after the $ symbol, the playback software uses this information to describe the interface, if some players (such as PotPlayer) do not support parsing and cannot play, you can turn it off                                                                | False             |
 | open_use_cache         | Enable the use of local cache data, applicable to the query request failure scenario (only for hotel sources and multicast sources)                                                                                                                                                                                                                                                                                              | True              |
 | open_history           | Enable the use of historical update results (including the interface for template and result files) and merge them into the current update                                                                                                                                                                                                                                                                                       | True              |
+| open_headers           | Enable to use the request header verification information contained in M3U, used for speed measurement and other operations. Note: Only a few players support playing this type of interface with verification information, which is turned off by default                                                                                                                                                                       | False             |
 | app_port               | Page service port, used to control the port number of the page service                                                                                                                                                                                                                                                                                                                                                           | 8000              |
 | cdn_url                | CDN proxy acceleration address, used for accelerated access to subscription sources, channel icons and other resources                                                                                                                                                                                                                                                                                                           |                   |
 | final_file             | Generated result file path                                                                                                                                                                                                                                                                                                                                                                                                       | output/result.txt |
@@ -272,6 +284,13 @@ Taking the host path /etc/docker as an example:
 | /log      | Speed test log        |
 
 - RTMP Streaming:
+
+> [!NOTE]
+> 1. To stream local video sources, create a `live` or `hls` (recommended) folder in the `config` directory.
+> 2. The `live` folder is used for live streaming interfaces, and the `hls` folder is used for HLS streaming interfaces.
+> 3. Place video files named after the `channel name` into these folders, and the program will automatically stream them
+     to the corresponding channels.
+> 4. Visit http://localhost:8080/stat to view real-time streaming status statistics.
 
 | Streaming Endpoint | Description                      |
 |:-------------------|:---------------------------------|
