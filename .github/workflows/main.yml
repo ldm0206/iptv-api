@@ -2,7 +2,7 @@ name: 'Update schedule'
 
 on:
   schedule:
-    - cron: '0 22,10 * * *'
+    - cron: '0 20,8 * * *'
   workflow_dispatch:
     branches:
       - master
@@ -50,17 +50,58 @@ jobs:
       - name: Install pipenv
         run: pip3 install --user pipenv
       - name: Install dependecies
-        run: pipenv --python 3.13 && pipenv install --deploy
+        run: |
+          pipenv lock
+          pipenv --python 3.13 && pipenv install --deploy
       - name: Install selenium
         if: env.OPEN_DRIVER == 'True'
         run: pipenv install selenium
+      - name: Download setting
+        run: |
+          curl -o config/local.txt ${{ secrets.GIST_IPTV}}a_local.txt
+          curl -o config/subscribe.txt ${{ secrets.GIST_IPTV}}a_subscribe.txt
+          curl -o config/whitelist.txt ${{ secrets.GIST_IPTV}}a_whitelist.txt
+          curl -o output/data/cache.pkl.gz ${{ secrets.GIST_IPTV}}cache.pkl.gz
       - name: Update
         run: pipenv run dev
+      - name: Deploy output text to gist
+        uses: Raphiiko/actions-deploy-gist@main
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gist_id: ${{ secrets.GIST_IPTV_ID }}
+          file_path: output/result.txt
+          file_type: text
+      - name: Deploy output m3u to gist
+        uses: Raphiiko/actions-deploy-gist@main
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gist_id: ${{ secrets.GIST_IPTV_ID }}
+          file_path: output/result.m3u
+          file_type: text
+      - name: Deploy output cache to gist
+        uses: Raphiiko/actions-deploy-gist@main
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gist_id: ${{ secrets.GIST_IPTV_ID }}
+          file_path: output/data/cache.pkl.gz
+          file_type: binary
+      - name: Deploy output log to gist
+        uses: Raphiiko/actions-deploy-gist@main
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gist_id: ${{ secrets.GIST_IPTV_ID }}
+          file_path: output/log/sort.log
+          file_type: text
       - name: Commit and push if changed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add .
+          if [[ -f "output/epg.xml" ]]; then
+            git add -f "output/epg/epg.xml"
+          fi
+          if [[ -f "output/epg.gz" ]]; then
+            git add -f "output/epg/epg.gz"
+          fi
           if ! git diff --staged --quiet; then
             git commit -m "Github Action Auto Updated"
             git push --force
