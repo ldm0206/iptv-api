@@ -49,7 +49,7 @@ log_path = os.path.join(output_dir, "log/log.log")
 
 url_host_pattern = re.compile(r"((https?|rtmp|rtsp)://)?([^:@/]+(:[^:@/]*)?@)?(\[[0-9a-fA-F:]+]|([\w-]+\.)+[\w-]+)")
 
-url_pattern = re.compile(r"(?P<url>" + url_host_pattern.pattern + r"(.*)?)")
+url_pattern = re.compile(r"(?P<url>" + url_host_pattern.pattern + r"[^\s]*)")
 
 rt_url_pattern = re.compile(r"^(rtmp|rtsp)://.*$")
 

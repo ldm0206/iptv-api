@@ -13,3 +13,4 @@ ku9.3n.cc
 8.138.7.223
 /audio/
 satellitepull.cnr.cn
+tvbox6.icu
