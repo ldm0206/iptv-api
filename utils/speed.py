@@ -379,7 +379,7 @@ def sort_result_key(item: TestResult | ChannelData) -> float:
     """
     Sort the result with key
     """
-    speed, origin = item["speed"], item["origin"]
+    speed, origin = item.get("speed", 0), item["origin"]
     if origin in ["whitelist", "live", "hls"]:
         return float("inf")
     else:
