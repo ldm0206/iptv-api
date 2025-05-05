@@ -176,7 +176,7 @@ class UpdateSource:
                         with gzip.open(constants.cache_path, "rb") as file:
                             try:
                                 cache = pickle.load(file)
-                            except EOFError:
+                            except Exception as e:
                                 cache = {}
                             cache_result = merge_objects(cache, cache_result, match_key="url")
                     with gzip.open(constants.cache_path, "wb") as file:
