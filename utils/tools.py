@@ -378,7 +378,7 @@ def convert_to_m3u(path=None, first_channel_name=None, data=None):
                         except:
                             continue
                         processed_channel_name = re.sub(
-                            r"(CCTV|CETV)-(\d+)(\+.*)?",
+                            r"(CCTV|CETV|SCTV)-(\d+)(\+.*)?",
                             lambda m: f"{m.group(1)}{m.group(2)}"
                                       + ("+" if m.group(3) else ""),
                             first_channel_name if current_group == "🕘️更新时间" else original_channel_name,
