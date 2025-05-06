@@ -321,7 +321,7 @@ class ConfigManager:
 
     @property
     def open_supply(self):
-        return self.config.getboolean("Settings", "open_supply", fallback=False)
+        return self.config.getboolean("Settings", "open_supply", fallback=True)
 
     @property
     def update_time_position(self):

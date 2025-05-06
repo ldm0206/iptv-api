@@ -742,26 +742,20 @@ def sort_channel_result(channel_data, result, filter_host=False, ipv6_support=Tr
         for name, values in obj.items():
             if not values:
                 continue
-            if filter_host:
-                name_results = [
-                    {**value, **get_speed_result(value["host"])}
-                    for value in values
-                ]
-            else:
-                name_results = (
-                        [
-                            value for value in values
-                            if value["origin"] in ["whitelist", "live", "hls"] or
-                               (not ipv6_support and value["ipv_type"] == "ipv6")
-                        ]
-                        + result.get(cate, {}).get(name, [])
-                )
-            sort_result = get_sort_result(name_results, name=name, ipv6_support=ipv6_support, logger=logger)
+            whitelist_result = []
+            test_result = [] if filter_host else result.get(cate, {}).get(name, [])
+            for value in values:
+                if value["origin"] in ["whitelist", "live", "hls"]:
+                    whitelist_result.append(value)
+                elif filter_host:
+                    test_result.append({**value, **get_speed_result(value["host"])})
+            total_result = whitelist_result + get_sort_result(test_result, name=name, ipv6_support=ipv6_support,
+                                                              logger=logger)
             append_data_to_info_data(
                 channel_result,
                 cate,
                 name,
-                sort_result,
+                total_result,
                 check=False,
             )
     logger.handlers.clear()
