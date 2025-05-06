@@ -26,8 +26,8 @@ open_supply = config.open_supply
 open_filter_speed = config.open_filter_speed
 min_speed_value = config.min_speed
 m3u8_headers = ['application/x-mpegurl', 'application/vnd.apple.mpegurl', 'audio/mpegurl', 'audio/x-mpegurl']
-default_ipv6_delay = 0.1
-default_ipv6_resolution = "1920x1080"
+default_ipv6_delay = -1
+default_ipv6_resolution = "192x108"
 default_ipv6_result = {
     'speed': float("inf"),
     'delay': default_ipv6_delay,
