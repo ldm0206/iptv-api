@@ -372,13 +372,15 @@ CCTV-15
 
 ☘️四川频道,#genre#
 四川卫视
-SCTV2
-SCTV3
-SCTV4
-SCTV5
+SCTV-2
+SCTV-3
+SCTV-4
+SCTV-5
 星空购物
-SCTV7
-SCTV8
+SCTV-7
+SCTV-7
+SCTV-8
+SCTV-科教
 四川乡村
 峨眉电影
 广元新闻综合
