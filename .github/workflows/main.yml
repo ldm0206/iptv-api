@@ -90,7 +90,7 @@ jobs:
         with:
           token: ${{ secrets.GIST_TOKEN }}
           gist_id: ${{ secrets.GIST_IPTV_ID }}
-          file_path: output/log/sort.log
+          file_path: output/log/result.log
           file_type: text
       - name: Commit and push if changed
         run: |

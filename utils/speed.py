@@ -369,10 +369,16 @@ async def get_speed(data, headers=None, ipv6_proxy=None, filter_resolution=open_
         return result
 
 
-def get_sort_result(results, name=None, supply=open_supply, filter_speed=open_filter_speed,
-                    min_speed=min_speed_value,
-                    filter_resolution=open_filter_resolution, min_resolution=min_resolution_value,
-                    max_resolution=max_resolution_value, ipv6_support=True, logger=None) -> list[ChannelTestResult]:
+def get_sort_result(
+        results,
+        supply=open_supply,
+        filter_speed=open_filter_speed,
+        min_speed=min_speed_value,
+        filter_resolution=open_filter_resolution,
+        min_resolution=min_resolution_value,
+        max_resolution=max_resolution_value,
+        ipv6_support=True
+) -> list[ChannelTestResult]:
     """
     get the sort result
     """
@@ -380,14 +386,11 @@ def get_sort_result(results, name=None, supply=open_supply, filter_speed=open_fi
     for result in results:
         if not ipv6_support and result["ipv_type"] == "ipv6":
             result.update(default_ipv6_result)
-        result_speed, result_delay, resolution = result["speed"] or 0, result["delay"] or -1, result["resolution"]
-        try:
-            if logger:
-                logger.info(
-                    f"Name: {name}, URL: {result["url"]}, IPv_Type: {result["ipv_type"]}, Date: {result["date"]}, Delay: {result_delay} ms, Speed: {result_speed:.2f} M/s, Resolution: {resolution}"
-                )
-        except Exception as e:
-            print(e)
+        result_speed, result_delay, resolution = (
+            result.get("speed") or 0,
+            result.get("delay") or -1,
+            result.get("resolution")
+        )
         if result_delay < 0:
             continue
         if not supply:
@@ -398,5 +401,5 @@ def get_sort_result(results, name=None, supply=open_supply, filter_speed=open_fi
                 if resolution_value < min_resolution or resolution_value > max_resolution:
                     continue
         total_result.append(result)
-    total_result.sort(key=lambda item: item.get("speed", 0), reverse=True)
+    total_result.sort(key=lambda item: item.get("speed") or 0, reverse=True)
     return total_result
