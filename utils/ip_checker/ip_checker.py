@@ -3,10 +3,12 @@ from urllib.parse import urlparse
 
 import ipdb
 
+from utils.tools import resource_path
+
 
 class IPChecker:
     def __init__(self):
-        self.db = ipdb.City("utils/ip_checker/data/qqwry.ipdb")
+        self.db = ipdb.City(resource_path("utils/ip_checker/data/qqwry.ipdb"))
         self.url_host = {}
         self.host_ip = {}
         self.host_ipv_type = {}
