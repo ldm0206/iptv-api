@@ -171,6 +171,7 @@ def get_channel_items() -> CategoryChannelData:
                                         for info in old_result[cate][name]:
                                             if info and info["url"] not in urls:
                                                 channels[cate][name].append(info)
+                                                frozen_channels.discard(info["url"])
             except Exception as e:
                 print(f"Error loading cache file: {e}")
                 pass
