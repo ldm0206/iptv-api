@@ -61,7 +61,7 @@ jobs:
           curl -o config/local.txt ${{ secrets.GIST_IPTV}}a_local.txt
           curl -o config/subscribe.txt ${{ secrets.GIST_IPTV}}a_subscribe.txt
           curl -o config/whitelist.txt ${{ secrets.GIST_IPTV}}a_whitelist.txt
-          curl -o output/data/cache.pkl.gz ${{ secrets.GIST_IPTV}}cache.pkl.gz
+          # curl -o output/data/cache.pkl.gz ${{ secrets.GIST_IPTV}}cache.pkl.gz
       - name: Update
         run: pipenv run dev
       - name: Deploy output text to gist
