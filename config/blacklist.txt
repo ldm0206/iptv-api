@@ -22,3 +22,6 @@ php.jdshipin.com
 api.olelive.com
 piccpndali.v.myalicdn.com
 p2.bdstatic.com
+ls.qingting.fm
+cdn.iptv8k.top
+goo.bkpcp.top
