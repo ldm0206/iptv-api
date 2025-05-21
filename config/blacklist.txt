@@ -25,3 +25,5 @@ p2.bdstatic.com
 ls.qingting.fm
 cdn.iptv8k.top
 goo.bkpcp.top
+61.133.118.228:5001
+live.lalifeier.eu.org
