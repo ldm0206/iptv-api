@@ -16,6 +16,7 @@ CCTV-14
 CCTV-15
 CCTV-16
 CCTV-17
+<<<<<<< HEAD
 CCTV-5+
 CCTV-4K
 CCTV-8K
@@ -28,6 +29,12 @@ CGTN西语
 CGTN法语
 CGTN纪录
 中国天气
+=======
+CETV-1
+CETV-2
+CETV-3
+CETV-4
+>>>>>>> 160557aab1fc7a8fa9cb3df89fc3ba1772598380
 
 💰央视付费频道,#genre#
 文化精品

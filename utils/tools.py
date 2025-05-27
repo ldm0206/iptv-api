@@ -8,6 +8,7 @@ import sys
 from collections import defaultdict
 from logging.handlers import RotatingFileHandler
 from time import time
+from urllib.parse import urlparse, urlunparse
 
 import pytz
 import requests
@@ -243,6 +244,8 @@ def check_ipv6_support():
     """
     Check if the system network supports ipv6
     """
+    if os.getenv("GITHUB_ACTIONS"):
+        return False
     url = "https://ipv6.tokyo.test-ipv6.com/ip/?callback=?&testdomain=test-ipv6.com&testname=test_aaaa"
     try:
         print("Checking if your network supports IPv6...")
@@ -252,7 +255,7 @@ def check_ipv6_support():
             return True
     except Exception:
         pass
-    print("Your network does not support IPv6, don't worry, these results will be saved")
+    print("Your network does not support IPv6, don't worry, the IPv6 results will be saved")
     return False
 
 
@@ -678,6 +681,35 @@ def join_url(url1: str, url2: str) -> str:
     if not url1.endswith("/"):
         url1 += "/"
     return url1 + url2
+
+
+def add_port_to_url(url: str, port: int) -> str:
+    """
+    Add port to the url
+    """
+    parsed = urlparse(url)
+    netloc = parsed.netloc
+    if parsed.username and parsed.password:
+        netloc = f"{parsed.username}:{parsed.password}@{netloc}"
+    if port:
+        netloc = f"{netloc}:{port}"
+    new_url = urlunparse((
+        parsed.scheme,
+        netloc,
+        parsed.path,
+        parsed.params,
+        parsed.query,
+        parsed.fragment
+    ))
+    return new_url
+
+
+def get_url_without_scheme(url: str) -> str:
+    """
+    Get the url without scheme
+    """
+    parsed = urlparse(url)
+    return parsed.netloc + parsed.path
 
 
 def find_by_id(data: dict, id: int) -> dict:

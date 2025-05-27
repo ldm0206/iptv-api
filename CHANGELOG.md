@@ -1,5 +1,75 @@
 # 更新日志（Changelog）
 
+## v1.7.2
+
+### 2025/5/26
+
+### 🚀 新功能 ###
+
+---
+
+- 新增支持设置`定时更新间隔`，`命令行` `GUI` `Docker`均可实现定时间隔更新，可通过配置`update_interval`设置执行更新任务时间的间隔，默认
+  `12小时`，不作用于工作流，工作流依旧每日
+  `6点与18点`执行更新
+
+### 🌟 优化 ###
+
+---
+
+- 更新频道别名数据，欢迎提供更多别名，参见：💖 [频道别名收集计划](https://github.com/Guovin/iptv-api/discussions/1082)
+
+### 🐛 修复 ###
+
+---
+
+- 修复公网推流`APP_HOST`配置应用（#1094）
+- 修复部分场景下未开启测速获取结果未保存问题（#1092）
+- 修复频道缓存结果`解冻`失败
+- 修复部分设备无法打开`GUI`界面
+
+### 🗑️ 移除 ###
+
+---
+
+- 移除Docker`UPDATE_CRON`环境变量，请使用`config/config.ini`文件中`update_interval`参数控制更新时间间隔
+
+<details>
+  <summary>English</summary>
+
+### 🚀 New Features ###
+
+---
+
+- Added support for setting `scheduled update interval`. Both `CLI`, `GUI`, and `Docker` now support scheduled interval
+  updates. You can set the interval for executing update tasks via the `update_interval` configuration. The default is
+  `12 hours`. This does not apply to workflows, which still update daily at
+  `6:00 and 18:00`.
+
+### 🌟 Optimization ###
+
+---
+
+- Updated channel alias data. Contributions for more aliases are welcome. See:
+  💖 [Channel Alias Collection Plan](https://github.com/Guovin/iptv-api/discussions/1082)
+
+### 🐛 Bug Fixes ###
+
+---
+
+- Fixed the application of the public streaming APP_HOST configuration (#1094)
+- Fixed the issue where results were not saved when speed test was not enabled in some scenarios (#1092)
+- Fixed failure to "unfreeze" channel cache results
+- Fixed some devices unable to open the `GUI` interface
+
+### 🗑️ Removal ###
+
+---
+
+- Removed Docker `UPDATE_CRON` environment variable. Please use the `update_interval` parameter in the
+  `config/config.ini` file to control the update interval.
+
+</details>
+
 ## v1.7.1
 
 ### 2025/5/9

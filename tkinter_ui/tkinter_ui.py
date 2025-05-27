@@ -1,3 +1,4 @@
+import datetime
 import os
 import sys
 
@@ -49,6 +50,7 @@ class TkinterUI:
         self.update_source = UpdateSource()
         self.update_running = False
         self.result_url = None
+        self.now = None
 
     def on_closing(self):
         if messagebox.askyesno("提示",
@@ -120,6 +122,9 @@ class TkinterUI:
                                    "使用分辨率、推流相关功能需要安装FFmpeg，为了实现更佳的观看体验，\n是否前往官网下载？"):
                 return webbrowser.open("https://ffmpeg.org")
 
+        if self.now:
+            self.update_source.stop()
+
         loop = asyncio.new_event_loop()
 
         def run_loop():
@@ -132,13 +137,17 @@ class TkinterUI:
     def stop(self):
         asyncio.get_event_loop().stop()
 
-    def update_progress(self, title, progress, finished=False, url=None):
+    def update_progress(self, title, progress, finished=False, url=None, now=None):
         self.progress_bar["value"] = progress
+        self.now = now
+        if finished and now:
+            next_time = now + datetime.timedelta(hours=config.update_interval)
+            title += f", 🕒下次更新时间: {next_time:%Y-%m-%d %H:%M:%S}"
         progress_text = f"{title}, 进度: {progress}%" if not finished else f"{title}"
         self.progress_label["text"] = progress_text
         self.root.update()
         if finished:
-            self.run_button.config(text="启动", state="normal")
+            self.run_button.config(text="定时更新中(重启)" if now else "启动", state="normal")
             self.update_running = False
             self.change_state("normal")
             if url:

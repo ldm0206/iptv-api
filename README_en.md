@@ -42,6 +42,7 @@ other features, under development...
 - [🗓️ Changelog](./CHANGELOG.md)
 - [❤️ Appreciate](#appreciate)
 - [👀 Follow the public account](#follow)
+- [⭐️ Star History](#star-history)
 - [📣 Disclaimer](#disclaimer)
 - [⚖️ License](#license)
 
@@ -180,6 +181,7 @@ https://raw.githubusercontent.com/Guovin/iptv-api/gd/source.json
 | subscribe_num          | The number of preferred subscribe source interfaces in the results                                                                                                                                                                                                                                                                                                                                                               | 10                |
 | time_zone              | Time zone, can be used to control the time zone displayed by the update time, optional values: Asia/Shanghai or other time zone codes                                                                                                                                                                                                                                                                                            | Asia/Shanghai     |
 | urls_limit             | Number of interfaces per channel                                                                                                                                                                                                                                                                                                                                                                                                 | 10                |
+| update_interval        | Scheduled execution update interval, unit hours, set 0 or empty means run only once, does not apply to workflow                                                                                                                                                                                                                                                                                                                  | 12                |
 | update_time_position   | Update time display position, need to enable open_update_time to take effect, optional values: top, bottom, top: display at the top of the result, bottom: display at the bottom of the result                                                                                                                                                                                                                                   | top               |
 
 ## Quick Start
@@ -213,8 +215,8 @@ pipenv run service
 
 ### GUI Software
 
-1. Download [IPTV-API update software](https://github.com/Guovin/iptv-api/releases), open the software, click update to
-   complete the update
+1. Download the [IPTV-API Update Software](https://github.com/Guovin/iptv-api/releases), open the software, and click
+   Start to perform the update
 
 2. Or run the following command in the project directory to open the GUI software:
 
@@ -258,11 +260,10 @@ Taking the host path /etc/docker as an example:
 
 ##### Environment Variables:
 
-| Variable    | Description          | Default Value      |
-|:------------|:---------------------|:-------------------|
-| APP_HOST    | Service host address | "http://localhost" |
-| APP_PORT    | Service port         | 8000               |
-| UPDATE_CRON | Scheduled task time  | "0 22,10 * * *"    |
+| Variable | Description          | Default Value      |
+|:---------|:---------------------|:-------------------|
+| APP_HOST | Service host address | "http://localhost" |
+| APP_PORT | Service port         | 8000               |
 
 #### 3. Update Results
 
@@ -323,6 +324,10 @@ Taking the host path /etc/docker as an example:
 Wechat public account search for Govin, or scan the code to receive updates and learn more tips:
 
 ![Wechat public account](./static/images/qrcode.jpg)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Guovin/iptv-api&type=Date)](https://star-history.com/#Guovin/iptv-api&Date)
 
 ## Disclaimer
 

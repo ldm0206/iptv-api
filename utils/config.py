@@ -387,6 +387,10 @@ class ConfigManager:
             if i.strip()
         ]
 
+    @property
+    def update_interval(self):
+        return self.config.getfloat("Settings", "update_interval", fallback=12)
+
     def load(self):
         """
         Load the config

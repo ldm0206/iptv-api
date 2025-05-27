@@ -93,6 +93,15 @@ class DefaultUI:
         )
         self.open_update_checkbutton.pack(side=tk.LEFT, padx=4, pady=8)
 
+        self.update_interval_label = tk.Label(
+            frame_default_open_update_column1, text="更新间隔(小时):", width=12
+        )
+        self.update_interval_label.pack(side=tk.LEFT, padx=4, pady=8)
+        self.update_interval_entry = tk.Entry(frame_default_open_update_column1, width=8)
+        self.update_interval_entry.pack(side=tk.LEFT, padx=4, pady=8)
+        self.update_interval_entry.insert(0, config.update_interval)
+        self.update_interval_entry.bind("<KeyRelease>", self.update_interval)
+
         self.open_service_label = tk.Label(
             frame_default_open_update_column2, text="开启服务:", width=8
         )
@@ -458,6 +467,9 @@ class DefaultUI:
     def update_open_service(self):
         config.set("Settings", "open_service", str(self.open_update_var.get()))
 
+    def update_interval(self, event):
+        config.set("Settings", "update_interval", self.update_interval_entry.get())
+
     def update_app_port(self, event):
         config.set("Settings", "app_port", self.app_port_entry.get())
 
@@ -561,6 +573,7 @@ class DefaultUI:
     def change_entry_state(self, state):
         for entry in [
             "open_update_checkbutton",
+            "update_interval_entry",
             "open_service_checkbutton",
             "app_port_entry",
             "open_rtmp_checkbutton",

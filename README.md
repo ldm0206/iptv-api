@@ -41,6 +41,7 @@
 - [🗓️ 更新日志](./CHANGELOG.md)
 - [❤️ 赞赏](#赞赏)
 - [👀 关注公众号](#关注)
+- [⭐️ Star统计](#Star统计)
 - [📣 免责声明](#免责声明)
 - [⚖️ 许可证](#许可证)
 
@@ -175,6 +176,7 @@ https://raw.githubusercontent.com/Guovin/iptv-api/gd/source.json
 | subscribe_num          | 结果中偏好的订阅源接口数量                                                                                                                                                         | 10                |
 | time_zone              | 时区，可用于控制更新时间显示的时区，可选值：Asia/Shanghai 或其它时区编码                                                                                                                           | Asia/Shanghai     |
 | urls_limit             | 单个频道接口数量                                                                                                                                                              | 10                |
+| update_interval        | 定时执行更新时间间隔，单位小时，设置0或空则只运行一次，不作用于工作流                                                                                                                                   | 12                |
 | update_time_position   | 更新时间显示位置，需要开启 open_update_time 才能生效，可选值：top、bottom，top: 显示于结果顶部，bottom: 显示于结果底部                                                                                       | top               |
 
 ## 快速上手
@@ -207,7 +209,7 @@ pipenv run service
 
 ### GUI 软件
 
-1. 下载[IPTV-API 更新软件](https://github.com/Guovin/iptv-api/releases)，打开软件，点击更新，即可完成更新
+1. 下载[IPTV-API 更新软件](https://github.com/Guovin/iptv-api/releases)，打开软件，点击启动，即可进行更新
 
 2. 或者在项目目录下运行以下命令，即可打开 GUI 软件：
 
@@ -250,11 +252,10 @@ docker run -d -p 8000:8000 guovern/iptv-api
 
 ##### 环境变量：
 
-| 变量          | 描述                 | 默认值                |
-|:------------|:-------------------|:-------------------|
-| APP_HOST    | 服务host地址，可修改使用公网域名 | "http://localhost" |
-| APP_PORT    | 服务端口               | 8000               |
-| UPDATE_CRON | 定时任务执行时间           | "0 22,10 * * *"    |
+| 变量       | 描述                 | 默认值                |
+|:---------|:-------------------|:-------------------|
+| APP_HOST | 服务host地址，可修改使用公网域名 | "http://localhost" |
+| APP_PORT | 服务端口               | 8000               |
 
 #### 3. 更新结果
 
@@ -314,6 +315,10 @@ docker run -d -p 8000:8000 guovern/iptv-api
 微信公众号搜索 Govin，或扫码，接收更新推送、学习更多使用技巧：
 
 ![微信公众号](./static/images/qrcode.jpg)
+
+## Star统计
+
+[![Star统计](https://api.star-history.com/svg?repos=Guovin/iptv-api&type=Date)](https://star-history.com/#Guovin/iptv-api&Date)
 
 ## 免责声明
 

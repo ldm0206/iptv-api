@@ -305,8 +305,8 @@ pipenv run service
 
 ## GUI Software
 
-1. Download the [IPTV-API update software](https://github.com/Guovin/iptv-api/releases), open the software, and click
-   update to complete the update.
+1. Download the [IPTV-API Update Software](https://github.com/Guovin/iptv-api/releases), open the software, and click
+   Start to perform the update.
 
 2. Or run the following command in the project directory to open the GUI software:
 
@@ -358,11 +358,10 @@ Taking the host path /etc/docker as an example:
 
 #### Environment Variables:
 
-| Variable    | Description          | Default Value      |
-|:------------|:---------------------|:-------------------|
-| APP_HOST    | Service host address | "http://localhost" |
-| APP_PORT    | Service port         | 8000               |
-| UPDATE_CRON | Scheduled task time  | "0 22,10 * * *"    |
+| Variable | Description          | Default Value      |
+|:---------|:---------------------|:-------------------|
+| APP_HOST | Service host address | "http://localhost" |
+| APP_PORT | Service port         | 8000               |
 
 ### 3. Update Results
 
