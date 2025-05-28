@@ -78,19 +78,26 @@ jobs:
           gist_id: ${{ secrets.GIST_IPTV_ID }}
           file_path: output/result.m3u
           file_type: text
-      - name: Deploy output cache to gist
-        uses: Raphiiko/actions-deploy-gist@main
-        with:
-          token: ${{ secrets.GIST_TOKEN }}
-          gist_id: ${{ secrets.GIST_IPTV_ID }}
-          file_path: output/data/cache.pkl.gz
-          file_type: binary
-      - name: Deploy output log to gist
+      # - name: Deploy output cache to gist
+      #   uses: Raphiiko/actions-deploy-gist@main
+      #   with:
+      #     token: ${{ secrets.GIST_TOKEN }}
+      #     gist_id: ${{ secrets.GIST_IPTV_ID }}
+      #     file_path: output/data/cache.pkl.gz
+      #     file_type: binary
+      - name: Deploy result log to gist
         uses: Raphiiko/actions-deploy-gist@main
         with:
           token: ${{ secrets.GIST_TOKEN }}
           gist_id: ${{ secrets.GIST_IPTV_ID }}
           file_path: output/log/result.log
+          file_type: text
+      - name: Deploy log to gist
+        uses: Raphiiko/actions-deploy-gist@main
+        with:
+          token: ${{ secrets.GIST_TOKEN }}
+          gist_id: ${{ secrets.GIST_IPTV_ID }}
+          file_path: output/log/log.log
           file_type: text
       - name: Commit and push if changed
         run: |
