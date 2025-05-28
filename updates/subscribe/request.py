@@ -116,6 +116,8 @@ async def get_channels_by_subscribe_urls(
                                 channels[name][region][url_type] = [value]
                             else:
                                 channels[name] = [value]
+            else:
+                print(f"Failed to fetch {subscribe_url}, response is None")
         except Exception as e:
             if error_print:
                 print(f"Error on {subscribe_url}: {e}")
