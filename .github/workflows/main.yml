@@ -92,13 +92,13 @@ jobs:
           gist_id: ${{ secrets.GIST_IPTV_ID }}
           file_path: output/log/result.log
           file_type: text
-      - name: Deploy log to gist
-        uses: Raphiiko/actions-deploy-gist@main
-        with:
-          token: ${{ secrets.GIST_TOKEN }}
-          gist_id: ${{ secrets.GIST_IPTV_ID }}
-          file_path: output/log/log.log
-          file_type: text
+      # - name: Deploy log to gist
+      #   uses: Raphiiko/actions-deploy-gist@main
+      #   with:
+      #     token: ${{ secrets.GIST_TOKEN }}
+      #     gist_id: ${{ secrets.GIST_IPTV_ID }}
+      #     file_path: output/log/log.log
+      #     file_type: text
       - name: Commit and push if changed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
