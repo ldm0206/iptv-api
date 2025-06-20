@@ -48,7 +48,7 @@ result_log_path = os.path.join(output_dir, "log/result.log")
 log_path = os.path.join(output_dir, "log/log.log")
 
 url_host_pattern = re.compile(
-    r"((webview://https?|https?|rtmp|rtsp)://)?([^:@/]+(:[^:@/]*)?@)?(\[[0-9a-fA-F:]+]|([\w-]+\.)+[\w-]+)")
+    r"((webview://https?|javascript://https?|https?|rtmp|rtsp)://)?([^:@/]+(:[^:@/]*)?@)?(\[[0-9a-fA-F:]+]|([\w-]+\.)+[\w-]+)")
 
 url_pattern = re.compile(
     r"(?P<url>" + url_host_pattern.pattern + r"(?:\S*?(?=\?$|\?\$|$)|[^\s?]*))")
