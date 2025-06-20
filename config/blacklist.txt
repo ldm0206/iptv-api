@@ -28,3 +28,4 @@ goo.bkpcp.top
 61.133.118.228:5001
 live.lalifeier.eu.org
 154.40.47.19:668
+smart.tv.home.kg
