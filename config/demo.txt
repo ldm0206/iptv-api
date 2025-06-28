@@ -114,6 +114,7 @@ IHOT爱赛车
 
 🖼️4K频道,#genre#
 CCTV-4K
+CCTV-16
 北京卫视4K
 欢笑剧场4K
 Loupe
@@ -251,6 +252,7 @@ IPTV经典电影
 🏀体育频道,#genre#
 CCTV-5
 CCTV-5+
+CCTV-16
 中国体育1
 中国体育2
 中国体育3
